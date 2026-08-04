@@ -1,0 +1,466 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Header v1.0
+ * ============================================================
+ */
+
+.cx-header{
+
+    width:100%;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--cx-border);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+.cx-topbar{
+
+    height:36px;
+
+    background:var(--cx-primary);
+
+    color:#fff;
+
+    font-size:14px;
+
+}
+
+.cx-topbar .container{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.cx-main-header{
+
+    height:88px;
+
+    background:#fff;
+
+}
+
+.cx-main-header .container{
+
+    height:100%;
+
+    display:grid;
+
+    grid-template-columns:
+
+        auto
+        1fr
+        auto;
+
+    gap:32px;
+
+    align-items:center;
+
+}
+
+.cx-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.cx-logo img{
+
+    height:56px;
+
+}
+
+.cx-search{
+
+    width:100%;
+
+}
+
+.cx-search form{
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    border:1px solid var(--cx-border);
+
+    border-radius:12px;
+
+    height:48px;
+
+}
+
+.cx-search input{
+
+    flex:1;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+}
+
+.cx-search button{
+
+    width:56px;
+
+    height:48px;
+
+    background:var(--cx-primary);
+
+    color:#fff;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-search button:hover{
+
+    background:var(--cx-primary-dark);
+
+}
+
+.cx-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+.cx-action{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.cx-nav{
+
+    height:56px;
+
+    border-top:1px solid var(--cx-border);
+
+}
+
+.cx-nav .container{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:36px;
+
+}
+
+.cx-nav a{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-nav a:hover{
+
+    color:var(--cx-primary);
+
+}
+
+@media(max-width:992px){
+
+    .cx-main-header .container{
+
+        grid-template-columns:auto auto;
+
+    }
+
+    .cx-search{
+
+        grid-column:1/-1;
+
+        order:3;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cx-topbar{
+
+        display:none;
+
+    }
+
+    .cx-nav{
+
+        display:none;
+
+    }
+
+    .cx-main-header{
+
+        height:72px;
+
+    }
+
+    .cx-logo img{
+
+        height:44px;
+
+    }
+
+}
+
+/* ============================================================
+   Sticky Header
+============================================================ */
+
+.cx-header.is-sticky{
+
+    box-shadow:var(--cx-shadow);
+
+}
+
+.cx-header.is-sticky .cx-main-header{
+
+    height:72px;
+
+    transition:height .25s ease;
+
+}
+
+.cx-header.is-sticky .cx-logo img{
+
+    height:44px;
+
+    transition:height .25s ease;
+
+}
+
+/* ============================================================
+   Logo
+============================================================ */
+
+.cx-logo{
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-logo:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ============================================================
+   Search
+============================================================ */
+
+.cx-search input::placeholder{
+
+    color:var(--cx-text-muted);
+
+}
+
+.cx-search form{
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-search form:focus-within{
+
+    border-color:var(--cx-primary);
+
+    box-shadow:0 0 0 4px rgba(255,87,51,.12);
+
+}
+
+/* ============================================================
+   Actions
+============================================================ */
+
+.cx-action{
+
+    cursor:pointer;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-action:hover{
+
+    color:var(--cx-primary);
+
+}
+
+/* ============================================================
+   Navigation
+============================================================ */
+
+.cx-nav a{
+
+    position:relative;
+
+}
+
+.cx-nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-18px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--cx-primary);
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ============================================================
+   Premium Buttons
+============================================================ */
+
+.cx-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    height:48px;
+
+    padding:0 22px;
+
+    border-radius:12px;
+
+    background:var(--cx-primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-btn:hover{
+
+    background:var(--cx-primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+/* ============================================================
+   Cards
+============================================================ */
+
+.cx-card{
+
+    background:#fff;
+
+    border:1px solid var(--cx-border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--cx-shadow-lg);
+
+}
+
+/* ============================================================
+   Section Title
+============================================================ */
+
+.cx-section-title{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.cx-section-subtitle{
+
+    color:var(--cx-text-light);
+
+    max-width:640px;
+
+    margin-bottom:48px;
+
+}
+
+/* ============================================================
+   Image
+============================================================ */
+
+.cx-image{
+
+    width:100%;
+
+    display:block;
+
+}
