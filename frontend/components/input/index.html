@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CamneX Input System</title>
+
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/typography.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
+
+    <link rel="stylesheet" href="input.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+<div class="container" style="padding:60px 0;max-width:900px;">
+
+    <h1>Input System</h1>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Full Name
+
+            <span class="cx-required">*</span>
+
+        </label>
+
+        <input
+            class="cx-input"
+            type="text"
+            placeholder="Enter your full name">
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Email Address
+
+        </label>
+
+        <input
+            class="cx-input"
+            type="email"
+            placeholder="example@email.com">
+
+        <span class="cx-help">
+
+            We'll never share your email.
+
+        </span>
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Search Products
+
+        </label>
+
+        <div class="cx-search">
+
+            <i data-lucide="search"></i>
+
+            <input
+                class="cx-input"
+                type="search"
+                placeholder="Search cameras, NVR, networking...">
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Error State
+
+        </label>
+
+        <input
+            class="cx-input"
+            type="text"
+            value="Wrong value">
+
+        <span class="cx-error">
+
+            This field is required.
+
+        </span>
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Success State
+
+        </label>
+
+        <input
+            class="cx-input"
+            type="text"
+            value="CamneX Bangladesh">
+
+        <span class="cx-success">
+
+            Looks good.
+
+        </span>
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Disabled
+
+        </label>
+
+        <input
+            class="cx-input"
+            type="text"
+            disabled
+            value="Disabled input">
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Small
+
+        </label>
+
+        <input
+            class="cx-input cx-input-sm"
+            type="text"
+            placeholder="Small input">
+
+    </div>
+
+    <br><br>
+
+    <div class="cx-field">
+
+        <label class="cx-label">
+
+            Large
+
+        </label>
+
+        <input
+            class="cx-input cx-input-lg"
+            type="text"
+            placeholder="Large input">
+
+    </div>
+
+</div>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>

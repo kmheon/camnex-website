@@ -1,0 +1,190 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Featured Products
+ * ============================================================
+ */
+
+.cx-products{
+
+    background:#F8F9FA;
+
+}
+
+.cx-product-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+.cx-product-card{
+
+    background:#fff;
+
+    border:1px solid var(--cx-border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:var(--cx-transition);
+
+    cursor:pointer;
+
+}
+
+.cx-product-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--cx-shadow-lg);
+
+}
+
+.cx-product-image{
+
+    aspect-ratio:1;
+
+    background:#f3f4f6;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.cx-product-image img{
+
+    width:85%;
+
+    height:85%;
+
+    object-fit:contain;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-product-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.cx-product-content{
+
+    padding:24px;
+
+}
+
+.cx-product-brand{
+
+    font-size:13px;
+
+    color:var(--cx-primary);
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.cx-product-title{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+    margin-bottom:14px;
+
+    min-height:52px;
+
+}
+
+.cx-product-rating{
+
+    margin-bottom:18px;
+
+    color:#FDBA12;
+
+}
+
+.cx-product-price{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:22px;
+
+}
+
+.cx-price{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.cx-old-price{
+
+    text-decoration:line-through;
+
+    color:#9CA3AF;
+
+}
+
+.cx-product-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.cx-product-buttons .cx-btn{
+
+    flex:1;
+
+}
+
+.cx-products-action{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:56px;
+
+}
+
+@media(max-width:992px){
+
+    .cx-product-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cx-product-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

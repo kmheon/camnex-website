@@ -1,0 +1,301 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Button System v2.0
+ * ============================================================
+ */
+
+.cx-btn {
+    --btn-height: 44px;
+
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: var(--btn-height);
+
+    padding: 0 20px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    font: inherit;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+
+/* ============================================================
+   PRIMARY
+============================================================ */
+
+.cx-btn-primary {
+    background: #FF5733;
+    color: #ffffff;
+}
+
+.cx-btn-primary:hover {
+    background: #EB4725;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 87, 51, 0.22);
+}
+
+
+/* ============================================================
+   SECONDARY
+============================================================ */
+
+.cx-btn-secondary {
+    background: #111827;
+    color: #ffffff;
+}
+
+.cx-btn-secondary:hover {
+    background: #1F2937;
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   OUTLINE
+============================================================ */
+
+.cx-btn-outline {
+    background: #ffffff;
+
+    border-color: #D1D5DB;
+
+    color: #111827;
+}
+
+.cx-btn-outline:hover {
+    border-color: #FF5733;
+
+    color: #FF5733;
+
+    background: #FFF8F6;
+}
+
+
+/* ============================================================
+   GHOST
+============================================================ */
+
+.cx-btn-ghost {
+    background: transparent;
+
+    color: #4B5563;
+}
+
+.cx-btn-ghost:hover {
+    background: #F3F4F6;
+
+    color: #111827;
+}
+
+
+/* ============================================================
+   SUCCESS
+============================================================ */
+
+.cx-btn-success {
+    background: #15803D;
+
+    color: #ffffff;
+}
+
+.cx-btn-success:hover {
+    background: #166534;
+}
+
+
+/* ============================================================
+   DANGER
+============================================================ */
+
+.cx-btn-danger {
+    background: #DC2626;
+
+    color: #ffffff;
+}
+
+.cx-btn-danger:hover {
+    background: #B91C1C;
+}
+
+
+/* ============================================================
+   SIZES
+============================================================ */
+
+.cx-btn-sm {
+    --btn-height: 36px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+}
+
+.cx-btn-md {
+    --btn-height: 44px;
+}
+
+.cx-btn-lg {
+    --btn-height: 52px;
+
+    padding: 0 26px;
+
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   FULL WIDTH
+============================================================ */
+
+.cx-btn-block {
+    width: 100%;
+}
+
+
+/* ============================================================
+   ICONS
+============================================================ */
+
+.cx-btn svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    stroke-width: 2;
+}
+
+.cx-btn-sm svg {
+    width: 16px;
+    height: 16px;
+}
+
+.cx-btn-lg svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* ============================================================
+   ICON-ONLY BUTTON
+============================================================ */
+
+.cx-btn-icon {
+    width: var(--btn-height);
+
+    padding: 0;
+}
+
+
+/* ============================================================
+   DISABLED
+============================================================ */
+
+.cx-btn:disabled,
+.cx-btn[aria-disabled="true"] {
+    opacity: 0.48;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   LOADING
+============================================================ */
+
+.cx-btn-loading {
+    cursor: wait;
+
+    pointer-events: none;
+}
+
+.cx-btn-spinner {
+    width: 17px;
+    height: 17px;
+
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation: cx-button-spin 700ms linear infinite;
+}
+
+@keyframes cx-button-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   KEYBOARD ACCESSIBILITY
+============================================================ */
+
+.cx-btn:focus-visible {
+    outline: 3px solid rgba(255, 87, 51, 0.28);
+
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   ACTIVE
+============================================================ */
+
+.cx-btn:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cx-btn {
+        transition: none;
+    }
+
+    .cx-btn-spinner {
+        animation-duration: 1.5s;
+    }
+
+}

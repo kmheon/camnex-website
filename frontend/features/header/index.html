@@ -1,79 +1,71 @@
-<div class="cx-topbar">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="container">
+<head>
 
-        <div>
-            🚚 Nationwide Delivery &nbsp;&nbsp;|&nbsp;&nbsp;
-            🛡 Official Warranty
-        </div>
+    <meta charset="UTF-8">
 
-        <div>
-            📞 Free Consultation
-        </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </div>
+    <title>CamneX Header</title>
 
-</div>
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/typography.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
+    <link rel="stylesheet" href="../../shared/css/utilities.css">
+    <link rel="stylesheet" href="../../shared/css/icons.css">
+    <link rel="stylesheet" href="header.css">
 
-<div class="cx-main-header">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <div class="container">
+</head>
 
-        <a href="#" class="cx-logo">
+<body>
 
-            <img
-                src="../../shared/assets/logos/logo-placeholder.svg"
-                alt="CamneX Logo">
+<header class="cx-header">
 
-        </a>
+    <div class="cx-topbar">
 
-        <div class="cx-search">
+        <div class="container">
 
-            <form>
+            <div class="cx-topbar-left">
 
-                <input
-                    type="text"
-                    placeholder="Search cameras, NVRs, networking, brands...">
+                <a href="#">
 
-                <button type="submit">
+                    <i data-lucide="truck"></i>
 
-                    🔍
+                    Nationwide Delivery
 
-                </button>
+                </a>
 
-            </form>
+                <a href="#">
 
-        </div>
+                    <i data-lucide="shield-check"></i>
 
-        <div class="cx-actions">
+                    Official Warranty
 
-            <div class="cx-action">
-
-                📞
-
-                <div>
-
-                    <small>Need Help?</small><br>
-
-                    <strong>01540-535150</strong>
-
-                </div>
+                </a>
 
             </div>
 
-            <div class="cx-action">
+            <div class="cx-topbar-right">
 
-                👤
+                <a href="#">
 
-                <span>Account</span>
+                    <i data-lucide="package-search"></i>
 
-            </div>
+                    Track Order
 
-            <div class="cx-action">
+                </a>
 
-                🛒
+                <a href="#">
 
-                <span>Cart</span>
+                    <i data-lucide="map-pinned"></i>
+
+                    Track Shipment
+
+                </a>
 
             </div>
 
@@ -81,28 +73,96 @@
 
     </div>
 
-</div>
+    <div class="cx-main-header">
 
-<nav class="cx-nav">
+        <div class="container">
 
-    <div class="container">
+            <a href="#" class="cx-logo">
 
-        <a href="#">Solutions</a>
+                <img src="../../shared/assets/logos/logo-placeholder.svg">
 
-        <a href="#">Products</a>
+            </a>
 
-        <a href="#">Packages</a>
+            <div class="cx-search">
 
-        <a href="#">Projects</a>
+                <form>
 
-        <a href="#">Brands</a>
+                    <input
+                        type="text"
+                        placeholder="Search products...">
 
-        <a href="#">Learning Center</a>
+                    <button>
 
-        <a href="#">Support</a>
+                        <i data-lucide="search"></i>
 
-        <a href="#">Contact</a>
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="cx-actions">
+
+                <a href="#" class="cx-action">
+
+                    <i data-lucide="phone"></i>
+
+                </a>
+
+                <a href="#" class="cx-action">
+
+                    <i data-lucide="heart"></i>
+
+                </a>
+
+                <a href="#" class="cx-action">
+
+                    <i data-lucide="user"></i>
+
+                </a>
+
+                <a href="#" class="cx-action">
+
+                    <i data-lucide="shopping-cart"></i>
+
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
-</nav>
+    <nav class="cx-nav">
+
+        <div class="container">
+
+            <a href="#">Solutions</a>
+
+            <a href="#">Products</a>
+
+            <a href="#">Bundles</a>
+
+            <a href="#">Projects</a>
+
+            <a href="#">Brands</a>
+
+            <a href="#">Support</a>
+
+            <a href="#">Contact</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>

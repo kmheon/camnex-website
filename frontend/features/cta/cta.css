@@ -1,0 +1,122 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * CTA
+ * ============================================================
+ */
+
+.cx-cta{
+
+    background:#ffffff;
+
+}
+
+.cx-cta-box{
+
+    background:linear-gradient(135deg,#FF5733,#E94A27);
+
+    border-radius:24px;
+
+    padding:64px;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:48px;
+
+}
+
+.cx-cta-box h2{
+
+    color:#fff;
+
+    font-size:42px;
+
+    margin:18px 0;
+
+}
+
+.cx-cta-box p{
+
+    color:rgba(255,255,255,.9);
+
+    margin:0;
+
+    max-width:620px;
+
+}
+
+.cx-cta-actions{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.cx-cta .cx-btn{
+
+    background:#fff;
+
+    color:#FF5733;
+
+}
+
+.cx-cta .cx-btn:hover{
+
+    background:#f5f5f5;
+
+}
+
+.cx-cta .cx-btn-outline{
+
+    background:transparent;
+
+    color:#fff;
+
+    border:2px solid rgba(255,255,255,.5);
+
+}
+
+.cx-cta .cx-btn-outline:hover{
+
+    border-color:#fff;
+
+}
+
+@media(max-width:992px){
+
+    .cx-cta-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:48px 32px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cx-cta-actions{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .cx-cta-actions .cx-btn{
+
+        width:100%;
+
+    }
+
+}

@@ -1,0 +1,225 @@
+/**
+============================================================
+CamneX Search System v1
+============================================================
+*/
+
+.cx-search{
+
+    position:relative;
+
+    width:100%;
+    max-width:760px;
+
+}
+
+.cx-search-box{
+
+    display:flex;
+    align-items:center;
+
+    height:56px;
+
+    background:#FFFFFF;
+
+    border:1.5px solid #E5E7EB;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:
+        border-color .2s cubic-bezier(.2,.8,.2,1),
+        box-shadow .2s cubic-bezier(.2,.8,.2,1);
+
+}
+
+.cx-search-box:focus-within{
+
+    border-color:#F15A24;
+
+    box-shadow:0 0 0 4px rgba(241,90,36,.12);
+
+}
+
+.cx-search-icon{
+
+    width:56px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#9CA3AF;
+
+}
+
+.cx-search-icon svg{
+
+    width:20px;
+    height:20px;
+
+}
+
+.cx-search-input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:15px;
+
+    padding-right:18px;
+
+}
+
+.cx-search-input::placeholder{
+
+    color:#9CA3AF;
+
+}
+
+.cx-search-button{
+
+    width:58px;
+    height:58px;
+
+    border:none;
+
+    background:#F15A24;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.cx-search-button:hover{
+
+    background:#D9480F;
+
+}
+
+.cx-search-button svg{
+
+    width:20px;
+    height:20px;
+
+}
+
+.cx-search-dropdown{
+
+    position:absolute;
+
+    top:calc(100% + 10px);
+
+    width:100%;
+
+    background:#fff;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:18px;
+
+    box-shadow:0 24px 50px rgba(0,0,0,.08);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:100;
+
+}
+
+.cx-search.open .cx-search-dropdown{
+
+    display:block;
+
+}
+
+.cx-search-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px 20px;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+}
+
+.cx-search-item:hover{
+
+    background:#F8FAFC;
+
+}
+
+.cx-search-thumb{
+
+    width:52px;
+    height:52px;
+
+    border-radius:12px;
+
+    background:#F3F4F6;
+
+    flex-shrink:0;
+
+}
+
+.cx-search-info{
+
+    flex:1;
+
+}
+
+.cx-search-title{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#111827;
+
+    margin-bottom:4px;
+
+}
+
+.cx-search-brand{
+
+    font-size:12px;
+
+    color:#6B7280;
+
+}
+
+.cx-search-price{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#F15A24;
+
+}
