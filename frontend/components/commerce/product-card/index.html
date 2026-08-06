@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamneX Product Card v5</title>
+    <link rel="stylesheet" href="product-card.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="container cx-demo">
+    <div class="cx-product-grid">
+
+        <article class="cx-product-card" 
+                 data-product-id="1042" 
+                 data-brand="Hikvision" 
+                 data-category="Security Cameras" 
+                 data-stock="in-stock" 
+                 data-warranty="Official Warranty" 
+                 data-sku="DS-2CE16D0T-IRPF-C">
+            
+            <div class="cx-product-image">
+                <span class="cx-product-badge sale">SALE</span>
+                
+                <button class="cx-product-wishlist" aria-label="Add DS-2CE16D0T-IRPF(C) to Wishlist" aria-pressed="false">
+                    <i data-lucide="heart" aria-hidden="true"></i>
+                </button>
+                
+                <img class="cx-product-photo"
+                    src="../../../assets/placeholders/camera.png"
+                     alt="Product Image" 
+                     loading="lazy" 
+                     decoding="async">
+                     
+                <!-- Expandable Stock Badge -->
+                <div class="cx-stock-badge in-stock">
+                    <span class="cx-dot"></span>
+                    <span class="cx-stock-text">In Stock</span>
+                    <span class="cx-stock-details">Available at: Chandrima Model Town</span>
+                </div>
+            </div>
+
+            <div class="cx-product-content">
+                
+                <div class="cx-product-brand-logo">
+    <img src="../../../assets/brands/hikvision.png"
+         alt="Hikvision Logo" 
+                         loading="lazy" 
+                         decoding="async">
+                </div>
+
+                <h3 class="cx-product-model">DS-2CE16D0T-IRPF(C)</h3>
+                <p class="cx-product-title">2MP IR Mini Bullet Camera</p>
+
+                <div class="cx-product-rating" aria-label="Rated 4.9 out of 5 stars">
+                    <div class="cx-stars" aria-hidden="true">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <span class="cx-rating-value">4.9</span>
+                    <span class="cx-rating-count">(24 Reviews)</span>
+                </div>
+
+                <div class="cx-price-box">
+                    <span class="cx-current-price">৳2,150</span>
+                    <span class="cx-old-price">৳2,450</span>
+                </div>
+
+                <ul class="cx-product-features" aria-label="Product Highlights">
+                    <li>
+                        <i data-lucide="badge-check" aria-hidden="true"></i>
+                        Genuine Product
+                    </li>
+                    <li>
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+                        Official Warranty
+                    </li>
+                </ul>
+
+                <!-- Add to Cart Button -->
+                <button class="cx-add-to-cart" aria-label="Add DS-2CE16D0T-IRPF(C) to Cart">
+                    <i data-lucide="shopping-cart" aria-hidden="true"></i>
+                    Add To Cart
+                </button>
+
+            </div>
+
+            <div class="cx-product-actions">
+                <a href="#" class="cx-product-footer" aria-label="View detailed specifications for DS-2CE16D0T-IRPF(C)">
+                    View Details
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </article>
+
+    </div>
+</div>
+
+<script src="product-card.js"></script>
+
+</body>
+</html>

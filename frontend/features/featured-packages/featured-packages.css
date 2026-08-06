@@ -1,0 +1,558 @@
+/* ========================================================
+   COMPONENT: Featured Packages Section & Card Integration (Complete)
+   VERSION: 2.0 (Production Ready)
+   ======================================================== */
+
+:root {
+    --cx-pkg-bg: #F5F7FA;
+    --cx-pkg-card: #FFFFFF;
+    
+    --cx-pkg-text-main: #111827;
+    --cx-pkg-text-muted: #6B7280;
+    --cx-pkg-text-light: #9CA3AF;
+    --cx-pkg-border: #E5E7EB;
+    
+    --cx-pkg-primary: #F15A24;
+    --cx-pkg-primary-hover: #D94D1C;
+    --cx-pkg-primary-bg: #FCFCFD;
+    
+    /* Standardized Badge Support */
+    --cx-pkg-badge-best-value: #F15A24;
+    --cx-pkg-badge-recommended: #10B981;
+    --cx-pkg-badge-popular: #3B82F6;
+    --cx-pkg-badge-enterprise: #8B5CF6;
+    --cx-pkg-badge-limited-offer: #DC2626;
+    
+    --cx-pkg-radius-card: 20px;
+    --cx-pkg-radius-pill: 999px;
+    
+    --cx-pkg-spacing-xs: 8px;
+    --cx-pkg-spacing-sm: 12px;
+    --cx-pkg-spacing-md: 16px;
+    --cx-pkg-spacing-lg: 24px;
+    
+    --cx-pkg-shadow-default: 0 0 0 transparent;
+    --cx-pkg-shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.12);
+    
+    --cx-pkg-transition-fast: 0.25s ease;
+    --cx-pkg-transition-slow: 0.35s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cx-pkg-bg);
+    font-family: Inter, Arial, sans-serif;
+    color: var(--cx-pkg-text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================================
+   FEATURED PACKAGES SECTION CONTAINER & HEADER
+   ======================================================== */
+.cx-featured-packages-section {
+    background: #F5F7FA;
+    padding: 80px 0;
+}
+
+.cx-demo {
+    padding: 0;
+}
+
+.container {
+    width: min(1400px, 92%);
+    margin: auto;
+}
+
+.cx-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px auto;
+}
+
+.cx-section-badge-label {
+    display: inline-block;
+    background: #F15A24;
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
+}
+
+.cx-section-title {
+    margin: 0 0 8px 0;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111827;
+}
+
+.cx-section-subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* Grid Layout: Exactly 3 cards per row on desktop with open spacing */
+.cx-featured-packages-section .cx-package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 56px;
+}
+
+/* ========================================================
+   PACKAGE CARD COMPONENT STYLES
+   ======================================================== */
+.cx-package-card {
+    background: var(--cx-pkg-card);
+    border: 1px solid var(--cx-pkg-border);
+    border-radius: var(--cx-pkg-radius-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--cx-pkg-shadow-default);
+    transition: transform var(--cx-pkg-transition-fast), 
+                box-shadow var(--cx-pkg-transition-fast), 
+                border-color var(--cx-pkg-transition-fast);
+    position: relative;
+    height: 100%;
+}
+
+.cx-package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--cx-pkg-shadow-hover);
+    border-color: var(--cx-pkg-primary);
+}
+
+/* ========================================================
+   MEDIA & OVERLAY
+   ======================================================== */
+.cx-package-media {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--cx-pkg-border);
+    flex-shrink: 0;
+}
+
+.cx-package-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(17, 24, 39, 0.05) 0%, rgba(17, 24, 39, 0.7) 100%);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity var(--cx-pkg-transition-slow);
+}
+
+.cx-package-card:hover .cx-package-overlay {
+    opacity: 0.85;
+}
+
+.cx-package-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform var(--cx-pkg-transition-slow);
+}
+
+.cx-package-card:hover .cx-package-img {
+    transform: scale(1.05);
+}
+
+/* ========================================================
+   STANDARDIZED BADGING SYSTEM
+   ======================================================== */
+.cx-package-card .cx-package-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 20px 0 12px 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 3;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cx-package-card .cx-package-badge.best-value { background: var(--cx-pkg-badge-best-value); }
+.cx-package-card .cx-package-badge.recommended { background: var(--cx-pkg-badge-recommended); }
+.cx-package-card .cx-package-badge.popular { background: var(--cx-pkg-badge-popular); }
+.cx-package-card .cx-package-badge.enterprise { background: var(--cx-pkg-badge-enterprise); }
+.cx-package-card .cx-package-badge.limited-offer { background: var(--cx-pkg-badge-limited-offer); }
+
+/* ========================================================
+   CONTENT SECTION
+   ======================================================== */
+.cx-package-content {
+    padding: var(--cx-pkg-spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cx-package-title {
+    margin: 0 0 4px 0;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--cx-pkg-text-main);
+}
+
+/* Compact Trust Information Row */
+.cx-trust-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.cx-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+.cx-trust-item svg {
+    width: 13px;
+    height: 13px;
+    color: var(--cx-pkg-primary);
+}
+
+.cx-package-tagline {
+    margin: 0 0 var(--cx-pkg-spacing-md) 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cx-pkg-text-muted);
+    line-height: 1.5;
+}
+
+/* ========================================================
+   VISUAL SUMMARY ROW
+   ======================================================== */
+.cx-package-summary-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    background: #F8FAFC;
+    border: 1px solid var(--cx-pkg-border);
+    border-radius: 12px;
+    padding: 10px 8px;
+    margin-bottom: var(--cx-pkg-spacing-md);
+}
+
+.cx-summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+}
+
+.cx-summary-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--cx-pkg-primary);
+}
+
+.cx-summary-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--cx-pkg-text-main);
+    line-height: 1.2;
+}
+
+/* ========================================================
+   IDEAL FOR SECTION
+   ======================================================== */
+.cx-ideal-for-section {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    margin-bottom: var(--cx-pkg-spacing-md);
+    padding: 0 4px;
+}
+
+.cx-ideal-label {
+    font-weight: 600;
+    color: var(--cx-pkg-text-muted);
+}
+
+.cx-ideal-values {
+    font-weight: 500;
+    color: var(--cx-pkg-text-main);
+}
+
+/* ========================================================
+   WHAT'S INCLUDED SECTION (Shortened)
+   ======================================================== */
+.cx-included-section {
+    background: #FAFAFA;
+    border: 1px solid var(--cx-pkg-border);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: var(--cx-pkg-spacing-lg);
+}
+
+.cx-included-heading {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cx-pkg-text-muted);
+    margin-bottom: 10px;
+}
+
+.cx-package-includes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cx-package-includes li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--cx-pkg-text-main);
+    font-weight: 500;
+}
+
+.cx-package-includes svg {
+    width: 14px;
+    height: 14px;
+    color: #10B981;
+    flex-shrink: 0;
+}
+
+.cx-more-items {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6B7280;
+    font-style: italic;
+}
+
+/* ========================================================
+   INVESTMENT / PRICE SECTION
+   ======================================================== */
+.cx-package-investment {
+    margin-top: auto;
+    padding-top: var(--cx-pkg-spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cx-investment-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--cx-pkg-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cx-investment-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.cx-current-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--cx-pkg-primary);
+    line-height: 1;
+}
+
+.cx-old-price {
+    font-size: 14px;
+    color: var(--cx-pkg-text-light);
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.cx-savings-badge {
+    background: #FEF2F2;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* ========================================================
+   FOOTER & STRETCHED LINK
+   ======================================================== */
+.cx-package-footer {
+    padding: 18px var(--cx-pkg-spacing-lg);
+    border-top: 1px solid var(--cx-pkg-border);
+    background: var(--cx-pkg-card);
+    transition: background var(--cx-pkg-transition-fast);
+}
+
+.cx-package-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    color: var(--cx-pkg-text-main);
+    font-size: 14px;
+    font-weight: 700;
+    transition: color var(--cx-pkg-transition-fast);
+    position: static;
+}
+
+.cx-package-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+.cx-package-btn svg {
+    width: 18px;
+    height: 18px;
+    color: var(--cx-pkg-text-main);
+    transition: transform var(--cx-pkg-transition-fast), color var(--cx-pkg-transition-fast);
+}
+
+.cx-package-card:hover .cx-package-footer {
+    background: var(--cx-pkg-primary-bg);
+}
+
+.cx-package-card:hover .cx-package-btn {
+    color: var(--cx-pkg-primary);
+}
+
+.cx-package-card:hover .cx-package-btn svg {
+    color: var(--cx-pkg-primary);
+    transform: translateX(4px);
+}
+
+/* ========================================================
+   SECTION FOOTER CTA (View All Packages Button)
+   ======================================================== */
+.cx-section-footer-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cx-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #F15A24;
+    color: #FFFFFF;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(241, 90, 36, 0.25);
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cx-btn-primary:hover {
+    background: #D94D1C;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(241, 90, 36, 0.35);
+}
+
+.cx-btn-primary svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.25s ease;
+}
+
+.cx-btn-primary:hover svg {
+    transform: translateX(4px);
+}
+
+.cx-btn-primary:focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+}
+
+/* ========================================================
+   ACCESSIBILITY
+   ======================================================== */
+.cx-package-btn:focus-visible {
+    outline: none;
+}
+
+.cx-package-card:has(.cx-package-btn:focus-visible) {
+    outline: 2px solid var(--cx-pkg-primary);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cx-package-card,
+    .cx-package-img,
+    .cx-package-footer,
+    .cx-package-btn,
+    .cx-package-btn svg,
+    .cx-package-overlay,
+    .cx-btn-primary {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN
+   ======================================================== */
+@media (max-width: 1200px) {
+    .cx-featured-packages-section .cx-package-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cx-featured-packages-section {
+        padding: 40px 16px;
+    }
+    .cx-featured-packages-section .cx-package-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .cx-section-title {
+        font-size: 28px;
+    }
+    .cx-package-card {
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}

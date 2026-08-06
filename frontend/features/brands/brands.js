@@ -1,37 +1,20 @@
-/**
- * ============================================================
- * CamneX Bangladesh
- * Brands
- * Version: 1.0
- * ============================================================
- */
-
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * ========================================================
+ * COMPONENT: Brands We Work With Section JS
+ * FILE PATH MATCH: features/brands-we-work-with/brands-we-work-with.js
+ * ========================================================
+ */
 
-    initializeBrands();
+const initializeBrandIcons = () => {
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+};
 
-});
+const initBrandsComponent = () => {
+    initializeBrandIcons();
+};
 
-function initializeBrands(){
-
-    const cards = document.querySelectorAll(".cx-brand-card");
-
-    cards.forEach(card=>{
-
-        card.addEventListener("mouseenter",()=>{
-
-            card.classList.add("hover-lift");
-
-        });
-
-        card.addEventListener("mouseleave",()=>{
-
-            card.classList.remove("hover-lift");
-
-        });
-
-    });
-
-}
+document.addEventListener("DOMContentLoaded", initBrandsComponent);

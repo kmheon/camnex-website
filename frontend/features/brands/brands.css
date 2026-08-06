@@ -1,80 +1,186 @@
-/**
- * ============================================================
- * CamneX Bangladesh
- * Brands
- * ============================================================
- */
+/* ========================================================
+   COMPONENT: Brands We Work With Section
+   FILE PATH MATCH: features/brands-we-work-with/brands-we-work-with.css
+   ======================================================== */
 
-.cx-brands{
-
-    background:#ffffff;
-
+:root {
+    --cx-brand-bg: #FFFFFF;
+    --cx-brand-surface: #F8FAFC;
+    --cx-brand-card: #FFFFFF;
+    
+    --cx-brand-text-main: #111827;
+    --cx-brand-text-muted: #6B7280;
+    --cx-brand-border: #E5E7EB;
+    
+    --cx-brand-primary: #F15A24;
+    --cx-brand-primary-hover: #D94D1C;
+    
+    --cx-brand-radius-card: 20px;
+    --cx-brand-radius-pill: 999px;
+    
+    --cx-brand-shadow-default: 0 4px 20px rgba(15, 23, 42, 0.03);
+    --cx-brand-shadow-hover: 0 16px 35px rgba(241, 90, 36, 0.08);
+    
+    --cx-brand-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cx-brand-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:24px;
-
+* {
+    box-sizing: border-box;
 }
 
-.cx-brand-card{
-
-    height:120px;
-
-    background:#fff;
-
-    border:1px solid var(--cx-border);
-
-    border-radius:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    color:#555;
-
-    transition:var(--cx-transition);
-
+body {
+    margin: 0;
+    background: var(--cx-brand-bg);
+    font-family: Inter, Arial, sans-serif;
+    color: var(--cx-brand-text-main);
+    -webkit-font-smoothing: antialiased;
 }
 
-.cx-brand-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--cx-primary);
-
-    color:var(--cx-primary);
-
-    box-shadow:var(--cx-shadow-lg);
-
+.container {
+    width: min(1400px, 92%);
+    margin: auto;
 }
 
-@media(max-width:992px){
+/* ========================================================
+   SECTION CONTAINER & HEADER
+   ======================================================== */
+.cx-brands-section {
+    background: var(--cx-brand-surface);
+    padding: 90px 0;
+    border-top: 1px solid var(--cx-brand-border);
+    border-bottom: 1px solid var(--cx-brand-border);
+}
 
-    .cx-brand-grid{
+.cx-demo {
+    padding: 0;
+}
 
-        grid-template-columns:repeat(2,1fr);
+.cx-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px auto;
+}
 
+.cx-section-badge-label {
+    display: inline-block;
+    background: var(--cx-brand-primary);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: var(--cx-brand-radius-pill);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
+}
+
+.cx-section-title {
+    margin: 0 0 10px 0;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--cx-brand-text-main);
+}
+
+.cx-section-subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cx-brand-text-muted);
+    line-height: 1.6;
+}
+
+/* ========================================================
+   BRANDS GRID & CARDS (4 Columns Desktop / 3 Tablet / 2 Mobile)
+   ======================================================== */
+.cx-brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.cx-brand-card {
+    background: var(--cx-brand-card);
+    border: 1px solid var(--cx-brand-border);
+    border-radius: var(--cx-brand-radius-card);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: var(--cx-brand-shadow-default);
+    transition: transform var(--cx-brand-transition), 
+                box-shadow var(--cx-brand-transition), 
+                border-color var(--cx-brand-transition);
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cx-brand-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--cx-brand-shadow-hover);
+    border-color: var(--cx-brand-primary);
+}
+
+.cx-brand-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.cx-brand-logo {
+    max-height: 42px;
+    max-width: 130px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--cx-brand-transition);
+}
+
+.cx-brand-card:hover .cx-brand-logo {
+    transform: scale(1.05);
+}
+
+.cx-brand-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cx-brand-text-muted);
+    transition: color var(--cx-brand-transition);
+}
+
+.cx-brand-card:hover .cx-brand-name {
+    color: var(--cx-brand-text-main);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN
+   ======================================================== */
+@media (max-width: 1024px) {
+    .cx-brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
     }
-
 }
 
-@media(max-width:768px){
-
-    .cx-brand-grid{
-
-        grid-template-columns:1fr;
-
+@media (max-width: 768px) {
+    .cx-brands-section {
+        padding: 60px 0;
     }
-
+    .cx-brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .cx-section-title {
+        font-size: 28px;
+    }
+    .cx-brand-card {
+        padding: 24px 16px;
+        height: 130px;
+    }
 }
