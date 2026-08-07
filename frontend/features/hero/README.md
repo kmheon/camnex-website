@@ -1,12 +1,25 @@
-# README.md
+# Hero Component
 
-## CamneX Hero Section - Connected Enterprise Ecosystem
+## Status
 
-World-class enterprise eCommerce hero section designed specifically for CamneX Bangladesh.
+✅ Production Ready (v1.0)
 
-### Features
-* **Dynamic Service Tabs**: Instant category switching (CCTV, Networking, Access Control, Smart Home) with smooth 250ms transitions without page reloads.
-* **Connected Security Ecosystem**: Visualizes an interconnected hardware topology (Camera → NVR → PoE Switch → Access Controller → Face Terminal → Cloud Router) complete with subtle animated data pulses.
-* **Blueprint Enterprise Background**: Clean technical grid and soft radial gradients providing depth without clutter.
-* **Refined Product Hierarchy**: Scaled primary device with active indicator LED and staggered floating information cards.
-* **Official SVG Brand Logotypes**: Enhanced partner brand strip (Hikvision, Dahua, EZVIZ, TP-Link, Ruijie, MikroTik) with brand-color hover states.
+## Purpose
+
+The flagship homepage Hero introducing CamneX Bangladesh's Security, Networking, Smart Home and Enterprise Technology solutions.
+
+## Features
+
+- Responsive Layout
+- Dynamic Campaign Tabs
+- Product Showcase
+- CTA Actions
+- Brand Integration
+- Smooth Transitions
+
+## Future Improvements
+
+- CMS-driven campaigns
+- Promotional scheduling
+- Analytics integration
+- Performance optimization
