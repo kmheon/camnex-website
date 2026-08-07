@@ -3,331 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CamneX Featured Packages - Final Polish</title>
-    <link rel="stylesheet" href="package-card.css">
+    <title>CamneX — Featured CCTV Packages</title>
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
     <link rel="stylesheet" href="featured-packages.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-<section class="cx-featured-packages-section" aria-labelledby="featured-packages-title">
-    <div class="container cx-demo">
+<section class="cx-featured-packages-section" aria-labelledby="packages-section-title">
+    <div class="cx-packages-bg-glow" aria-hidden="true"></div>
+    
+    <div class="container cx-packages-container">
         
-        <!-- Section Header -->
-        <div class="cx-section-header">
-            <span class="cx-section-badge-label">Featured Packages</span>
-            <h2 id="featured-packages-title" class="cx-section-title">Pre-Configured Security & Tech Bundles</h2>
-            <p class="cx-section-subtitle">Choose from professionally designed security packages built for homes, offices, shops, factories, and commercial spaces.</p>
+        <!-- Section Header with Carousel Navigation Controls -->
+        <div class="cx-packages-header">
+            <div class="cx-header-text-block">
+                <div class="cx-section-eyebrow">
+                    <span class="cx-eyebrow-line"></span>
+                    <span>FEATURED CCTV PACKAGES</span>
+                    <span class="cx-eyebrow-line"></span>
+                </div>
+                
+                <h2 id="packages-section-title" class="cx-section-heading">
+                    Professional CCTV Packages Ready for Installation
+                </h2>
+                
+                <p class="cx-section-desc">
+                    Choose complete surveillance solutions for homes, shops, offices and enterprises with professional installation across Bangladesh.
+                </p>
+            </div>
+
+            <!-- Carousel Navigation Arrows -->
+            <div class="cx-carousel-controls">
+                <button type="button" class="cx-carousel-btn cx-btn-prev" id="prevPackageBtn" aria-label="Previous packages">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button type="button" class="cx-carousel-btn cx-btn-next" id="nextPackageBtn" aria-label="Next packages">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Package Cards Grid (3 cards max on desktop) -->
-        <div class="cx-package-grid">
-
-            <!-- Card 1: 2 Camera Home Package -->
-            <article class="cx-package-card" 
-                     data-package-id="301" 
-                     data-package-name="2-Camera Home Solution Bundle"
-                     data-camera-count="2"
-                     data-storage="500GB"
-                     data-warranty="2 Years"
-                     data-price="12500"
-                     data-package-url="/packages/2-camera-home">
-            
-                <div class="cx-package-media">
-                    <div class="cx-package-overlay" aria-hidden="true"></div>
-                    <span class="cx-package-badge best-value">Best Value</span>
-                    
-                    <img class="cx-package-img" 
-                         src="../../assets/images/home-cctv-installation.jpg" 
-                         alt="Home CCTV Installation showing completed residential security" 
-                         loading="lazy" 
-                         decoding="async">
-                </div>
-
-                <div class="cx-package-content">
-                    <h3 class="cx-package-title">2-Camera Home Package</h3>
-                    
-                    <!-- Trust Information Row -->
-                    <div class="cx-trust-row" aria-label="Trust indicators">
-                        <span class="cx-trust-item"><i data-lucide="shield-check" aria-hidden="true"></i> 2 Year Warranty</span>
-                        <span class="cx-trust-item"><i data-lucide="truck" aria-hidden="true"></i> Nationwide Delivery</span>
-                    </div>
-
-                    <p class="cx-package-tagline">Essential protection for residential entry points</p>
-
-                    <div class="cx-package-summary-row" aria-label="Core bundle specifications">
-                        <div class="cx-summary-item">
-                            <i data-lucide="video" aria-hidden="true"></i>
-                            <span>2 Cameras</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="server" aria-hidden="true"></i>
-                            <span>DVR Included</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="hard-drive" aria-hidden="true"></i>
-                            <span>500GB HDD</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="shield-check" aria-hidden="true"></i>
-                            <span>2Y Warranty</span>
-                        </div>
-                    </div>
-
-                    <div class="cx-ideal-for-section">
-                        <span class="cx-ideal-label">Ideal For:</span>
-                        <span class="cx-ideal-values">Home • Small Flat</span>
-                    </div>
-
-                    <div class="cx-included-section">
-                        <span class="cx-included-heading">What's Included</span>
-                        <ul class="cx-package-includes" aria-label="Detailed package components">
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>Cameras</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>DVR / NVR</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>HDD</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>Cabling</span>
-                            </li>
-                        </ul>
-                        <span class="cx-more-items">+ 2 More Items Included</span>
-                    </div>
-
-                    <div class="cx-package-investment">
-                        <span class="cx-investment-label">Package Price</span>
-                        <div class="cx-investment-row">
-                            <span class="cx-current-price">৳12,500</span>
-                            <span class="cx-old-price">৳14,200</span>
-                            <span class="cx-savings-badge">Save ৳1,700</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cx-package-footer">
-                    <a href="/packages/2-camera-home" class="cx-package-btn" aria-label="Explore 2-Camera Home Package details">
-                        Explore Package
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card 2: 4 Camera Business Package -->
-            <article class="cx-package-card" 
-                     data-package-id="302" 
-                     data-package-name="4-Camera Business Solution Bundle"
-                     data-camera-count="4"
-                     data-storage="1TB"
-                     data-warranty="2 Years"
-                     data-price="18500"
-                     data-package-url="/packages/4-camera-business">
-            
-                <div class="cx-package-media">
-                    <div class="cx-package-overlay" aria-hidden="true"></div>
-                    <span class="cx-package-badge recommended">Recommended</span>
-                    
-                    <img class="cx-package-img" 
-                         src="../../assets/images/retail-shop-security.jpg" 
-                         alt="Retail Shop Security showing professional surveillance coverage" 
-                         loading="lazy" 
-                         decoding="async">
-                </div>
-
-                <div class="cx-package-content">
-                    <h3 class="cx-package-title">4-Camera Business Package</h3>
-                    
-                    <!-- Trust Information Row -->
-                    <div class="cx-trust-row" aria-label="Trust indicators">
-                        <span class="cx-trust-item"><i data-lucide="shield-check" aria-hidden="true"></i> 2 Year Warranty</span>
-                        <span class="cx-trust-item"><i data-lucide="wrench" aria-hidden="true"></i> Installation Available</span>
-                    </div>
-
-                    <p class="cx-package-tagline">Everything you need for full property protection</p>
-
-                    <div class="cx-package-summary-row" aria-label="Core bundle specifications">
-                        <div class="cx-summary-item">
-                            <i data-lucide="video" aria-hidden="true"></i>
-                            <span>4 Cameras</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="server" aria-hidden="true"></i>
-                            <span>DVR Included</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="hard-drive" aria-hidden="true"></i>
-                            <span>1TB HDD</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="shield-check" aria-hidden="true"></i>
-                            <span>2Y Warranty</span>
-                        </div>
-                    </div>
-
-                    <div class="cx-ideal-for-section">
-                        <span class="cx-ideal-label">Ideal For:</span>
-                        <span class="cx-ideal-values">Home • Shop • Office</span>
-                    </div>
-
-                    <div class="cx-included-section">
-                        <span class="cx-included-heading">What's Included</span>
-                        <ul class="cx-package-includes" aria-label="Detailed package components">
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>Cameras</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>DVR / NVR</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>HDD</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>Cabling</span>
-                            </li>
-                        </ul>
-                        <span class="cx-more-items">+ 4 More Items Included</span>
-                    </div>
-
-                    <div class="cx-package-investment">
-                        <span class="cx-investment-label">Package Price</span>
-                        <div class="cx-investment-row">
-                            <span class="cx-current-price">৳18,500</span>
-                            <span class="cx-old-price">৳21,000</span>
-                            <span class="cx-savings-badge">Save ৳2,500</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cx-package-footer">
-                    <a href="/packages/4-camera-business" class="cx-package-btn" aria-label="Explore 4-Camera Business Package details">
-                        Explore Package
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card 3: 8 Camera Office Package -->
-            <article class="cx-package-card" 
-                     data-package-id="303" 
-                     data-package-name="8-Camera Office Solution Bundle"
-                     data-camera-count="8"
-                     data-storage="2TB"
-                     data-warranty="2 Years"
-                     data-price="34000"
-                     data-package-url="/packages/8-camera-office">
-            
-                <div class="cx-package-media">
-                    <div class="cx-package-overlay" aria-hidden="true"></div>
-                    <span class="cx-package-badge popular">Popular</span>
-                    
-                    <img class="cx-package-img" 
-                         src="../../assets/images/office-surveillance.jpg" 
-                         alt="Office Surveillance featuring corporate security system setup" 
-                         loading="lazy" 
-                         decoding="async">
-                </div>
-
-                <div class="cx-package-content">
-                    <h3 class="cx-package-title">8-Camera Office Package</h3>
-                    
-                    <!-- Trust Information Row -->
-                    <div class="cx-trust-row" aria-label="Trust indicators">
-                        <span class="cx-trust-item"><i data-lucide="shield-check" aria-hidden="true"></i> 2 Year Warranty</span>
-                        <span class="cx-trust-item"><i data-lucide="wrench" aria-hidden="true"></i> Installation Available</span>
-                    </div>
-
-                    <p class="cx-package-tagline">Comprehensive multi-zone workplace monitoring</p>
-
-                    <div class="cx-package-summary-row" aria-label="Core bundle specifications">
-                        <div class="cx-summary-item">
-                            <i data-lucide="video" aria-hidden="true"></i>
-                            <span>8 Cameras</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="server" aria-hidden="true"></i>
-                            <span>DVR Included</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="hard-drive" aria-hidden="true"></i>
-                            <span>2TB HDD</span>
-                        </div>
-                        <div class="cx-summary-item">
-                            <i data-lucide="shield-check" aria-hidden="true"></i>
-                            <span>2Y Warranty</span>
-                        </div>
-                    </div>
-
-                    <div class="cx-ideal-for-section">
-                        <span class="cx-ideal-label">Ideal For:</span>
-                        <span class="cx-ideal-values">Office • Warehouse • School</span>
-                    </div>
-
-                    <div class="cx-included-section">
-                        <span class="cx-included-heading">What's Included</span>
-                        <ul class="cx-package-includes" aria-label="Detailed package components">
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>Cameras</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>DVR / NVR</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>HDD</span>
-                            </li>
-                            <li>
-                                <i data-lucide="check" aria-hidden="true"></i>
-                                <span>Cabling</span>
-                            </li>
-                        </ul>
-                        <span class="cx-more-items">+ 4 More Items Included</span>
-                    </div>
-
-                    <div class="cx-package-investment">
-                        <span class="cx-investment-label">Package Price</span>
-                        <div class="cx-investment-row">
-                            <span class="cx-current-price">৳34,000</span>
-                            <span class="cx-old-price">৳38,500</span>
-                            <span class="cx-savings-badge">Save ৳4,500</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cx-package-footer">
-                    <a href="/packages/8-camera-office" class="cx-package-btn" aria-label="Explore 8-Camera Office Package details">
-                        Explore Package
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
+        <!-- Horizontal Product Showcase Carousel Track -->
+        <div class="cx-packages-carousel-viewport">
+            <div class="cx-packages-track" id="packagesTrack">
+                <!-- Dynamically rendered via JavaScript data array -->
+            </div>
         </div>
 
-        <!-- Section Footer CTA -->
-        <div class="cx-section-footer-cta">
-            <a href="/packages" class="cx-btn-primary" aria-label="View all security packages">
-                View All Packages
-                <i data-lucide="arrow-right" aria-hidden="true"></i>
-            </a>
-        </div>
+        <!-- Carousel Pagination Dots -->
+        <div class="cx-carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel Pagination"></div>
 
     </div>
 </section>
 
-<script src="package-card.js"></script>
 <script src="featured-packages.js"></script>
 
 </body>
