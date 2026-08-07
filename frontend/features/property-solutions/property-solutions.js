@@ -2,8 +2,8 @@
 
 /**
  * ========================================================
- * COMPONENT: Property Solutions Section
- * VERSION: 2.1 (Final Revision)
+ * COMPONENT: Property Solutions JS
+ * FILE PATH MATCH: frontend/features/property-solutions/property-solutions.js
  * ========================================================
  */
 
@@ -13,8 +13,8 @@ const initializePropertyIcons = () => {
     }
 };
 
-const initPropertySolutionsComponent = () => {
+const initPropertyComponent = () => {
     initializePropertyIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initPropertySolutionsComponent);
+document.addEventListener("DOMContentLoaded", initPropertyComponent);

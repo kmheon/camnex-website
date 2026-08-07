@@ -3,216 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CamneX Property Solutions - Final Revision</title>
+    <title>CamneX — Property Solutions</title>
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
     <link rel="stylesheet" href="property-solutions.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-<section class="cx-property-solutions" aria-labelledby="property-solutions-title">
-    <div class="container cx-demo">
+<section class="cx-property-solutions" aria-labelledby="property-section-title">
+    <div class="cx-property-bg-glow" aria-hidden="true"></div>
+    
+    <div class="container cx-property-container">
         
         <!-- Section Header -->
-        <div class="cx-section-header">
-            <span class="cx-section-badge">Find Your Solution</span>
-            <h2 id="property-solutions-title" class="cx-section-title">Where Do You Need Security?</h2>
-            <p class="cx-section-subtitle">Choose your property to discover recommended security systems, packages, and products designed for your environment.</p>
+        <div class="cx-property-header">
+            <div class="cx-section-eyebrow">
+                <span class="cx-eyebrow-line"></span>
+                <span>PROPERTY SOLUTIONS</span>
+                <span class="cx-eyebrow-line"></span>
+            </div>
+            
+            <h2 id="property-section-title" class="cx-section-heading">
+                Find the Perfect Security Solution for Your Property
+            </h2>
+            
+            <p class="cx-section-desc">
+                Professional security, networking and smart technology solutions designed specifically for every environment.
+            </p>
         </div>
 
-        <!-- Property Grid (4 columns desktop, 2 tablet, 1 mobile) -->
-        <div class="cx-property-grid">
+        <!-- Property Solutions Bento Grid Layout (Polished & Streamlined) -->
+        <div class="cx-property-bento-grid">
+            
+            <!-- 1. HOME (Large Featured Card) -->
+            <a href="/solutions/home" class="cx-property-card cx-prop-large" aria-label="Explore Home Solutions">
+                <div class="cx-card-bg-image">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85" alt="Modern Smart Home" loading="lazy">
+                    <div class="cx-card-gradient-overlay"></div>
+                </div>
+                <div class="cx-card-top">
+                    <span class="cx-package-badge">Most Popular</span>
+                </div>
+                <div class="cx-card-bottom">
+                    <h3 class="cx-prop-title">Home</h3>
+                    <p class="cx-prop-desc">Complete residential protection and intelligent automation for your family and property.</p>
+                    <div class="cx-tech-chips">
+                        <span>CCTV</span>
+                        <span>Smart Doorbell</span>
+                        <span>WiFi</span>
+                    </div>
+                    <span class="cx-explore-action">
+                        <span>Explore Solution</span>
+                        <i data-lucide="arrow-right"></i>
+                    </span>
+                </div>
+            </a>
 
-            <!-- Card 1: Home -->
-            <article class="cx-property-card" 
-                     data-property-id="home"
-                     data-property-name="Home"
-                     data-tagline="Protect Your Family"
-                     data-destination-url="/solutions/home"
-                     data-package-count="3"
-                     data-product-count="24">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="home" class="cx-property-icon" aria-hidden="true"></i>
+            <!-- 2. OFFICE (Large Featured Card) -->
+            <a href="/solutions/office" class="cx-property-card cx-prop-large" aria-label="Explore Office Solutions">
+                <div class="cx-card-bg-image">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=85" alt="Corporate Office" loading="lazy">
+                    <div class="cx-card-gradient-overlay"></div>
                 </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Home</h3>
-                    <p class="cx-property-tagline">Protect Your Family</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
+                <div class="cx-card-top">
+                    <span class="cx-package-badge">Enterprise Choice</span>
                 </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/home" class="cx-property-btn" aria-label="View security solutions for Home">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
+                <div class="cx-card-bottom">
+                    <h3 class="cx-prop-title">Office</h3>
+                    <p class="cx-prop-desc">Enterprise networking, biometric attendance, and high-security surveillance for workplaces.</p>
+                    <div class="cx-tech-chips">
+                        <span>CCTV</span>
+                        <span>Access Control</span>
+                        <span>Networking</span>
+                        <span>Time Attendance</span>
+                    </div>
+                    <span class="cx-explore-action">
+                        <span>Explore Solution</span>
+                        <i data-lucide="arrow-right"></i>
+                    </span>
                 </div>
-            </article>
+            </a>
 
-            <!-- Card 2: Shop -->
-            <article class="cx-property-card" 
-                     data-property-id="shop"
-                     data-property-name="Shop"
-                     data-tagline="Protect Your Business"
-                     data-destination-url="/solutions/shop"
-                     data-package-count="4"
-                     data-product-count="32">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="store" class="cx-property-icon" aria-hidden="true"></i>
+            <!-- 3. RETAIL SHOP (Medium Card) -->
+            <a href="/solutions/retail-shop" class="cx-property-card cx-prop-medium" aria-label="Explore Retail Shop Solutions">
+                <div class="cx-card-bg-image">
+                    <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=1000&q=85" alt="Retail Shop" loading="lazy">
+                    <div class="cx-card-gradient-overlay"></div>
                 </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Shop</h3>
-                    <p class="cx-property-tagline">Protect Your Business</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
+                <div class="cx-card-top">
+                    <span class="cx-package-badge">Recommended Solution</span>
                 </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/shop" class="cx-property-btn" aria-label="View security solutions for Shop">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
+                <div class="cx-card-bottom">
+                    <h3 class="cx-prop-title">Retail Shop</h3>
+                    <p class="cx-prop-desc">Loss prevention cameras, POS integration, and staff attendance tracking.</p>
+                    <div class="cx-tech-chips">
+                        <span>CCTV</span>
+                        <span>POS</span>
+                        <span>Time Attendance</span>
+                    </div>
+                    <span class="cx-explore-action">
+                        <span>Explore Solution</span>
+                        <i data-lucide="arrow-right"></i>
+                    </span>
                 </div>
-            </article>
+            </a>
 
-            <!-- Card 3: Office -->
-            <article class="cx-property-card" 
-                     data-property-id="office"
-                     data-property-name="Office"
-                     data-tagline="Secure Your Workplace"
-                     data-destination-url="/solutions/office"
-                     data-package-count="5"
-                     data-product-count="45">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="briefcase" class="cx-property-icon" aria-hidden="true"></i>
+            <!-- 4. WAREHOUSE (Medium Card) -->
+            <a href="/solutions/warehouse" class="cx-property-card cx-prop-medium" aria-label="Explore Warehouse Solutions">
+                <div class="cx-card-bg-image">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85" alt="Large Warehouse" loading="lazy">
+                    <div class="cx-card-gradient-overlay"></div>
                 </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Office</h3>
-                    <p class="cx-property-tagline">Secure Your Workplace</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
+                <div class="cx-card-top">
+                    <span class="cx-package-badge">Recommended Solution</span>
                 </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/office" class="cx-property-btn" aria-label="View security solutions for Office">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
+                <div class="cx-card-bottom">
+                    <h3 class="cx-prop-title">Warehouse</h3>
+                    <p class="cx-prop-desc">Long-range surveillance, NVR storage, and industrial networking.</p>
+                    <div class="cx-tech-chips">
+                        <span>CCTV</span>
+                        <span>PoE</span>
+                        <span>NVR Storage</span>
+                    </div>
+                    <span class="cx-explore-action">
+                        <span>Explore Solution</span>
+                        <i data-lucide="arrow-right"></i>
+                    </span>
                 </div>
-            </article>
+            </a>
 
-            <!-- Card 4: Factory -->
-            <article class="cx-property-card" 
-                     data-property-id="factory"
-                     data-property-name="Factory"
-                     data-tagline="Industrial Security"
-                     data-destination-url="/solutions/factory"
-                     data-package-count="2"
-                     data-product-count="18">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="factory" class="cx-property-icon" aria-hidden="true"></i>
+            <!-- 5. FACTORY (Medium Card) -->
+            <a href="/solutions/factory" class="cx-property-card cx-prop-medium" aria-label="Explore Factory Solutions">
+                <div class="cx-card-bg-image">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=85" alt="Industrial Factory" loading="lazy">
+                    <div class="cx-card-gradient-overlay"></div>
                 </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Factory</h3>
-                    <p class="cx-property-tagline">Industrial Security</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
+                <div class="cx-card-top">
+                    <span class="cx-package-badge">Industrial Grade</span>
                 </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/factory" class="cx-property-btn" aria-label="View security solutions for Factory">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
+                <div class="cx-card-bottom">
+                    <h3 class="cx-prop-title">Factory</h3>
+                    <p class="cx-prop-desc">Perimeter security, strict access control, and AI analytics.</p>
+                    <div class="cx-tech-chips">
+                        <span>CCTV</span>
+                        <span>Access Control</span>
+                        <span>AI Analytics</span>
+                    </div>
+                    <span class="cx-explore-action">
+                        <span>Explore Solution</span>
+                        <i data-lucide="arrow-right"></i>
+                    </span>
                 </div>
-            </article>
+            </a>
 
-            <!-- Card 5: School -->
-            <article class="cx-property-card" 
-                     data-property-id="school"
-                     data-property-name="School"
-                     data-tagline="Campus Protection"
-                     data-destination-url="/solutions/school"
-                     data-package-count="3"
-                     data-product-count="20">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="graduation-cap" class="cx-property-icon" aria-hidden="true"></i>
+            <!-- 6. EDUCATIONAL INSTITUTE (Medium Card) -->
+            <a href="/solutions/educational-institute" class="cx-property-card cx-prop-medium" aria-label="Explore Educational Institute Solutions">
+                <div class="cx-card-bg-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85" alt="Educational Campus" loading="lazy">
+                    <div class="cx-card-gradient-overlay"></div>
                 </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">School</h3>
-                    <p class="cx-property-tagline">Campus Protection</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
+                <div class="cx-card-top">
+                    <span class="cx-package-badge">Campus Wide</span>
                 </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/school" class="cx-property-btn" aria-label="View security solutions for School">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
+                <div class="cx-card-bottom">
+                    <h3 class="cx-prop-title">Educational Institute</h3>
+                    <p class="cx-prop-desc">Campus safety cameras and automated student attendance tracking.</p>
+                    <div class="cx-tech-chips">
+                        <span>CCTV</span>
+                        <span>Attendance</span>
+                        <span>Networking</span>
+                    </div>
+                    <span class="cx-explore-action">
+                        <span>Explore Solution</span>
+                        <i data-lucide="arrow-right"></i>
+                    </span>
                 </div>
-            </article>
-
-            <!-- Card 6: Hospital -->
-            <article class="cx-property-card" 
-                     data-property-id="hospital"
-                     data-property-name="Hospital"
-                     data-tagline="Healthcare Security"
-                     data-destination-url="/solutions/hospital"
-                     data-package-count="3"
-                     data-product-count="22">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="hospital" class="cx-property-icon" aria-hidden="true"></i>
-                </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Hospital</h3>
-                    <p class="cx-property-tagline">Healthcare Security</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
-                </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/hospital" class="cx-property-btn" aria-label="View security solutions for Hospital">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card 7: Apartment -->
-            <article class="cx-property-card" 
-                     data-property-id="apartment"
-                     data-property-name="Apartment"
-                     data-tagline="Residential Protection"
-                     data-destination-url="/solutions/apartment"
-                     data-package-count="4"
-                     data-product-count="28">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="building-2" class="cx-property-icon" aria-hidden="true"></i>
-                </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Apartment</h3>
-                    <p class="cx-property-tagline">Residential Protection</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
-                </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/apartment" class="cx-property-btn" aria-label="View security solutions for Apartment">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card 8: Warehouse -->
-            <article class="cx-property-card" 
-                     data-property-id="warehouse"
-                     data-property-name="Warehouse"
-                     data-tagline="Storage Protection"
-                     data-destination-url="/solutions/warehouse"
-                     data-package-count="2"
-                     data-product-count="15">
-                <div class="cx-property-icon-wrapper">
-                    <i data-lucide="warehouse" class="cx-property-icon" aria-hidden="true"></i>
-                </div>
-                <div class="cx-property-content">
-                    <h3 class="cx-property-name">Warehouse</h3>
-                    <p class="cx-property-tagline">Storage Protection</p>
-                    <div class="cx-property-dynamic-slot" aria-hidden="true"></div>
-                </div>
-                <div class="cx-property-footer">
-                    <a href="/solutions/warehouse" class="cx-property-btn" aria-label="View security solutions for Warehouse">
-                        View Solutions
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
+            </a>
 
         </div>
 
