@@ -1,0 +1,297 @@
+/* ========================================================
+   COMPONENT: Category Card
+   VERSION: 2.1 (Final Polish)
+   ======================================================== */
+
+:root {
+    --cx-cat-bg: #F5F7FA;
+    --cx-cat-card: #FFFFFF;
+    
+    --cx-cat-text-main: #111827;
+    --cx-cat-text-muted: #6B7280;
+    --cx-cat-border: #E5E7EB;
+    
+    --cx-cat-primary: #F15A24;
+    --cx-cat-primary-hover: #D94D1C;
+    --cx-cat-primary-bg: #FCFCFD;
+    
+    /* Badge Support */
+    --cx-cat-badge-featured: #F15A24;
+    --cx-cat-badge-popular: #3B82F6;
+    --cx-cat-badge-trending: #8B5CF6;
+    --cx-cat-badge-new: #10B981;
+    --cx-cat-badge-sale: #DC2626;
+    
+    --cx-cat-radius-card: 20px;
+    --cx-cat-radius-pill: 999px;
+    
+    --cx-cat-spacing-xs: 8px;
+    --cx-cat-spacing-sm: 12px;
+    --cx-cat-spacing-md: 16px;
+    --cx-cat-spacing-lg: 24px;
+    
+    --cx-cat-shadow-default: 0 0 0 transparent;
+    --cx-cat-shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.12);
+    
+    --cx-cat-transition-fast: 0.25s ease;
+    --cx-cat-transition-slow: 0.35s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cx-cat-bg);
+    font-family: Inter, Arial, sans-serif;
+    color: var(--cx-cat-text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+.cx-demo {
+    padding: 80px 0;
+}
+
+.container {
+    width: min(1400px, 92%);
+    margin: auto;
+}
+
+.cx-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+    justify-content: center;
+    gap: 32px;
+}
+
+/* ========================================================
+   CARD (Stretched Link Anchor)
+   ======================================================== */
+.cx-category-card {
+    background: var(--cx-cat-card);
+    border: 1px solid var(--cx-cat-border);
+    border-radius: var(--cx-cat-radius-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--cx-cat-shadow-default);
+    transition: transform var(--cx-cat-transition-fast), 
+                box-shadow var(--cx-cat-transition-fast), 
+                border-color var(--cx-cat-transition-fast);
+    position: relative;
+    min-height: 440px;
+    height: 100%;
+}
+
+.cx-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--cx-cat-shadow-hover);
+    border-color: var(--cx-cat-primary);
+}
+
+/* ========================================================
+   MEDIA & OVERLAY
+   ======================================================== */
+.cx-category-media {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--cx-cat-border);
+    flex-shrink: 0;
+}
+
+.cx-category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(17, 24, 39, 0.05) 0%, rgba(17, 24, 39, 0.7) 100%);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity var(--cx-cat-transition-slow);
+}
+
+.cx-category-card:hover .cx-category-overlay {
+    opacity: 0.85;
+}
+
+.cx-category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform var(--cx-cat-transition-slow);
+}
+
+.cx-category-card:hover .cx-category-img {
+    transform: scale(1.05);
+}
+
+/* ========================================================
+   BADGES (Reduced Size)
+   ======================================================== */
+.cx-category-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: var(--cx-cat-radius-card) 0 12px 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 3;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cx-category-badge.featured { background: var(--cx-cat-badge-featured); }
+.cx-category-badge.popular { background: var(--cx-cat-badge-popular); }
+.cx-category-badge.trending { background: var(--cx-cat-badge-trending); }
+.cx-category-badge.new { background: var(--cx-cat-badge-new); }
+.cx-category-badge.sale { background: var(--cx-cat-badge-sale); }
+
+/* ========================================================
+   CONTENT
+   ======================================================== */
+.cx-category-content {
+    padding: var(--cx-cat-spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cx-category-title {
+    margin: 0 0 var(--cx-cat-spacing-xs) 0;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--cx-cat-text-main);
+}
+
+.cx-category-tagline {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cx-cat-text-muted);
+    line-height: 1.5;
+}
+
+/* Rounded Information Chip */
+.cx-product-count-chip {
+    margin-top: auto;
+    background: #F1F5F9;
+    color: var(--cx-cat-text-muted);
+    padding: 4px 10px;
+    border-radius: var(--cx-cat-radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+    width: max-content;
+    align-self: flex-start;
+}
+
+/* ========================================================
+   FOOTER & STRETCHED LINK
+   ======================================================== */
+.cx-category-footer {
+    padding: 18px var(--cx-cat-spacing-lg);
+    border-top: 1px solid var(--cx-cat-border);
+    background: var(--cx-cat-card);
+    transition: background var(--cx-cat-transition-fast);
+}
+
+.cx-category-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    color: var(--cx-cat-text-main);
+    font-size: 14px;
+    font-weight: 700;
+    transition: color var(--cx-cat-transition-fast);
+    position: static;
+}
+
+/* Make entire card clickable natively through CSS */
+.cx-category-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+.cx-category-btn svg {
+    width: 18px;
+    height: 18px;
+    color: var(--cx-cat-text-main);
+    transition: transform var(--cx-cat-transition-fast), color var(--cx-cat-transition-fast);
+}
+
+.cx-category-card:hover .cx-category-footer {
+    background: var(--cx-cat-primary-bg);
+}
+
+.cx-category-card:hover .cx-category-btn {
+    color: var(--cx-cat-primary);
+}
+
+.cx-category-card:hover .cx-category-btn svg {
+    color: var(--cx-cat-primary);
+    transform: translateX(4px);
+}
+
+/* ========================================================
+   ACCESSIBILITY
+   ======================================================== */
+.cx-category-btn:focus-visible {
+    outline: none;
+}
+
+/* Apply focus ring to the whole card when link is focused */
+.cx-category-card:has(.cx-category-btn:focus-visible) {
+    outline: 2px solid var(--cx-cat-primary);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cx-category-card,
+    .cx-category-img,
+    .cx-category-footer,
+    .cx-category-btn,
+    .cx-category-btn svg,
+    .cx-category-overlay {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
+@media (max-width: 1024px) {
+    .cx-category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cx-demo {
+        padding: 40px 16px;
+    }
+    .cx-category-grid {
+        grid-template-columns: 1fr;
+    }
+    .cx-category-card {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    .cx-category-media {
+        height: 220px;
+    }
+}

@@ -1,0 +1,136 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Hero v1.0
+ * ============================================================
+ */
+
+.cx-hero{
+
+    padding:96px 0;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8f9fa 100%
+    );
+
+}
+
+.cx-hero .container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:64px;
+
+    align-items:center;
+
+}
+
+.cx-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 16px;
+
+    background:#FFF2EE;
+
+    color:var(--cx-primary);
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    margin-bottom:24px;
+
+}
+
+.cx-hero h1{
+
+    font-size:3.5rem;
+
+    line-height:1.1;
+
+    margin-bottom:24px;
+
+}
+
+.cx-hero p{
+
+    font-size:1.125rem;
+
+    margin-bottom:36px;
+
+    max-width:620px;
+
+}
+
+.cx-hero-actions{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.cx-btn-outline{
+
+    background:#fff;
+
+    color:var(--cx-text);
+
+    border:1px solid var(--cx-border);
+
+}
+
+.cx-btn-outline:hover{
+
+    border-color:var(--cx-primary);
+
+    color:var(--cx-primary);
+
+}
+
+.cx-hero-image img{
+
+    width:100%;
+
+    border-radius:24px;
+
+    box-shadow:var(--cx-shadow-lg);
+
+}
+
+@media(max-width:992px){
+
+    .cx-hero .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cx-hero{
+
+        text-align:center;
+
+    }
+
+    .cx-hero p{
+
+        margin-inline:auto;
+
+    }
+
+    .cx-hero-actions{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+}

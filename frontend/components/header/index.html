@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamneX Header Component - Enterprise Enterprise Mega Menus</title>
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Sticky Header Wrapper -->
+    <header class="cx-site-header" id="siteHeader">
+
+        <!-- Row 1: Announcement Bar -->
+        <div class="cx-top-bar-bg" id="topBar">
+            <div class="container cx-top-bar-container">
+                <div class="cx-top-bar-left">
+                    <span class="cx-top-item"><i data-lucide="shield-check" aria-hidden="true"></i> Nationwide Installation</span>
+                    <span class="cx-top-divider">•</span>
+                    <span class="cx-top-item"><i data-lucide="award" aria-hidden="true"></i> Official Warranty</span>
+                    <span class="cx-top-divider">•</span>
+                    <span class="cx-top-item"><i data-lucide="headphones" aria-hidden="true"></i> 24/7 Technical Support</span>
+                </div>
+                <div class="cx-top-bar-right">
+                    <a href="/track-order" class="cx-top-link"><i data-lucide="package" aria-hidden="true"></i> Track Order</a>
+                    <span class="cx-top-divider">•</span>
+                    <a href="tel:01540535150" class="cx-top-link"><i data-lucide="phone" aria-hidden="true"></i> +880 1540-535150</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Main Header -->
+        <div class="cx-main-header-bg">
+            <div class="container cx-main-header-container">
+                
+                <!-- Logo & Mobile Toggle -->
+                <div class="cx-header-left">
+                    <button type="button" class="cx-mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <a href="/" class="cx-logo" aria-label="CamneX Home">
+                        <svg class="cx-logo-svg" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 6H6C3.79086 6 2 7.79086 2 10V26C2 28.2091 3.79086 30 6 30H12" stroke="#FF5733" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="28" cy="18" r="4" fill="#FF5733"/>
+                            <text x="42" y="25" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="22" fill="#111827" letter-spacing="-0.03em">CamneX</text>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="cx-header-search-wrapper">
+                    <form action="/search" method="GET" class="cx-search-form" role="search">
+                        <i data-lucide="search" class="cx-search-icon" aria-hidden="true"></i>
+                        <input type="search" 
+                               name="q" 
+                               placeholder="Search CCTV Cameras, NVR, Networking..." 
+                               class="cx-search-input" 
+                               aria-label="Search products and solutions"
+                               autocomplete="off">
+                        <button type="submit" class="cx-search-submit" aria-label="Submit search">
+                            <span>Search</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Utilities: Phone, Wishlist, Account, Cart, Get Quote -->
+                <div class="cx-header-right">
+                    <div class="cx-header-phone-block">
+                        <span class="cx-phone-label">Need Help?</span>
+                        <a href="tel:01540535150" class="cx-phone-number">
+                            <i data-lucide="phone-call" class="cx-phone-icon" aria-hidden="true"></i>
+                            +880 1540-535150
+                        </a>
+                    </div>
+
+                    <div class="cx-header-actions">
+                        <a href="/wishlist" class="cx-action-icon-btn" aria-label="Wishlist">
+                            <i data-lucide="heart"></i>
+                        </a>
+                        <a href="/account" class="cx-action-icon-btn" aria-label="Account">
+                            <i data-lucide="user"></i>
+                        </a>
+                        <a href="/cart" class="cx-action-icon-btn cx-cart-btn" aria-label="Shopping Cart">
+                            <i data-lucide="shopping-bag"></i>
+                            <span class="cx-cart-badge" aria-label="2 items in cart">2</span>
+                        </a>
+                    </div>
+
+                    <div class="cx-utility-cta">
+                        <a href="/get-quote" class="cx-btn-quote" aria-label="Get a free consultation quote">Get Quote</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Row 3: Navigation Bar -->
+        <div class="cx-nav-bar-bg">
+            <nav class="container cx-nav-container" aria-label="Main Navigation">
+                <ul class="cx-nav-list" role="menubar">
+                    <li class="cx-nav-item" role="none">
+                        <a href="/" class="cx-nav-link active" role="menuitem">Home</a>
+                    </li>
+
+                    <!-- 1. PRODUCTS MEGA MENU -->
+                    <li class="cx-nav-item cx-dropdown cx-products-mega-parent" role="none">
+                        <a href="/products" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                            Products <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="cx-products-mega-menu" role="menu">
+                            <div class="cx-prod-mega-container">
+                                
+                                <!-- Main Categories Scrollable/Grid Area -->
+                                <div class="cx-prod-categories-grid">
+                                    
+                                    <!-- CCTV Cameras -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/cctv-cameras" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="video"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>CCTV Cameras</h4>
+                                                <span>Indoor & Outdoor Security</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/cctv/analog">Analog Cameras</a></li>
+                                            <li><a href="/products/cctv/ip">IP Cameras</a></li>
+                                            <li><a href="/products/cctv/ptz">PTZ Cameras</a></li>
+                                            <li><a href="/products/cctv/wifi">WiFi Cameras</a></li>
+                                            <li><a href="/products/cctv/solar">Solar Cameras</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Recorders -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/recorders" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="hard-drive"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Recorders</h4>
+                                                <span>DVR, NVR & Hybrid Units</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/recorders/dvr">DVR</a></li>
+                                            <li><a href="/products/recorders/nvr">NVR</a></li>
+                                            <li><a href="/products/recorders/hybrid">Hybrid Recorders</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Storage -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/storage" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="database"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Storage</h4>
+                                                <span>Surveillance HDD & SSD</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/storage/hdd">Surveillance HDD</a></li>
+                                            <li><a href="/products/storage/ssd">SSD</a></li>
+                                            <li><a href="/products/storage/cards">Memory Cards</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Networking -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/networking" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="globe"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Networking</h4>
+                                                <span>Routers & Switches</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/networking/routers">Routers</a></li>
+                                            <li><a href="/products/networking/switches">Switches</a></li>
+                                            <li><a href="/products/networking/poe">PoE Switches</a></li>
+                                            <li><a href="/products/networking/ap">Access Points</a></li>
+                                            <li><a href="/products/networking/cables">Network Cables</a></li>
+                                            <li><a href="/products/networking/fiber">Fiber Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Access Control -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/access-control" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="shield"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Access Control</h4>
+                                                <span>Locks & RFID Systems</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/access/locks">Door Locks</a></li>
+                                            <li><a href="/products/access/controllers">Access Controllers</a></li>
+                                            <li><a href="/products/access/rfid">RFID Cards</a></li>
+                                            <li><a href="/products/access/exit">Exit Buttons</a></li>
+                                            <li><a href="/products/access/accessories">Door Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Time Attendance -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/attendance" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="clock"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Time Attendance</h4>
+                                                <span>Biometric & Face Recognition</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/attendance/fingerprint">Fingerprint Devices</a></li>
+                                            <li><a href="/products/attendance/face">Face Recognition</a></li>
+                                            <li><a href="/products/attendance/rfid">RFID Attendance</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Smart Home -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/smart-home" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="home"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Smart Home</h4>
+                                                <span>Doorbells & Sensors</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/smart/cameras">Smart Cameras</a></li>
+                                            <li><a href="/products/smart/doorbells">Video Doorbells</a></li>
+                                            <li><a href="/products/smart/sensors">Sensors</a></li>
+                                            <li><a href="/products/smart/lighting">Smart Lighting</a></li>
+                                            <li><a href="/products/smart/plugs">Smart Plugs</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Alarm Systems -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/alarms" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="bell"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Alarm Systems</h4>
+                                                <span>Panels & PIR Sensors</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/alarms/panels">Alarm Panels</a></li>
+                                            <li><a href="/products/alarms/pir">PIR Sensors</a></li>
+                                            <li><a href="/products/alarms/sirens">Sirens</a></li>
+                                            <li><a href="/products/alarms/gsm">GSM Modules</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Video Intercom -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/intercom" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="monitor"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Video Intercom</h4>
+                                                <span>Monitors & Stations</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/intercom/monitors">Indoor Monitors</a></li>
+                                            <li><a href="/products/intercom/stations">Outdoor Stations</a></li>
+                                            <li><a href="/products/intercom/villa">Villa Intercom</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Power & Accessories -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/power" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="zap"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Power & Accessories</h4>
+                                                <span>PSU, UPS & Adapters</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/power/supplies">Power Supplies</a></li>
+                                            <li><a href="/products/power/ups">UPS</a></li>
+                                            <li><a href="/products/power/adapters">Adapters</a></li>
+                                            <li><a href="/products/power/connectors">Connectors</a></li>
+                                            <li><a href="/products/power/junction">Junction Boxes</a></li>
+                                            <li><a href="/products/power/mounting">Mounting Accessories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Installation Materials -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/installation" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="tool"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Installation Materials</h4>
+                                                <span>Cables, Pipes & Racks</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/install/cat6">CAT6 Cable</a></li>
+                                            <li><a href="/products/install/coaxial">Coaxial Cable</a></li>
+                                            <li><a href="/products/install/fiber">Fiber Cable</a></li>
+                                            <li><a href="/products/install/pvc">PVC Pipe</a></li>
+                                            <li><a href="/products/install/racks">Rack Cabinets</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- CCTV Packages & Bundles -->
+                                    <div class="cx-prod-cat-card">
+                                        <a href="/products/bundles" class="cx-prod-cat-header">
+                                            <div class="cx-prod-cat-icon"><i data-lucide="package-plus"></i></div>
+                                            <div class="cx-prod-cat-titles">
+                                                <h4>Packages & Bundles</h4>
+                                                <span>Turnkey Solutions</span>
+                                            </div>
+                                        </a>
+                                        <ul class="cx-prod-sub-list">
+                                            <li><a href="/products/bundles/home">Home Packages</a></li>
+                                            <li><a href="/products/bundles/business">Business Packages</a></li>
+                                            <li><a href="/products/bundles/enterprise">Enterprise Packages</a></li>
+                                            <li><a href="/products/bundles/networking">Networking Bundles</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- Right Balanced Sidebar -->
+                                <div class="cx-prod-sidebar">
+                                    
+                                    <!-- Featured Product / Bundle -->
+                                    <div class="cx-sidebar-card cx-sidebar-featured">
+                                        <div class="cx-sidebar-badge">Featured Bundle</div>
+                                        <div class="cx-sidebar-prod-info">
+                                            <h5 class="cx-sidebar-prod-title">Hikvision ColorVu 8-Camera Pro Kit</h5>
+                                            <div class="cx-sidebar-prod-meta">
+                                                <span class="cx-stars">★★★★★</span>
+                                                <span class="cx-price">৳ 32,500</span>
+                                            </div>
+                                        </div>
+                                        <a href="/bundles/hikvision-8cam" class="cx-sidebar-cta">View Bundle</a>
+                                    </div>
+
+                                    <!-- Quick Discovery Blocks -->
+                                    <div class="cx-sidebar-links-group">
+                                        <a href="/products/new-arrivals" class="cx-sidebar-link-item">
+                                            <i data-lucide="sparkles"></i>
+                                            <div>
+                                                <strong>New Arrivals</strong>
+                                                <span>Latest security releases</span>
+                                            </div>
+                                        </a>
+                                        <a href="/products/best-sellers" class="cx-sidebar-link-item">
+                                            <i data-lucide="trending-up"></i>
+                                            <div>
+                                                <strong>Best Sellers</strong>
+                                                <span>Top rated by clients</span>
+                                            </div>
+                                        </a>
+                                        <a href="/products/promotions" class="cx-sidebar-link-item">
+                                            <i data-lucide="tag"></i>
+                                            <div>
+                                                <strong>Current Promotions</strong>
+                                                <span>Special discounts & offers</span>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Popular Brands Quick Grid -->
+                                    <div class="cx-sidebar-brands-preview">
+                                        <span class="cx-sidebar-brands-title">Top Brands</span>
+                                        <div class="cx-sidebar-brands-row">
+                                            <a href="/brands/hikvision" title="Hikvision"><img src="../../assets/brands/hikvision.png" alt="Hikvision"></a>
+                                            <a href="/brands/dahua" title="Dahua"><img src="../../assets/brands/dahua.png" alt="Dahua"></a>
+                                            <a href="/brands/ezviz" title="EZVIZ"><img src="../../assets/brands/ezviz.png" alt="EZVIZ"></a>
+                                            <a href="/brands/tp-link" title="TP-Link"><img src="../../assets/brands/tp-link.png" alt="TP-Link"></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Mega Menu Footer Area -->
+                            <div class="cx-prod-mega-footer">
+                                <div class="cx-mega-footer-links">
+                                    <a href="/products" class="cx-footer-action-link">
+                                        Browse All Products <i data-lucide="arrow-right"></i>
+                                    </a>
+                                    <span class="cx-footer-divider">•</span>
+                                    <a href="/brands" class="cx-footer-action-link">
+                                        Shop by Brand <i data-lucide="arrow-right"></i>
+                                    </a>
+                                    <span class="cx-footer-divider">•</span>
+                                    <a href="/catalog.pdf" target="_blank" class="cx-footer-action-link">
+                                        Product Catalog PDF <i data-lucide="file-text"></i>
+                                    </a>
+                                </div>
+                                <span class="cx-mega-footer-count">Showing 1000+ Professional Security & Networking Items</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <!-- 2. SOLUTIONS MEGA MENU -->
+                    <li class="cx-nav-item cx-dropdown cx-solutions-mega-parent" role="none">
+                        <a href="/solutions" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                            Solutions <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="cx-solutions-mega-menu" role="menu">
+                            <div class="cx-sol-mega-container">
+                                
+                                <!-- Solutions Use Cases Columns -->
+                                <div class="cx-sol-categories-grid">
+                                    
+                                    <!-- Residential -->
+                                    <div class="cx-sol-cat-col">
+                                        <div class="cx-sol-category-header">
+                                            <i data-lucide="home"></i> Residential Use Cases
+                                        </div>
+                                        <ul class="cx-sol-sub-list">
+                                            <li><a href="/solutions/home">🏠 Home Security</a></li>
+                                            <li><a href="/solutions/apartment">🏢 Apartment Security</a></li>
+                                            <li><a href="/solutions/villa">🏡 Villa Security</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Commercial -->
+                                    <div class="cx-sol-cat-col">
+                                        <div class="cx-sol-category-header">
+                                            <i data-lucide="building-2"></i> Commercial Spaces
+                                        </div>
+                                        <ul class="cx-sol-sub-list">
+                                            <li><a href="/solutions/retail">🏬 Retail Stores</a></li>
+                                            <li><a href="/solutions/office">🏢 Corporate Offices</a></li>
+                                            <li><a href="/solutions/factory">🏭 Factories</a></li>
+                                            <li><a href="/solutions/warehouse">📦 Warehouses</a></li>
+                                            <li><a href="/solutions/hospitality">🏨 Hotels & Restaurants</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Education & Healthcare -->
+                                    <div class="cx-sol-cat-col">
+                                        <div class="cx-sol-category-header">
+                                            <i data-lucide="graduation-cap"></i> Education & Healthcare
+                                        </div>
+                                        <ul class="cx-sol-sub-list">
+                                            <li><a href="/solutions/schools">🏫 Schools</a></li>
+                                            <li><a href="/solutions/universities">🎓 Universities</a></li>
+                                            <li><a href="/solutions/hospitals">🏥 Hospitals</a></li>
+                                            <li><a href="/solutions/laboratories">🧪 Laboratories</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Government & Financial -->
+                                    <div class="cx-sol-cat-col">
+                                        <div class="cx-sol-category-header">
+                                            <i data-lucide="landmark"></i> Government & Financial
+                                        </div>
+                                        <ul class="cx-sol-sub-list">
+                                            <li><a href="/solutions/government">🏛 Government Offices</a></li>
+                                            <li><a href="/solutions/banks">🏦 Banks</a></li>
+                                            <li><a href="/solutions/religious">🕌 Religious Institutions</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Smart Infrastructure -->
+                                    <div class="cx-sol-cat-col">
+                                        <div class="cx-sol-category-header">
+                                            <i data-lucide="network"></i> Smart Infrastructure
+                                        </div>
+                                        <ul class="cx-sol-sub-list">
+                                            <li><a href="/solutions/smart-buildings">🌆 Smart Buildings</a></li>
+                                            <li><a href="/solutions/parking">🚗 Parking Management</a></li>
+                                            <li><a href="/solutions/city">🎥 City Surveillance</a></li>
+                                            <li><a href="/solutions/enterprise">🔒 Enterprise Security</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- Solutions Sidebar -->
+                                <div class="cx-sol-sidebar">
+                                    <div class="cx-sol-sidebar-card">
+                                        <span class="cx-sol-badge">Verified Case Study</span>
+                                        <h5 class="cx-sol-sidebar-title">Gulshan Commercial Tower Integration</h5>
+                                        <p class="cx-sol-sidebar-desc">Deployment of 128-channel IP surveillance, optical fiber backbone, and facial recognition access control.</p>
+                                        <a href="/projects/gulshan-tower" class="cx-sol-sidebar-link">
+                                            Read Case Study <i data-lucide="arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="cx-sol-sidebar-links">
+                                        <a href="/projects" class="cx-sol-quick-link"><i data-lucide="folder-kanban"></i> Installation Gallery</a>
+                                        <a href="/solutions/success-stories" class="cx-sol-quick-link"><i data-lucide="award"></i> Success Stories</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Solutions Mega Menu Footer -->
+                            <div class="cx-sol-mega-footer">
+                                <span class="cx-sol-footer-text">Need a custom industry deployment tailored to your facility?</span>
+                                <a href="/solutions" class="cx-btn-quote cx-sol-footer-btn">
+                                    View All Solutions <i data-lucide="arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="cx-nav-item" role="none">
+                        <a href="/projects" class="cx-nav-link" role="menuitem">Projects</a>
+                    </li>
+
+                    <!-- 3. BRANDS MEGA MENU -->
+                    <li class="cx-nav-item cx-dropdown cx-mega-dropdown-parent" role="none">
+                        <a href="/brands" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                            Brands <i data-lucide="chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="cx-mega-menu" role="menu">
+                            <div class="cx-mega-menu-container">
+                                <div class="cx-mega-menu-header-row">
+                                    <div class="cx-mega-title-group">
+                                        <span class="cx-mega-subtitle">Authorized Catalog</span>
+                                        <h4 class="cx-mega-heading">Explore Technology Brands</h4>
+                                    </div>
+                                    <a href="/brands" class="cx-mega-view-all-top">
+                                        View All Brands <i data-lucide="arrow-right"></i>
+                                    </a>
+                                </div>
+                                <div class="cx-brands-grid-catalog">
+                                    <a href="/brands/hikvision" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/hikvision.png" alt="Hikvision logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">Hikvision</span>
+                                    </a>
+                                    <a href="/brands/dahua" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/dahua.png" alt="Dahua logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">Dahua</span>
+                                    </a>
+                                    <a href="/brands/ezviz" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/ezviz.png" alt="EZVIZ logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">EZVIZ</span>
+                                    </a>
+                                    <a href="/brands/imou" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/imou.png" alt="IMOU logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">IMOU</span>
+                                    </a>
+                                    <a href="/brands/tp-link" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/tp-link.png" alt="TP-Link logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">TP-Link</span>
+                                    </a>
+                                    <a href="/brands/mikrotik" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/mikrotik.png" alt="MikroTik logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">MikroTik</span>
+                                    </a>
+                                    <a href="/brands/ruijie" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/ruijie.png" alt="Ruijie logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">Ruijie</span>
+                                    </a>
+                                    <a href="/brands/ubiquiti" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/ubiquiti.png" alt="Ubiquiti logo" loading="lazy">
+                                        </div>
+                                        <span class="cx-brand-catalog-name">Ubiquiti</span>
+                                    </a>
+                                    <a href="/brands/zkteco" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box cx-brand-text-fallback">
+                                            <span>ZKTeco</span>
+                                        </div>
+                                        <span class="cx-brand-catalog-name">ZKTeco</span>
+                                    </a>
+                                    <a href="/brands/uniview" class="cx-brand-catalog-card" role="menuitem">
+                                        <div class="cx-brand-logo-box cx-brand-text-fallback">
+                                            <span>Uniview</span>
+                                        </div>
+                                        <span class="cx-brand-catalog-name">Uniview</span>
+                                    </a>
+                                </div>
+                                <div class="cx-mega-menu-footer-row">
+                                    <span class="cx-mega-footer-note">All partner brands carry official manufacturer warranty and direct support.</span>
+                                    <a href="/brands" class="cx-mega-view-all-bottom">
+                                        View All Brands Catalog <i data-lucide="arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="cx-nav-item" role="none">
+                        <a href="/support" class="cx-nav-link" role="menuitem">Support</a>
+                    </li>
+                    <li class="cx-nav-item" role="none">
+                        <a href="/contact" class="cx-nav-link" role="menuitem">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mobile Slide-Out Menu -->
+        <div class="cx-mobile-menu" id="mobileMenu" aria-hidden="true">
+            <div class="cx-mobile-menu-header">
+                <span class="cx-mobile-menu-title">Menu</span>
+                <button type="button" class="cx-mobile-close" id="mobileClose" aria-label="Close mobile menu">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="cx-mobile-menu-body">
+                <ul class="cx-mobile-nav-list">
+                    <li><a href="/" class="cx-mobile-nav-link">Home</a></li>
+                    
+                    <!-- Mobile Products Accordion -->
+                    <li class="cx-mobile-dropdown-item">
+                        <button type="button" class="cx-mobile-dropdown-toggle" id="mobileProductsToggle" aria-expanded="false">
+                            Products <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="cx-mobile-dropdown-content" id="mobileProductsContent">
+                            <div class="cx-mobile-subcat-group">
+                                <strong>CCTV Cameras</strong>
+                                <a href="/products/cctv/analog">Analog Cameras</a>
+                                <a href="/products/cctv/ip">IP Cameras</a>
+                                <a href="/products/cctv/ptz">PTZ Cameras</a>
+                                <a href="/products/cctv/wifi">WiFi Cameras</a>
+                                <a href="/products/cctv/solar">Solar Cameras</a>
+                            </div>
+                            <div class="cx-mobile-subcat-group">
+                                <strong>Recorders & Storage</strong>
+                                <a href="/products/recorders/dvr">DVR / NVR Units</a>
+                                <a href="/products/storage/hdd">Surveillance HDD</a>
+                            </div>
+                            <div class="cx-mobile-subcat-group">
+                                <strong>Networking</strong>
+                                <a href="/products/networking/routers">Routers & Switches</a>
+                                <a href="/products/networking/poe">PoE Switches & APs</a>
+                            </div>
+                            <a href="/products" class="cx-mobile-view-all-brands">View All Products →</a>
+                        </div>
+                    </li>
+
+                    <!-- Mobile Solutions Accordion -->
+                    <li class="cx-mobile-dropdown-item">
+                        <button type="button" class="cx-mobile-dropdown-toggle" id="mobileSolutionsToggle" aria-expanded="false">
+                            Solutions <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="cx-mobile-dropdown-content" id="mobileSolutionsContent">
+                            <div class="cx-mobile-subcat-group">
+                                <strong>Residential</strong>
+                                <a href="/solutions/home">Home Security</a>
+                                <a href="/solutions/apartment">Apartment Security</a>
+                            </div>
+                            <div class="cx-mobile-subcat-group">
+                                <strong>Commercial</strong>
+                                <a href="/solutions/retail">Retail Stores</a>
+                                <a href="/solutions/office">Corporate Offices</a>
+                                <a href="/solutions/factory">Factories</a>
+                            </div>
+                            <a href="/solutions" class="cx-mobile-view-all-brands">View All Solutions →</a>
+                        </div>
+                    </li>
+
+                    <li><a href="/projects" class="cx-mobile-nav-link">Projects</a></li>
+                    
+                    <!-- Mobile Brands Accordion -->
+                    <li class="cx-mobile-dropdown-item">
+                        <button type="button" class="cx-mobile-dropdown-toggle" id="mobileBrandsToggle" aria-expanded="false">
+                            Brands <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="cx-mobile-dropdown-content" id="mobileBrandsContent">
+                            <div class="cx-mobile-brands-grid">
+                                <a href="/brands/hikvision" class="cx-mobile-brand-link">Hikvision</a>
+                                <a href="/brands/dahua" class="cx-mobile-brand-link">Dahua</a>
+                                <a href="/brands/ezviz" class="cx-mobile-brand-link">EZVIZ</a>
+                                <a href="/brands/imou" class="cx-mobile-brand-link">IMOU</a>
+                                <a href="/brands/tp-link" class="cx-mobile-brand-link">TP-Link</a>
+                                <a href="/brands/mikrotik" class="cx-mobile-brand-link">MikroTik</a>
+                            </div>
+                            <a href="/brands" class="cx-mobile-view-all-brands">View All Brands →</a>
+                        </div>
+                    </li>
+
+                    <li><a href="/support" class="cx-mobile-nav-link">Support</a></li>
+                    <li><a href="/contact" class="cx-mobile-nav-link">Contact</a></li>
+                </ul>
+                <div class="cx-mobile-menu-footer">
+                    <a href="/get-quote" class="cx-btn-quote cx-mobile-quote-btn">Get Quote</a>
+                    <div class="cx-mobile-contact-info">
+                        <a href="tel:01540535150"><i data-lucide="phone"></i> +880 1540-535150</a>
+                        <a href="/track-order"><i data-lucide="package"></i> Track Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cx-mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+    </header>
+
+    <script src="header.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "CamneX Bangladesh",
+  "description": "CamneX Bangladesh - Official website for Security, CCTV, Networking, and IT Solutions in Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+

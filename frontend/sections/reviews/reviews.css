@@ -1,0 +1,96 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Customer Reviews
+ * ============================================================
+ */
+
+.cx-reviews{
+
+    background:#F8F9FA;
+
+}
+
+.cx-review-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+.cx-review-card{
+
+    background:#fff;
+
+    border:1px solid var(--cx-border);
+
+    border-radius:20px;
+
+    padding:36px;
+
+    transition:var(--cx-transition);
+
+}
+
+.cx-review-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--cx-shadow-lg);
+
+    border-color:var(--cx-primary);
+
+}
+
+.cx-review-stars{
+
+    color:#FDBA12;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+}
+
+.cx-review-card p{
+
+    margin-bottom:24px;
+
+    min-height:90px;
+
+}
+
+.cx-review-card h4{
+
+    margin-bottom:6px;
+
+}
+
+.cx-review-card small{
+
+    color:var(--cx-text-light);
+
+}
+
+@media(max-width:992px){
+
+    .cx-review-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cx-review-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

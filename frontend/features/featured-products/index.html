@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamneX — Popular Products</title>
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="featured-products.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<section class="cx-popular-products-section" aria-labelledby="products-section-title">
+    <div class="cx-products-bg-grid" aria-hidden="true"></div>
+    
+    <div class="container cx-products-container">
+        
+        <!-- Section Header -->
+        <div class="cx-products-header">
+            <div class="cx-header-text-block">
+                <div class="cx-section-eyebrow">
+                    <span class="cx-eyebrow-line"></span>
+                    <span>POPULAR PRODUCTS</span>
+                    <span class="cx-eyebrow-line"></span>
+                </div>
+                
+                <h2 id="products-section-title" class="cx-section-heading">
+                    Engineered for Absolute Reliability
+                </h2>
+                
+                <p class="cx-section-desc">
+                    Explore our top-rated security cameras, networking switches, and biometric access terminals.
+                </p>
+            </div>
+
+            <!-- Dynamic Category Filter Pills -->
+            <div class="cx-category-filters" id="categoryFilters" role="tablist" aria-label="Product Categories"></div>
+        </div>
+
+        <!-- Carousel Viewport & Track -->
+        <div class="cx-products-carousel-viewport" id="carouselViewport">
+            <div class="cx-products-track" id="productsTrack"></div>
+        </div>
+
+        <!-- Carousel Navigation & Pagination Footer -->
+        <div class="cx-carousel-footer-controls" id="carouselFooter">
+            <div class="cx-carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel Pagination"></div>
+            
+            <div class="cx-carousel-arrows">
+                <button type="button" class="cx-carousel-btn cx-btn-prev" id="prevProductBtn" aria-label="Previous products">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button type="button" class="cx-carousel-btn cx-btn-next" id="nextProductBtn" aria-label="Next products">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Animations
+ * Version: 1.0
+ * ============================================================
+ */
+
+:root{
+    --cx-duration-fast:.2s;
+    --cx-duration:.3s;
+    --cx-duration-slow:.5s;
+}
+
+.fade-in{
+    animation:cxFadeIn .4s ease forwards;
+}
+
+.slide-up{
+    animation:cxSlideUp .45s ease forwards;
+}
+
+.scale-in{
+    animation:cxScaleIn .3s ease forwards;
+}
+
+.hover-lift{
+    transition:
+        transform var(--cx-duration),
+        box-shadow var(--cx-duration);
+}
+
+.hover-lift:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--cx-shadow-lg);
+}
+
+.hover-scale{
+    transition:transform var(--cx-duration);
+}
+
+.hover-scale:hover{
+    transform:scale(1.03);
+}
+
+@keyframes cxFadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes cxSlideUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes cxScaleIn{
+
+    from{
+        opacity:0;
+        transform:scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
