@@ -3,7 +3,10 @@
    FILE PATH MATCH: features/brands-we-work-with/brands-we-work-with.css
    ======================================================== */
 
-:root {
+/* ========================================================
+   SECTION ROOT (scoped design tokens for the brands feature only)
+   ======================================================== */
+.cx-brands-section {
     --cx-brand-bg: #FFFFFF;
     --cx-brand-surface: #F8FAFC;
     --cx-brand-card: #FFFFFF;
@@ -22,46 +25,27 @@
     --cx-brand-shadow-hover: 0 16px 35px rgba(241, 90, 36, 0.08);
     
     --cx-brand-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-brand-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-brand-text-main);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & HEADER
-   ======================================================== */
-.cx-brands-section {
     background: var(--cx-brand-surface);
     padding: 90px 0;
     border-top: 1px solid var(--cx-brand-border);
     border-bottom: 1px solid var(--cx-brand-border);
 }
 
-.cx-demo {
+.cx-brands-section .container,
+.cx-brands-section .cx-demo {
+    width: min(1400px, 92%);
+    margin: auto;
     padding: 0;
 }
 
-.cx-section-header {
+.cx-brands-section .cx-section-header {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 56px auto;
 }
 
-.cx-section-badge-label {
+.cx-brands-section .cx-section-badge-label {
     display: inline-block;
     background: var(--cx-brand-primary);
     color: #FFFFFF;
@@ -75,7 +59,7 @@ body {
     box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
 }
 
-.cx-section-title {
+.cx-brands-section .cx-section-title {
     margin: 0 0 10px 0;
     font-size: 36px;
     font-weight: 800;
@@ -83,7 +67,7 @@ body {
     color: var(--cx-brand-text-main);
 }
 
-.cx-section-subtitle {
+.cx-brands-section .cx-section-subtitle {
     margin: 0;
     font-size: 16px;
     font-weight: 500;
@@ -176,7 +160,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
-    .cx-section-title {
+    .cx-brands-section .cx-section-title {
         font-size: 28px;
     }
     .cx-brand-card {

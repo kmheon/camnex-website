@@ -3,7 +3,15 @@
    FILE PATH MATCH: features/customer-testimonials/customer-testimonials.css
    ======================================================== */
 
-:root {
+
+
+
+
+
+/* ========================================================
+   SECTION CONTAINER & HEADER
+   ======================================================== */
+.cx-testimonials-section {
     --cx-test-bg: #FFFFFF;
     --cx-test-surface: #F8FAFC;
     --cx-test-card: #FFFFFF;
@@ -25,46 +33,27 @@
     --cx-test-shadow-hover: 0 20px 40px rgba(241, 90, 36, 0.08);
     
     --cx-test-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-test-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-test-text-main);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & HEADER
-   ======================================================== */
-.cx-testimonials-section {
     background: var(--cx-test-surface);
     padding: 90px 0;
     border-top: 1px solid var(--cx-test-border);
     border-bottom: 1px solid var(--cx-test-border);
 }
 
-.cx-demo {
+.cx-testimonials-section .container,
+.cx-testimonials-section .cx-demo {
+    width: min(1400px, 92%);
+    margin: auto;
     padding: 0;
 }
 
-.cx-section-header {
+.cx-testimonials-section .cx-section-header {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 56px auto;
 }
 
-.cx-section-badge-label {
+.cx-testimonials-section .cx-section-badge-label {
     display: inline-block;
     background: var(--cx-test-primary);
     color: #FFFFFF;
@@ -78,7 +67,7 @@ body {
     box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
 }
 
-.cx-section-title {
+.cx-testimonials-section .cx-section-title {
     margin: 0 0 10px 0;
     font-size: 36px;
     font-weight: 800;
@@ -86,7 +75,7 @@ body {
     color: var(--cx-test-text-main);
 }
 
-.cx-section-subtitle {
+.cx-testimonials-section .cx-section-subtitle {
     margin: 0;
     font-size: 16px;
     font-weight: 500;
@@ -127,7 +116,7 @@ body {
 }
 
 /* Card Top: Quote Icon & Stars */
-.cx-card-top {
+.cx-testimonial-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -356,7 +345,7 @@ body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .cx-section-title {
+    .cx-testimonials-section .cx-section-title {
         font-size: 28px;
     }
     .cx-testimonial-card {

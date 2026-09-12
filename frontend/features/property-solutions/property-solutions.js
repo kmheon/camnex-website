@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -17,4 +17,4 @@ const initPropertyComponent = () => {
     initializePropertyIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initPropertyComponent);
+window.initPropertyComponent = initPropertyComponent;

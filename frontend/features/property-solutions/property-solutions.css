@@ -3,7 +3,10 @@
    FILE PATH MATCH: frontend/features/property-solutions/property-solutions.css
    ======================================================== */
 
-:root {
+/* ========================================================
+   SECTION ROOT (scoped design tokens for the property-solutions feature only)
+   ======================================================== */
+.cx-property-solutions {
     --cx-prop-bg: #FFFFFF;
     --cx-navy: #0B0F19;
     --cx-text-muted: #CBD5E1; /* Increased contrast for readability over dark gradient overlay */
@@ -17,33 +20,16 @@
     --cx-shadow-card-hover: 0 35px 65px -12px rgba(255, 87, 51, 0.28);
     
     --cx-transition: 350ms cubic-bezier(0.16, 1, 0.3, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-prop-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-navy);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & HEADER
-   ======================================================== */
-.cx-property-solutions {
     position: relative;
     background: var(--cx-prop-bg);
     padding: 120px 0 140px 0;
     overflow: hidden;
+}
+
+.cx-property-solutions .container {
+    width: min(1400px, 92%);
+    margin: auto;
 }
 
 .cx-property-bg-glow {
@@ -92,7 +78,7 @@ body {
 
 .cx-section-heading {
     margin: 0 0 16px 0;
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.03em;
@@ -251,7 +237,7 @@ body {
 }
 
 /* Premium CTA with Animated Arrow */
-.cx-explore-action {
+.cx-property-card .cx-explore-action {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -263,7 +249,7 @@ body {
     transition: color var(--cx-transition);
 }
 
-.cx-explore-action::after {
+.cx-property-card .cx-explore-action::after {
     content: '';
     position: absolute;
     bottom: -2px;

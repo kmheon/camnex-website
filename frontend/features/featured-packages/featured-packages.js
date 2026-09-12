@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -13,7 +13,6 @@ const initializePackageIcons = () => {
     }
 };
 
-/* WooCommerce Ready Data Array with Clean Component Pairs */
 const cctvPackagesData = [
     {
         id: "pkg-2cam",
@@ -160,7 +159,6 @@ const renderPackages = () => {
     const dotsContainer = document.getElementById("carouselDots");
     if (!track || !dotsContainer) return;
 
-    // Render Cards with a clean structural row layout to prevent any box overlaps
     track.innerHTML = cctvPackagesData.map(pkg => `
         <div class="cx-package-card" data-id="${pkg.id}">
             <div class="cx-card-top-row">
@@ -275,4 +273,4 @@ const initPackagesComponent = () => {
     setupCarouselInteractivity();
 };
 
-document.addEventListener("DOMContentLoaded", initPackagesComponent);
+window.initPackagesComponent = initPackagesComponent;

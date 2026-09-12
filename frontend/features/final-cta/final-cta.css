@@ -3,7 +3,10 @@
    FILE PATH MATCH: features/final-cta/final-cta.css
    ======================================================== */
 
-:root {
+/* ========================================================
+   SECTION ROOT (scoped design tokens for the final-cta feature only)
+   ======================================================== */
+.cx-final-cta-section {
     --cx-final-bg: #FFFFFF;
     --cx-final-surface: #F8FAFC;
     
@@ -19,36 +22,17 @@
     --cx-final-shadow-btn-hover: 0 16px 35px rgba(0, 0, 0, 0.15);
     
     --cx-final-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-final-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: #111827;
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & GRADIENT BACKGROUND
-   ======================================================== */
-.cx-final-cta-section {
     background: var(--cx-final-surface);
     padding: 90px 0;
     border-top: 1px solid #E5E7EB;
     border-bottom: 1px solid #E5E7EB;
 }
 
-.cx-demo {
+.cx-final-cta-section .container,
+.cx-final-cta-section .cx-demo {
+    width: min(1400px, 92%);
+    margin: auto;
     padding: 0;
 }
 

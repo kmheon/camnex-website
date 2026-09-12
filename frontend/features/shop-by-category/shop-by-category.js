@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -17,4 +17,4 @@ const initCategoryComponent = () => {
     initializeCategoryIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initCategoryComponent);
+window.initCategoryComponent = initCategoryComponent;

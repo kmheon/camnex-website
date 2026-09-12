@@ -170,6 +170,40 @@ Future versions may introduce a dedicated Homepage Product Card optimized for qu
 
 ## Version History
 
+### v1.1.0 — Premium refinement pass
+
+- Product image area increased to ~46% of card height; added a soft
+  backdrop panel behind the image so it no longer reads as an empty
+  grey placeholder.
+- Product images now load through a skeleton shimmer and fade in on
+  the image's actual `load` event (or fall back gracefully on error)
+  instead of assuming instant load.
+- Added a brand logo mark (`assets/brands/{brandSlug}.svg`, with a
+  clean fallback to the text wordmark if the file isn't there yet)
+  next to the brand name.
+- Feature chips redesigned as pills with a small icon badge.
+- Sale price strengthened as the dominant price element; discount
+  badge format unchanged (`Save ৳XXX`).
+- Category filter pills now have an animated sliding underline (in
+  addition to the orange active fill), and switching filters fades
+  cards out/in instead of an instant swap.
+- Fixed a real bug found during testing: on narrow screens the filter
+  pills wrapped to a second row, which broke the sliding underline
+  (it always sat under the bottom row regardless of which pill was
+  active). Filter pills now scroll horizontally on mobile instead,
+  per this doc's existing "Responsive Layout" spec below.
+- Carousel: added autoplay (pauses on hover/touch/drag) and
+  pointer-based swipe/drag support, alongside the existing arrows and
+  dots.
+- Fixed `data.js`: three products were silently sharing duplicate
+  stock photos (MikroTik/TP-Link/Ruijie all used the same image;
+  EZVIZ/Imou shared another). Each product now has a distinct image,
+  and resolution was bumped from `w=600` to `w=900&q=85`.
+- Fixed `index.html`: the stylesheet `<link>` pointed at a
+  nonexistent `style.css` — corrected to `featured-products.css`.
+- Card hover glow strengthened (`--cx-shadow-glow`) alongside the
+  existing lift/shadow/border/image-zoom/button hover states.
+
 ### v1.0.0
 
 - Initial release
@@ -183,4 +217,4 @@ Future versions may introduce a dedicated Homepage Product Card optimized for qu
 
 Status
 
-**Frozen**
+**Refined — v1.1.0**

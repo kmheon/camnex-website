@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -17,4 +17,4 @@ const initFinalCtaComponent = () => {
     initializeFinalCtaIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initFinalCtaComponent);
+window.initFinalCtaComponent = initFinalCtaComponent;

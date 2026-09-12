@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -17,4 +17,4 @@ const initBrandsComponent = () => {
     initializeBrandIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initBrandsComponent);
+window.initBrandsComponent = initBrandsComponent;

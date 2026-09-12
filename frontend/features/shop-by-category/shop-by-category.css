@@ -3,7 +3,10 @@
    FILE PATH MATCH: frontend/features/shop-by-category/shop-by-category.css
    ======================================================== */
 
-:root {
+/* ========================================================
+   SECTION ROOT (scoped design tokens for the shop-by-category feature only)
+   ======================================================== */
+.cx-shop-by-category {
     --cx-cat-bg: #FFFFFF;
     --cx-navy: #0B0F19;
     --cx-text-muted: #64748B;
@@ -18,33 +21,16 @@
     --cx-shadow-card-hover: 0 35px 65px -12px rgba(255, 87, 51, 0.16);
     
     --cx-transition: 300ms cubic-bezier(0.16, 1, 0.3, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-cat-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-navy);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & HEADER
-   ======================================================== */
-.cx-shop-by-category {
     position: relative;
     background: var(--cx-cat-bg);
     padding: 100px 0 120px 0;
     overflow: hidden;
+}
+
+.cx-shop-by-category .container {
+    width: min(1400px, 92%);
+    margin: auto;
 }
 
 .cx-section-bg-glow {
@@ -93,7 +79,7 @@ body {
 
 .cx-section-heading {
     margin: 0 0 16px 0;
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.03em;
@@ -315,7 +301,7 @@ body {
 }
 
 /* Premium CTA with Animated Arrow and Underline/Color Transition */
-.cx-explore-action {
+.cx-bento-card .cx-explore-action {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -327,7 +313,7 @@ body {
     transition: color var(--cx-transition);
 }
 
-.cx-explore-action::after {
+.cx-bento-card .cx-explore-action::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -346,7 +332,7 @@ body {
     width: 100%;
 }
 
-.cx-explore-action i {
+.cx-bento-card .cx-explore-action i {
     width: 15px;
     height: 15px;
     transition: transform var(--cx-transition);

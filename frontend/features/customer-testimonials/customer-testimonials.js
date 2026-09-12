@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -17,4 +17,4 @@ const initTestimonialsComponent = () => {
     initializeTestimonialIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initTestimonialsComponent);
+window.initTestimonialsComponent = initTestimonialsComponent;

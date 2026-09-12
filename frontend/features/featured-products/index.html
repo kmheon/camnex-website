@@ -3,185 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CamneX Featured Products Section</title>
-    <link rel="stylesheet" href="product-card.css">
+    <title>CamneX — Popular Products</title>
+    <link rel="stylesheet" href="../../shared/css/variables.css">
+    <link rel="stylesheet" href="../../shared/css/reset.css">
+    <link rel="stylesheet" href="../../shared/css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="featured-products.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-<section class="cx-featured-products-section" aria-labelledby="featured-products-title">
-    <div class="container cx-demo">
+<section class="cx-popular-products-section" aria-labelledby="products-section-title">
+    <div class="cx-products-bg-grid" aria-hidden="true"></div>
+    
+    <div class="container cx-products-container">
         
         <!-- Section Header -->
-        <div class="cx-section-header">
-            <span class="cx-section-badge-label">Featured Products</span>
-            <h2 id="featured-products-title" class="cx-section-title">Popular Security & Networking Products</h2>
-            <p class="cx-section-subtitle">Browse our best-selling CCTV cameras, networking devices, access control systems, and smart security products.</p>
-        </div>
-
-        <!-- Horizontal Category Filter Navigation -->
-        <nav class="cx-filter-nav" aria-label="Product category filters">
-            <div class="cx-filter-container" role="tablist">
-                <button role="tab" aria-selected="true" class="cx-filter-chip active" data-filter="all">All</button>
-                <button role="tab" aria-selected="false" class="cx-filter-chip" data-filter="cctv">CCTV Cameras</button>
-                <button role="tab" aria-selected="false" class="cx-filter-chip" data-filter="networking">Networking</button>
-                <button role="tab" aria-selected="false" class="cx-filter-chip" data-filter="access-control">Access Control</button>
-                <button role="tab" aria-selected="false" class="cx-filter-chip" data-filter="smart-home">Smart Home</button>
-                <button role="tab" aria-selected="false" class="cx-filter-chip" data-filter="accessories">Accessories</button>
+        <div class="cx-products-header">
+            <div class="cx-header-text-block">
+                <div class="cx-section-eyebrow">
+                    <span class="cx-eyebrow-line"></span>
+                    <span>POPULAR PRODUCTS</span>
+                    <span class="cx-eyebrow-line"></span>
+                </div>
+                
+                <h2 id="products-section-title" class="cx-section-heading">
+                    Engineered for Absolute Reliability
+                </h2>
+                
+                <p class="cx-section-desc">
+                    Explore our top-rated security cameras, networking switches, and biometric access terminals.
+                </p>
             </div>
-        </nav>
 
-        <!-- Product Grid -->
-        <div class="cx-product-grid" role="region" aria-label="Product listing">
-
-            <!-- Product Card 1 -->
-            <article class="cx-product-card" 
-                     data-product-id="101" 
-                     data-category="cctv"
-                     data-product-name="Hikvision 2MP Outdoor Bullet Camera"
-                     data-price="3200"
-                     data-product-url="/products/hikvision-2mp-bullet">
-            
-                <div class="cx-product-media">
-                    <div class="cx-product-overlay" aria-hidden="true"></div>
-                    <span class="cx-product-badge best-seller">Best Seller</span>
-                    
-                    <img class="cx-product-img" 
-                         src="../../assets/products/hikvision-bullet.jpg" 
-                         alt="Hikvision 2MP Outdoor Bullet Camera" 
-                         loading="lazy" 
-                         decoding="async">
-                </div>
-
-                <div class="cx-product-content">
-                    <span class="cx-product-category">CCTV Cameras</span>
-                    <h3 class="cx-product-title">Hikvision 2MP Outdoor Bullet Camera</h3>
-                    
-                    <div class="cx-product-meta-row" aria-label="Key specifications">
-                        <span class="cx-meta-item"><i data-lucide="video" aria-hidden="true"></i> 1080p Full HD</span>
-                        <span class="cx-meta-item"><i data-lucide="moon" aria-hidden="true"></i> IR Night Vision</span>
-                    </div>
-
-                    <div class="cx-product-pricing">
-                        <div class="cx-price-row">
-                            <span class="cx-current-price">৳3,200</span>
-                            <span class="cx-old-price">৳3,800</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cx-product-footer">
-                    <a href="/products/hikvision-2mp-bullet" class="cx-product-btn" aria-label="View product details for Hikvision 2MP Outdoor Bullet Camera">
-                        View Product
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Product Card 2 -->
-            <article class="cx-product-card" 
-                     data-product-id="102" 
-                     data-category="networking"
-                     data-product-name="MikroTik hEX S Gigabit Router"
-                     data-price="7500"
-                     data-product-url="/products/mikrotik-hex-s">
-            
-                <div class="cx-product-media">
-                    <div class="cx-product-overlay" aria-hidden="true"></div>
-                    <span class="cx-product-badge popular">Popular</span>
-                    
-                    <img class="cx-product-img" 
-                         src="../../assets/products/mikrotik-hex-s.jpg" 
-                         alt="MikroTik hEX S Gigabit Router" 
-                         loading="lazy" 
-                         decoding="async">
-                </div>
-
-                <div class="cx-product-content">
-                    <span class="cx-product-category">Networking</span>
-                    <h3 class="cx-product-title">MikroTik hEX S Gigabit Router</h3>
-                    
-                    <div class="cx-product-meta-row" aria-label="Key specifications">
-                        <span class="cx-meta-item"><i data-lucide="cpu" aria-hidden="true"></i> Dual Core 880MHz</span>
-                        <span class="cx-meta-item"><i data-lucide="network" aria-hidden="true"></i> 5x Gigabit Ports</span>
-                    </div>
-
-                    <div class="cx-product-pricing">
-                        <div class="cx-price-row">
-                            <span class="cx-current-price">৳7,500</span>
-                            <span class="cx-old-price">৳8,200</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cx-product-footer">
-                    <a href="/products/mikrotik-hex-s" class="cx-product-btn" aria-label="View product details for MikroTik hEX S Gigabit Router">
-                        View Product
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Product Card 3 -->
-            <article class="cx-product-card" 
-                     data-product-id="103" 
-                     data-category="smart-home"
-                     data-product-name="Imou Ranger 2 3MP Wi-Fi Camera"
-                     data-price="3800"
-                     data-product-url="/products/imou-ranger-2">
-            
-                <div class="cx-product-media">
-                    <div class="cx-product-overlay" aria-hidden="true"></div>
-                    <span class="cx-product-badge sale">Sale</span>
-                    
-                    <img class="cx-product-img" 
-                         src="../../assets/products/imou-ranger-2.jpg" 
-                         alt="Imou Ranger 2 3MP Wi-Fi Camera" 
-                         loading="lazy" 
-                         decoding="async">
-                </div>
-
-                <div class="cx-product-content">
-                    <span class="cx-product-category">Smart Home</span>
-                    <h3 class="cx-product-title">Imou Ranger 2 3MP Wi-Fi Camera</h3>
-                    
-                    <div class="cx-product-meta-row" aria-label="Key specifications">
-                        <span class="cx-meta-item"><i data-lucide="rotate-cw" aria-hidden="true"></i> 360° Coverage</span>
-                        <span class="cx-meta-item"><i data-lucide="mic" aria-hidden="true"></i> Two-Way Talk</span>
-                    </div>
-
-                    <div class="cx-product-pricing">
-                        <div class="cx-price-row">
-                            <span class="cx-current-price">৳3,800</span>
-                            <span class="cx-old-price">৳4,500</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cx-product-footer">
-                    <a href="/products/imou-ranger-2" class="cx-product-btn" aria-label="View product details for Imou Ranger 2 3MP Wi-Fi Camera">
-                        View Product
-                        <i data-lucide="arrow-right" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
-
+            <!-- Dynamic Category Filter Pills -->
+            <div class="cx-category-filters" id="categoryFilters" role="tablist" aria-label="Product Categories"></div>
         </div>
 
-        <!-- Section Footer CTA -->
-        <div class="cx-section-footer-cta">
-            <a href="/shop" class="cx-btn-primary" aria-label="View all security and networking products">
-                View All Products
-                <i data-lucide="arrow-right" aria-hidden="true"></i>
-            </a>
+        <!-- Carousel Viewport & Track -->
+        <div class="cx-products-carousel-viewport" id="carouselViewport">
+            <div class="cx-products-track" id="productsTrack"></div>
+        </div>
+
+        <!-- Carousel Navigation & Pagination Footer -->
+        <div class="cx-carousel-footer-controls" id="carouselFooter">
+            <div class="cx-carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel Pagination"></div>
+            
+            <div class="cx-carousel-arrows">
+                <button type="button" class="cx-carousel-btn cx-btn-prev" id="prevProductBtn" aria-label="Previous products">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button type="button" class="cx-carousel-btn cx-btn-next" id="nextProductBtn" aria-label="Next products">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
         </div>
 
     </div>
 </section>
 
-<script src="product-card.js"></script>
-<script src="featured-products.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

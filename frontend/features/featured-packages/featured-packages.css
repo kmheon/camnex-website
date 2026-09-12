@@ -3,7 +3,7 @@
    FILE PATH MATCH: frontend/features/featured-packages/featured-packages.css
    ======================================================== */
 
-:root {
+.cx-featured-packages-section {
     --cx-pkg-bg: #FFFFFF;
     --cx-navy: #0B0F19;
     --cx-text-muted: #64748B;
@@ -21,33 +21,16 @@
     --cx-shadow-card-hover: 0 35px 65px -12px rgba(255, 87, 51, 0.18);
     
     --cx-transition: 300ms cubic-bezier(0.16, 1, 0.3, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-pkg-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-navy);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & HEADER
-   ======================================================== */
-.cx-featured-packages-section {
     position: relative;
     background: var(--cx-pkg-bg);
     padding: 120px 0 140px 0;
     overflow: hidden;
+}
+
+.cx-featured-packages-section .container {
+    width: min(1400px, 92%);
+    margin: auto;
 }
 
 .cx-packages-bg-glow {
@@ -148,9 +131,7 @@ body {
     height: 20px;
 }
 
-/* ========================================================
-   CAROUSEL VIEWPORT & TRACK
-   ======================================================== */
+/* Carousel Viewport & Track */
 .cx-packages-carousel-viewport {
     position: relative;
     width: 100%;
@@ -166,9 +147,7 @@ body {
     will-change: transform;
 }
 
-/* ========================================================
-   PACKAGE CARD DESIGN (Optimized height & flawless internal hierarchy)
-   ======================================================== */
+/* Package Card Design */
 .cx-package-card {
     position: relative;
     background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
@@ -178,10 +157,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: calc(25% - 18px); /* 4 visible on desktop */
+    min-width: calc(25% - 18px);
     width: calc(25% - 18px);
     flex-shrink: 0;
-    height: 500px; /* Perfect balanced height to eliminate text crowding */
+    height: 500px;
     box-shadow: var(--cx-shadow-card);
     transition: transform var(--cx-transition), box-shadow var(--cx-transition), border-color var(--cx-transition), background var(--cx-transition);
 }
@@ -200,7 +179,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Premium Badge */
 .cx-pkg-badge {
     display: inline-block;
     font-size: 10px;
@@ -220,7 +198,6 @@ body {
     color: var(--cx-text-muted);
 }
 
-/* Visual Product Render */
 .cx-pkg-visual {
     position: relative;
     width: 100%;
@@ -243,7 +220,6 @@ body {
     transform: scale(1.06) translateY(-4px);
 }
 
-/* Meta Information & Social Proof */
 .cx-pkg-info {
     display: flex;
     flex-direction: column;
@@ -291,7 +267,6 @@ body {
     overflow: hidden;
 }
 
-/* Clean Included Components List (Fixed overlapping bug completely) */
 .cx-pkg-components {
     display: flex;
     flex-direction: column;
@@ -336,7 +311,6 @@ body {
     margin-top: 2px;
 }
 
-/* Pricing & Taller CTA Group */
 .cx-pkg-footer {
     display: flex;
     flex-direction: column;
@@ -412,9 +386,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ========================================================
-   PAGINATION DOTS
-   ======================================================== */
+/* Pagination Dots */
 .cx-carousel-dots {
     display: flex;
     justify-content: center;
@@ -438,9 +410,7 @@ body {
     border-radius: 4px;
 }
 
-/* ========================================================
-   RESPONSIVE DESIGN
-   ======================================================== */
+/* Responsive */
 @media (max-width: 1200px) {
     .cx-package-card {
         min-width: calc(50% - 12px);

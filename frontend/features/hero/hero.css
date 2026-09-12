@@ -1,326 +1,703 @@
 /* ========================================================
-   COMPONENT: Immersive Image Hero (Fixed & Complete)
+   COMPONENT: CamneX Hero (exact recreation of approved mock)
    FILE PATH MATCH: frontend/features/hero/hero.css
+   ------------------------------------------------------
+   No nav is rendered here - this drops directly under the
+   site's existing header.
+
+   SCOPED: All selectors are scoped under .cx-hero so the
+   component is self-contained and cannot leak onto other
+   homepage sections. Collision-prone generic names are
+   hero-prefixed (.cx-hero-btn*, .cx-hero-eyebrow).
    ======================================================== */
 
-:root {
-    --cx-bg: #FFFFFF;
-    --cx-navy: #0F172A;
-    --cx-text-muted: #64748B;
-    --cx-border: #E2E8F0;
+.cx-hero {
+    --cx-ink: #10182B;
+    --cx-text-muted: #6B7280;
+    --cx-text-faint: #9CA3AF;
+    --cx-border: #ECECEF;
+    --cx-paper: #FFFFFF;
 
-    --cx-orange: #FF5733;
-    --cx-orange-dark: #E64522;
-    --cx-radius-banner: 24px;
-    --cx-transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --cx-orange: #FF5A2B;
+    --cx-orange-dark: #E8471C;
+    --cx-orange-soft: #FFF1EC;
+
+    --cx-font: 'Inter', Arial, sans-serif;
+    --cx-speed: 0.5s;
+    --cx-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+    position: relative;
+    padding: 72px 0 0;
+    overflow: hidden;
+    max-width: 100vw;
+    background:
+        radial-gradient(ellipse 900px 500px at 88% 30%, rgba(255, 90, 43, 0.07), transparent 60%);
 }
 
-* {
+.cx-hero *, 
+.cx-hero *::before,
+.cx-hero *::after {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    background: var(--cx-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-navy);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1360px, 92%);
+.cx-hero .container {
+    width: min(1500px, 92%);
     margin: auto;
 }
 
 /* ========================================================
-   SECTION CONTAINER
+   SECTION SHELL
    ======================================================== */
-.cx-weverly-image-hero {
-    position: relative;
-    background: var(--cx-bg);
-    padding: 140px 0 60px 0;
+.cx-hero .cx-hero-grid {
+    display: grid;
+    grid-template-columns: 5fr 8fr;
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 64px;
+}
+
+.cx-hero .cx-hero-grid > * {
+    min-width: 0;
 }
 
 /* ========================================================
-   LARGE IMMERSIVE BANNER
+   LEFT COLUMN
    ======================================================== */
-.cx-image-banner {
-    position: relative;
-    width: 100%;
-    height: 580px;
-    background: #090D16;
-    border-radius: var(--cx-radius-banner);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 50px 60px;
-    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2);
+.cx-hero .cx-hero-left {
+    padding-top: 8px;
 }
 
-.cx-banner-bg-layer {
+.cx-hero .cx-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 90, 43, 0.35);
+    background: #FFFFFF;
+    color: var(--cx-orange);
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 999px;
+    margin: 0 0 28px;
+}
+
+.cx-hero .cx-badge-pill svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.cx-hero .cx-hero-headline {
+    margin: 0 0 22px;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.cx-hero .cx-hero-headline .cx-line-ink {
+    display: block;
+    color: var(--cx-ink);
+}
+
+.cx-hero .cx-hero-headline .cx-line-orange {
+    display: block;
+    color: var(--cx-orange);
+}
+
+.cx-hero .cx-hero-body {
+    margin: 0 0 34px;
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--cx-text-muted);
+    max-width: 470px;
+}
+
+.cx-hero .cx-hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 46px;
+}
+
+.cx-hero .cx-hero-btn,
+.cx-hero .cx-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--cx-font);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 15px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.15s ease, box-shadow .25s ease;
+}
+
+.cx-hero .cx-hero-btn:active,
+.cx-hero .cx-btn:active {
+    transform: translateY(1px);
+}
+
+.cx-hero .cx-hero-btn svg,
+.cx-hero .cx-btn svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    display: block;
+}
+
+.cx-hero .cx-hero-btn-primary,
+.cx-hero .cx-btn-primary {
+    background: var(--cx-orange);
+    color: #FFFFFF;
+    box-shadow: 0 10px 24px rgba(255, 90, 43, 0.28);
+}
+
+.cx-hero .cx-hero-btn-primary:hover,
+.cx-hero .cx-btn-primary:hover {
+    background: var(--cx-orange-dark);
+}
+
+.cx-hero .cx-hero-btn-secondary,
+.cx-hero .cx-btn-secondary {
+    background: #FFFFFF;
+    color: var(--cx-ink);
+    border-color: var(--cx-border);
+}
+
+.cx-hero .cx-hero-btn-secondary:hover,
+.cx-hero .cx-btn-secondary:hover {
+    border-color: #D6D8DE;
+    background: #FAFAFB;
+}
+
+.cx-hero .cx-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cx-hero .cx-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cx-hero .cx-trust-item svg {
+    width: 26px;
+    height: 26px;
+    color: var(--cx-orange);
+    flex-shrink: 0;
+    stroke-width: 1.6;
+}
+
+.cx-hero .cx-trust-item .cx-trust-label {
+    font-size: 13.5px;
+    line-height: 1.4;
+}
+
+.cx-hero .cx-trust-item .cx-trust-label span {
+    display: block;
+}
+
+.cx-hero .cx-trust-item .cx-trust-label .l1 {
+    color: var(--cx-text-faint);
+    font-weight: 500;
+}
+
+.cx-hero .cx-trust-item .cx-trust-label .l2 {
+    color: var(--cx-ink);
+    font-weight: 700;
+}
+
+/* ========================================================
+   RIGHT COLUMN
+   ======================================================== */
+.cx-hero .cx-hero-right {
+    position: relative;
+}
+
+/* ---- Tab bar ---- */
+.cx-hero .cx-tabbar {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: #FFFFFF;
+    border: 1px solid var(--cx-border);
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(16, 24, 43, 0.05);
+    margin-bottom: 34px;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.cx-hero .cx-tabbar::-webkit-scrollbar {
+    display: none;
+}
+
+.cx-hero .cx-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 18px;
+    font-family: var(--cx-font);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cx-text-muted);
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cx-hero .cx-tab svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 auto;
+    display: block;
+}
+
+.cx-hero .cx-tab:hover {
+    color: var(--cx-ink);
+}
+
+.cx-hero .cx-tab.active {
+    background: var(--cx-orange);
+    color: #FFFFFF;
+}
+
+/* ---- Product panel ---- */
+.cx-hero .cx-product-panel {
+    display: grid;
+    grid-template-columns: minmax(240px, 300px) 1fr;
+    grid-template-areas:
+        "info stage"
+        "chips chips";
+    column-gap: 32px;
+}
+
+.cx-hero .cx-product-panel > * {
+    min-width: 0;
+}
+
+.cx-hero .cx-product-info {
+    grid-area: info;
+    padding-top: 6px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--cx-speed) var(--cx-ease), transform var(--cx-speed) var(--cx-ease);
+}
+
+.cx-hero.is-switching .cx-product-info {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.cx-hero .cx-hero-eyebrow,
+.cx-hero .cx-eyebrow {
+    margin: 0 0 10px;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cx-orange);
+}
+
+.cx-hero .cx-product-title {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--cx-ink);
+}
+
+.cx-hero .cx-product-subtitle {
+    margin: 0 0 20px;
+    font-size: 14.5px;
+    color: var(--cx-text-muted);
+    font-weight: 500;
+}
+
+.cx-hero .cx-checklist {
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cx-hero .cx-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 14.5px;
+    color: #374151;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.cx-hero .cx-checklist svg {
+    width: 16px;
+    height: 16px;
+    color: var(--cx-orange);
+    flex-shrink: 0;
+    margin-top: 2px;
+    stroke-width: 3;
+}
+
+.cx-hero .cx-explore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--cx-orange);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cx-hero .cx-explore-link svg {
+    width: 15px;
+    height: 15px;
+    transition: transform 0.25s ease;
+}
+
+.cx-hero .cx-explore-link:hover svg {
+    transform: translateX(3px);
+}
+
+/* ---- Stage (image + blob + badge) ---- */
+.cx-hero .cx-stage {
+    grid-area: stage;
+    position: relative;
+    min-height: 380px;
+}
+
+.cx-hero .cx-stage-blob {
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 55%;
+    width: 560px;
+    height: 560px;
+    max-width: 130%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 111, 61, 0.85) 0%, rgba(255, 138, 90, 0.35) 55%, rgba(255, 138, 90, 0) 78%);
     z-index: 0;
 }
 
-.cx-banner-bg-layer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    transform: scale(1.03);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.cx-banner-bg-layer img.active {
-    opacity: 0.75; /* Let dark overlay keep text legible while showing product clearly */
-    transform: scale(1);
-}
-
-.cx-banner-dark-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(9, 13, 22, 0.92) 0%, rgba(9, 13, 22, 0.7) 100%);
-    z-index: 1;
-}
-
-/* Content Layer */
-.cx-image-content-layer {
+.cx-hero .cx-stage-image-wrap {
     position: relative;
+    z-index: 1;
+    height: 100%;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity var(--cx-speed) var(--cx-ease), transform var(--cx-speed) var(--cx-ease);
+}
+
+.cx-hero.is-switching .cx-stage-image-wrap {
+    opacity: 0;
+    transform: scale(0.94);
+}
+
+.cx-hero .cx-stage-image {
+    max-width: 92%;
+    max-height: 380px;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 34px rgba(16, 24, 43, 0.22));
+}
+
+.cx-hero .cx-stage-image-wrap.is-fallback .cx-stage-image {
+    max-width: 78%;
+    max-height: 320px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    box-shadow: 0 24px 48px rgba(16, 24, 43, 0.22);
+}
+
+.cx-hero .cx-warranty-badge {
+    position: absolute;
+    top: 4%;
+    right: 2%;
     z-index: 2;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid var(--cx-orange);
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    color: #FFFFFF;
-}
-
-.cx-banner-top-left {
-    max-width: 420px;
-}
-
-/* Brand eyebrow pill — ties the hero back to the orange CamneX accent
-   used across the rest of the site (e.g. the "Why Choose CamneX" pill). */
-.cx-banner-eyebrow {
-    display: inline-block;
-    background: var(--cx-orange);
-    color: #FFFFFF;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 7px 14px;
-    border-radius: 999px;
-    margin-bottom: 14px;
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.cx-image-banner.active-anim .cx-banner-eyebrow {
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 28px rgba(16, 24, 43, 0.14);
+    text-align: center;
     opacity: 1;
-    transform: translateY(0);
+    transition: opacity var(--cx-speed) ease, transform var(--cx-speed) var(--cx-ease);
 }
 
-.cx-banner-top-desc {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
+.cx-hero.is-switching .cx-warranty-badge {
     opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+    transform: scale(0.85);
 }
 
-.cx-image-banner.active-anim .cx-banner-top-desc {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cx-banner-center-main {
-    margin: auto 0;
-}
-
-.cx-banner-headline {
-    margin: 0;
-    font-size: 64px;
+.cx-hero .cx-warranty-badge .cx-wb-number {
+    font-size: 26px;
     font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-    max-width: 800px;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    color: var(--cx-orange);
+    line-height: 1;
 }
 
-.cx-image-banner.active-anim .cx-banner-headline {
+.cx-hero .cx-warranty-badge .cx-wb-year {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cx-orange);
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+.cx-hero .cx-warranty-badge .cx-wb-word {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: var(--cx-text-muted);
+    letter-spacing: 0.08em;
+}
+
+/* ---- Spec chip row ---- */
+.cx-hero .cx-chip-row {
+    grid-area: chips;
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.cx-hero .cx-chip {
+    flex: 1 1 100px;
+    min-width: 96px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 14px 12px;
+    box-shadow: 0 10px 24px rgba(16, 24, 43, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
     opacity: 1;
     transform: translateY(0);
+    transition: opacity var(--cx-speed) ease, transform var(--cx-speed) var(--cx-ease);
 }
 
-.cx-banner-bottom-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 40px;
-}
-
-.cx-banner-subtext {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 440px;
+.cx-hero.is-switching .cx-chip {
     opacity: 0;
     transform: translateY(8px);
-    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
 }
 
-.cx-image-banner.active-anim .cx-banner-subtext {
-    opacity: 1;
-    transform: translateY(0);
+.cx-hero .cx-chip.variant-icon-left {
+    flex-direction: row;
+    text-align: left;
+    gap: 10px;
+    justify-content: flex-start;
 }
 
-.cx-banner-watermark {
-    font-size: 72px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: rgba(255, 255, 255, 0.06);
-    user-select: none;
-    line-height: 1;
-    white-space: nowrap;
-    text-transform: uppercase;
+.cx-hero .cx-chip-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cx-ink);
 }
 
-/* Bottom Integrated Navigation Tabs Bar */
-.cx-banner-bottom-tabs {
+.cx-hero .cx-chip-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.6;
+}
+
+.cx-hero .cx-chip-colorwheel {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #FF3B3B, #FF9F1C, #FFD93D, #6BCB77, #4D96FF, #9B5DE5, #FF3B3B);
+    position: relative;
+}
+
+.cx-hero .cx-chip-colorwheel::after {
+    content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 56px;
-    background: rgba(9, 13, 22, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 40px;
-    z-index: 5;
+    inset: 28%;
+    border-radius: 50%;
+    background: #FFFFFF;
 }
 
-.cx-banner-tab {
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.3s ease, background 0.3s ease;
-    padding: 10px 20px;
-    letter-spacing: 0.04em;
-    border-radius: 8px;
-}
-
-.cx-banner-tab:hover {
-    color: #FFFFFF;
-}
-
-.cx-banner-tab.active {
-    color: #FFFFFF;
-    font-weight: 700;
-    background: var(--cx-orange);
-}
-
-/* ========================================================
-   BOTTOM PARTNER LOGO STRIP (Transparent background, no boxes)
-   ======================================================== */
-.cx-image-logo-strip {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 48px 20px 0 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.cx-brand-badge {
-    font-size: 16px;
+.cx-hero .cx-chip-text .l1 {
+    display: block;
+    font-size: 15px;
     font-weight: 800;
-    letter-spacing: 0.06em;
-    background: transparent; /* Removed background fill */
-    padding: 4px 8px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    cursor: default;
-    opacity: 0.75;
+    color: var(--cx-ink);
+    line-height: 1.25;
 }
 
-.cx-brand-badge:hover {
-    transform: translateY(-2px);
-    opacity: 1;
+.cx-hero .cx-chip-text .l2 {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cx-text-muted);
+    line-height: 1.25;
 }
-
-/* Real Brand Colors (Transparent background) */
-.brand-hikvision { color: #C8102E; }
-.brand-dahua { color: #004B87; letter-spacing: -0.04em; }
-.brand-ezviz { color: #0076CE; }
-.brand-ruijie { color: #E11D48; font-style: italic; }
-.brand-tplink { color: #0099DA; }
-.brand-mikrotik { color: #2B3A42; }
 
 /* ========================================================
-   RESPONSIVE DESIGN
+   PARTNER STRIP
    ======================================================== */
-@media (max-width: 1024px) {
-    .cx-image-banner {
-        height: 500px;
-        padding: 40px;
+.cx-hero .cx-partner-section {
+    border-top: 1px solid var(--cx-border);
+    padding: 30px 0 40px;
+}
+
+.cx-hero .cx-partner-heading {
+    text-align: center;
+    font-size: 14.5px;
+    color: var(--cx-text-muted);
+    margin: 0 0 28px;
+}
+
+.cx-hero .cx-partner-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.cx-hero .cx-partner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border-left: 1px solid var(--cx-border);
+}
+
+.cx-hero .cx-partner-logo:first-child {
+    border-left: none;
+}
+
+.cx-hero .cx-partner-logo img {
+    height: 26px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.cx-hero .cx-partner-logo .cx-partner-fallback-text {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--cx-ink);
+}
+
+.cx-hero .cx-partner-logo .cx-partner-caption {
+    font-size: 12px;
+    color: var(--cx-text-faint);
+    font-weight: 500;
+}
+
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
+@media (max-width: 1180px) {
+    .cx-hero .cx-hero-headline {
+        font-size: 44px;
     }
-    .cx-banner-headline {
-        font-size: 50px;
+    .cx-hero .cx-hero-grid {
+        grid-template-columns: 1fr;
     }
-    .cx-banner-watermark {
-        font-size: 50px;
+    .cx-hero .cx-hero-left {
+        max-width: 640px;
+    }
+    .cx-hero .cx-product-panel {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "stage"
+            "info"
+            "chips";
+    }
+    .cx-hero .cx-product-info {
+        max-width: 560px;
+    }
+    .cx-hero .cx-stage {
+        min-height: 320px;
     }
 }
 
-@media (max-width: 768px) {
-    .cx-weverly-image-hero {
-        padding: 100px 0 40px 0;
+@media (max-width: 640px) {
+    .cx-hero {
+        padding-top: 40px;
     }
-    .cx-image-banner {
-        height: 560px;
-        padding: 30px;
+    .cx-hero .cx-hero-headline {
+        font-size: 34px;
     }
-    .cx-banner-headline {
-        font-size: 36px;
-    }
-    .cx-banner-bottom-info {
+    .cx-hero .cx-hero-cta-row {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        align-items: stretch;
     }
-    .cx-banner-watermark {
-        display: none;
-    }
-    .cx-banner-bottom-tabs {
-        padding: 0 10px;
-        overflow-x: auto;
-        justify-content: flex-start;
-    }
-    .cx-banner-tab {
-        flex-shrink: 0;
-        font-size: 11px;
-        padding: 10px 14px;
-    }
-    .cx-image-logo-strip {
-        gap: 16px;
-        flex-wrap: wrap;
+    .cx-hero .cx-hero-btn,
+    .cx-hero .cx-btn {
         justify-content: center;
+        width: 100%;
+    }
+    .cx-hero .cx-trust-row {
+        gap: 18px 24px;
+    }
+    .cx-hero .cx-chip-row {
+        gap: 10px;
+    }
+    .cx-hero .cx-chip {
+        min-width: 0;
+        flex: 1 1 calc(33.333% - 7px);
+        padding: 12px 8px;
+    }
+    .cx-hero .cx-warranty-badge {
+        width: 74px;
+        height: 74px;
+        top: -6px;
+        right: 4%;
+    }
+    .cx-hero .cx-warranty-badge .cx-wb-number {
+        font-size: 20px;
+    }
+    .cx-hero .cx-partner-strip {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 24px;
+    }
+    .cx-hero .cx-partner-logo:nth-child(4) {
+        border-left: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cx-hero .cx-product-info,
+    .cx-hero .cx-stage-image-wrap,
+    .cx-hero .cx-warranty-badge,
+    .cx-hero .cx-chip {
+        transition: none !important;
     }
 }

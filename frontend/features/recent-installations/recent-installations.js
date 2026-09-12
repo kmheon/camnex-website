@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 /**
  * ========================================================
@@ -17,4 +17,4 @@ const initRecentProjectsComponent = () => {
     initializeRecentProjectIcons();
 };
 
-document.addEventListener("DOMContentLoaded", initRecentProjectsComponent);
+window.initRecentProjectsComponent = initRecentProjectsComponent;

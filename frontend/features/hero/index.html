@@ -7,56 +7,101 @@
     <link rel="stylesheet" href="../../shared/css/variables.css">
     <link rel="stylesheet" href="../../shared/css/reset.css">
     <link rel="stylesheet" href="../../shared/css/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="hero.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-<section class="cx-weverly-image-hero" aria-labelledby="bannerHeadline">
-    <div class="container cx-hero-container">
+<section class="cx-hero" id="camnexHero">
+    <div class="container cx-hero-grid">
 
-        <!-- Large Immersive Banner with Complete Product Showcase & Dynamic Watermark -->
-        <div class="cx-image-banner" id="imageBanner">
+        <!-- ============ LEFT: static brand column ============ -->
+        <div class="cx-hero-left">
+            <span class="cx-badge-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                Bangladesh's Trusted Technology Partner
+            </span>
 
-            <!-- Background Product Image Layer -->
-            <div class="cx-banner-bg-layer">
-                <img id="bannerBgImg" src="" alt="Product Showcase">
-                <div class="cx-banner-dark-overlay"></div>
+            <h1 class="cx-hero-headline">
+                <span class="cx-line-ink">Securing What</span>
+                <span class="cx-line-ink">Matters.</span>
+                <span class="cx-line-orange">Connected for</span>
+                <span class="cx-line-orange">Tomorrow.</span>
+            </h1>
+
+            <p class="cx-hero-body">CamneX delivers high-performance security, networking and smart technology solutions with reliable products and expert installation across Bangladesh.</p>
+
+            <div class="cx-hero-cta-row">
+                <a href="#" class="cx-btn cx-btn-primary">
+                    Get Free Quote
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#" class="cx-btn cx-btn-secondary">
+                    Explore Solutions
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+                </a>
             </div>
 
-            <!-- Content Area -->
-            <div class="cx-image-content-layer">
-                <div class="cx-banner-top-left">
-                    <span class="cx-banner-eyebrow">Trusted Security Partner</span>
-                    <p class="cx-banner-top-desc" id="bannerTopDesc"></p>
+            <ul class="cx-trust-row">
+                <li class="cx-trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                    <span class="cx-trust-label"><span class="l1">Official</span><span class="l2">Warranty</span></span>
+                </li>
+                <li class="cx-trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="cx-trust-label"><span class="l1">Nationwide</span><span class="l2">Installation</span></span>
+                </li>
+                <li class="cx-trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+                    <span class="cx-trust-label"><span class="l1">Certified</span><span class="l2">Engineers</span></span>
+                </li>
+                <li class="cx-trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg>
+                    <span class="cx-trust-label"><span class="l1">Genuine</span><span class="l2">Products</span></span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ============ RIGHT: dynamic product spotlight ============ -->
+        <div class="cx-hero-right">
+
+            <div class="cx-tabbar" id="heroTabbar" role="tablist" aria-label="Solution categories"></div>
+
+            <div class="cx-product-panel">
+                <div class="cx-product-info">
+                    <p class="cx-eyebrow" id="pEyebrow"></p>
+                    <h2 class="cx-product-title" id="pTitle"></h2>
+                    <p class="cx-product-subtitle" id="pSubtitle"></p>
+                    <ul class="cx-checklist" id="pChecklist"></ul>
+                    <a href="#" class="cx-explore-link" id="pExploreLink">
+                        <span id="pExploreText"></span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+                    </a>
                 </div>
 
-                <div class="cx-banner-center-main">
-                    <h1 id="bannerHeadline" class="cx-banner-headline"></h1>
+                <div class="cx-stage">
+                    <div class="cx-stage-blob"></div>
+                    <div class="cx-stage-image-wrap" id="stageImageWrap">
+                        <img class="cx-stage-image" id="stageImage" src="" alt="">
+                    </div>
+                    <div class="cx-warranty-badge" id="warrantyBadge">
+                        <span class="cx-wb-number" id="wbNumber"></span>
+                        <span class="cx-wb-year">YEAR</span>
+                        <span class="cx-wb-word">WARRANTY</span>
+                    </div>
                 </div>
 
-                <div class="cx-banner-bottom-info">
-                    <p class="cx-banner-subtext" id="bannerSubtext"></p>
-                    <div class="cx-banner-watermark" id="bannerWatermark">CCTV</div>
-                </div>
+                <div class="cx-chip-row" id="chipRow"></div>
             </div>
-
-            <!-- Bottom Integrated Navigation Tabs Bar
-                 Buttons are generated by hero.js from the slide data itself,
-                 so the tabs can never fall out of sync with slide content again. -->
-            <div class="cx-banner-bottom-tabs" id="heroTabsBar" role="tablist" aria-label="Solution Switcher"></div>
         </div>
 
-        <!-- Bottom Partner Logo Strip (Transparent background & Corrected 'Dahua' spelling) -->
-        <div class="cx-image-logo-strip" role="region" aria-label="Authorized Partner Brands">
-            <div class="cx-brand-badge brand-hikvision">HIKVISION</div>
-            <div class="cx-brand-badge brand-dahua">Dahua</div>
-            <div class="cx-brand-badge brand-ezviz">EZVIZ</div>
-            <div class="cx-brand-badge brand-ruijie">RUIJIE</div>
-            <div class="cx-brand-badge brand-tplink">tp-link</div>
-            <div class="cx-brand-badge brand-mikrotik">MikroTik</div>
-        </div>
+    </div>
 
+    <div class="container cx-partner-section">
+        <p class="cx-partner-heading">We work with the world's leading brands</p>
+        <div class="cx-partner-strip" id="partnerStrip"></div>
     </div>
 </section>
 

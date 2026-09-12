@@ -3,7 +3,15 @@
    FILE PATH MATCH: features/recent-installations/recent-installations.css
    ======================================================== */
 
-:root {
+
+
+
+
+
+/* ========================================================
+   SECTION CONTAINER & HEADER
+   ======================================================== */
+.cx-recent-projects-section {
     --cx-proj-bg: #FFFFFF;
     --cx-proj-surface: #F8FAFC;
     --cx-proj-card: #FFFFFF;
@@ -35,46 +43,27 @@
     
     --cx-proj-transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     --cx-proj-transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: var(--cx-proj-bg);
-    font-family: Inter, Arial, sans-serif;
-    color: var(--cx-proj-text-main);
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: min(1400px, 92%);
-    margin: auto;
-}
-
-/* ========================================================
-   SECTION CONTAINER & HEADER
-   ======================================================== */
-.cx-recent-projects-section {
     background: var(--cx-proj-surface);
     padding: 90px 0;
     border-top: 1px solid var(--cx-proj-border);
     border-bottom: 1px solid var(--cx-proj-border);
 }
 
-.cx-demo {
+.cx-recent-projects-section .container,
+.cx-recent-projects-section .cx-demo {
+    width: min(1400px, 92%);
+    margin: auto;
     padding: 0;
 }
 
-.cx-section-header {
+.cx-recent-projects-section .cx-section-header {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 56px auto;
 }
 
-.cx-section-badge-label {
+.cx-recent-projects-section .cx-section-badge-label {
     display: inline-block;
     background: var(--cx-proj-primary);
     color: #FFFFFF;
@@ -88,7 +77,7 @@ body {
     box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
 }
 
-.cx-section-title {
+.cx-recent-projects-section .cx-section-title {
     margin: 0 0 10px 0;
     font-size: 36px;
     font-weight: 800;
@@ -96,7 +85,7 @@ body {
     color: var(--cx-proj-text-main);
 }
 
-.cx-section-subtitle {
+.cx-recent-projects-section .cx-section-subtitle {
     margin: 0;
     font-size: 16px;
     font-weight: 500;
@@ -325,14 +314,14 @@ body {
     transform: scale(1.05);
 }
 
-.cx-card-content {
+.cx-project-content {
     padding: 24px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.cx-card-location {
+.cx-project-location {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -342,13 +331,13 @@ body {
     margin-bottom: 8px;
 }
 
-.cx-card-location svg {
+.cx-project-location svg {
     width: 14px;
     height: 14px;
     color: var(--cx-proj-primary);
 }
 
-.cx-card-title {
+.cx-project-name {
     margin: 0 0 10px 0;
     font-size: 19px;
     font-weight: 700;
@@ -356,7 +345,7 @@ body {
     line-height: 1.3;
 }
 
-.cx-card-desc {
+.cx-project-desc {
     margin: 0 0 20px 0;
     font-size: 14px;
     font-weight: 500;
@@ -368,7 +357,7 @@ body {
     overflow: hidden;
 }
 
-.cx-card-footer {
+.cx-project-footer {
     margin-top: auto;
     padding: 0 24px 24px 24px;
 }
@@ -450,7 +439,7 @@ body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .cx-section-title {
+    .cx-recent-projects-section .cx-section-title {
         font-size: 28px;
     }
     .cx-featured-title {
