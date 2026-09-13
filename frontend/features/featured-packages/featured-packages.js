@@ -10,11 +10,94 @@
 
     let initialized = false;
 
+    /**
+     * Asset mapping registry for local CamneX package photographs
+     * and their Unsplash fallback references.
+     */
+    const FEATURED_PACKAGES_ASSET_MAP = {
+        "pkg-hikvision-colorvu-4cam": {
+            id: "pkg-colorvu",
+            name: "4 Camera Hikvision ColorVu Package",
+            target: "../../assets/packages/pkg-hikvision-colorvu-4cam.webp",
+            fallback: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-hikvision-ip-8cam": {
+            id: "pkg-8cam",
+            name: "8 Camera Hikvision IP Package",
+            target: "../../assets/packages/pkg-hikvision-ip-8cam.webp",
+            fallback: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-dahua-fullcolor-4cam": {
+            id: "pkg-nightvision",
+            name: "4 Camera Dahua Full Color Kit",
+            target: "../../assets/packages/pkg-dahua-fullcolor-4cam.webp",
+            fallback: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-commercial-cctv-16cam": {
+            id: "pkg-16cam",
+            name: "16 Camera Commercial CCTV Kit",
+            target: "../../assets/packages/pkg-commercial-cctv-16cam.webp",
+            fallback: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-smarthome-wifi-2cam": {
+            id: "pkg-2cam",
+            name: "2 Camera Smart Home WiFi Kit",
+            target: "../../assets/packages/pkg-smarthome-wifi-2cam.webp",
+            fallback: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-dahua-ip-4cam": {
+            id: "pkg-4cam",
+            name: "4 Camera Dahua IP System",
+            target: "../../assets/packages/pkg-dahua-ip-4cam.webp",
+            fallback: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-corporate-security-8cam": {
+            id: "pkg-business",
+            name: "8 Camera Corporate Security Kit",
+            target: "../../assets/packages/pkg-corporate-security-8cam.webp",
+            fallback: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        },
+        "pkg-industrial-cctv-32cam": {
+            id: "pkg-warehouse",
+            name: "32 Camera Industrial CCTV Setup",
+            target: "../../assets/packages/pkg-industrial-cctv-32cam.webp",
+            fallback: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+            recommendedResolution: "800 × 600 px",
+            aspectRatio: "4:3 or 1:1"
+        }
+    };
+
+    const setupPackageImageFallbacks = () => {
+        const images = document.querySelectorAll(".cx-package-card .cx-pkg-visual img[data-fallback]");
+        images.forEach((img) => {
+            img.addEventListener("error", function handleImgError() {
+                const fallbackSrc = this.getAttribute("data-fallback");
+                if (fallbackSrc && this.src !== fallbackSrc) {
+                    this.src = fallbackSrc;
+                }
+            }, { once: true });
+        });
+    };
+
     const initializePackageIcons = () => {
-    if (window.lucide) {
-        lucide.createIcons();
-    }
-};
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    };
 
 const cctvPackagesData = [
     {
@@ -30,7 +113,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 8,500",
-        image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-smarthome-wifi-2cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-smarthome-wifi-2cam.webp",
         viewLink: "/packages/2-camera",
         customizeLink: "/customize/2-camera"
     },
@@ -47,7 +132,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 14,500",
-        image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-dahua-ip-4cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-dahua-ip-4cam.webp",
         viewLink: "/packages/4-camera",
         customizeLink: "/customize/4-camera"
     },
@@ -64,7 +151,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 28,000",
-        image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-hikvision-ip-8cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-hikvision-ip-8cam.webp",
         viewLink: "/packages/8-camera",
         customizeLink: "/customize/8-camera"
     },
@@ -81,7 +170,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 55,000",
-        image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-commercial-cctv-16cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-commercial-cctv-16cam.webp",
         viewLink: "/packages/16-camera",
         customizeLink: "/customize/16-camera"
     },
@@ -98,7 +189,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 18,500",
-        image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-hikvision-colorvu-4cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-hikvision-colorvu-4cam.webp",
         viewLink: "/packages/colorvu",
         customizeLink: "/customize/colorvu"
     },
@@ -115,7 +208,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 12,500",
-        image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-dahua-fullcolor-4cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-dahua-fullcolor-4cam.webp",
         viewLink: "/packages/night-vision",
         customizeLink: "/customize/night-vision"
     },
@@ -132,7 +227,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 22,000",
-        image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-corporate-security-8cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-corporate-security-8cam.webp",
         viewLink: "/packages/business",
         customizeLink: "/customize/business"
     },
@@ -149,7 +246,9 @@ const cctvPackagesData = [
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 38,000",
-        image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        targetImage: "../../assets/packages/pkg-industrial-cctv-32cam.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80",
+        image: "../../assets/packages/pkg-industrial-cctv-32cam.webp",
         viewLink: "/packages/warehouse",
         customizeLink: "/customize/warehouse"
     }
@@ -171,7 +270,7 @@ const renderPackages = () => {
             </div>
             
             <div class="cx-pkg-visual">
-                <img src="${pkg.image}" alt="${pkg.title}" loading="lazy">
+                <img src="${pkg.image}" alt="${pkg.title}" loading="lazy" data-fallback="${pkg.fallbackImage}" onerror="this.onerror=null;this.src='${pkg.fallbackImage}'">
             </div>
 
             <div class="cx-pkg-info">
@@ -217,6 +316,7 @@ const renderPackages = () => {
     `).join("");
 
     initializePackageIcons();
+    setupPackageImageFallbacks();
     setupDotListeners();
 };
 
@@ -284,6 +384,7 @@ const initPackagesComponent = () => {
 };
 
 window.initPackagesComponent = initPackagesComponent;
+window.FEATURED_PACKAGES_ASSET_MAP = FEATURED_PACKAGES_ASSET_MAP;
 
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initPackagesComponent);

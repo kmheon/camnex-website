@@ -11,10 +11,10 @@
     let initialized = false;
 
     const initializeProductIcons = () => {
-    if (window.lucide) {
-        lucide.createIcons();
-    }
-};
+        if (typeof window !== "undefined" && window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+    };
 
 let activeCategory = "All";
 let currentProductIndex = 0;
@@ -22,6 +22,29 @@ let filteredProducts = [];
 let autoplayTimer = null;
 const AUTOPLAY_INTERVAL = 5000;
 const FILTER_TRANSITION_MS = 220;
+
+/* ---------------- Brand logo mapping to existing PNG assets ---------------- */
+
+const BRAND_LOGO_MAP = {
+    "hikvision": "hikvision.png",
+    "dahua": "dahua.png",
+    "ezviz": "ezviz.png",
+    "ruijie": "ruijie.png",
+    "tplink": "tp-link.png",
+    "tp-link": "tp-link.png",
+    "mikrotik": "mikrotik.png",
+    "ubiquiti": "ubiquiti.png",
+    "imou": "imou.png",
+    "uniview": "uniview.png",
+    "zkteco": "zkteco.png"
+};
+
+const getBrandLogoUrl = (brandSlug) => {
+    if (!brandSlug) return "";
+    const cleanSlug = String(brandSlug).toLowerCase().trim();
+    const filename = BRAND_LOGO_MAP[cleanSlug] || `${cleanSlug}.png`;
+    return `../../assets/brands/${filename}`;
+};
 
 /* ---------------- Responsive helper (single source of truth,
    replaces the repeated inline ternary from the original) ---------------- */
@@ -137,7 +160,7 @@ const renderProducts = () => {
 
                 <div class="cx-product-visual">
                     <span class="cx-img-skeleton"></span>
-                    <img src="${prod.image}" alt="${prod.title}" loading="lazy">
+                    <img src="${prod.image}" alt="${prod.title}" loading="lazy" data-fallback="${prod.fallbackImage || prod.image}" onerror="this.onerror=null;this.src='${prod.fallbackImage || prod.image}'">
                 </div>
 
                 <div class="cx-product-info">
@@ -151,7 +174,7 @@ const renderProducts = () => {
                     <div class="cx-product-title-area">
                         <div class="cx-brand-row">
                             <span class="cx-brand-logo" data-brand="${prod.brandSlug || ''}">
-                                <img src="assets/brands/${prod.brandSlug || ''}.svg" alt="${prod.brand}">
+                                <img src="${getBrandLogoUrl(prod.brandSlug)}" alt="${prod.brand}" loading="lazy">
                                 <span class="cx-sr-only">${prod.brand}</span>
                             </span>
                         </div>
@@ -200,7 +223,8 @@ const renderProducts = () => {
 };
 
 /* Reveals each image (and hides its skeleton) once it has actually
-   loaded, rather than assuming it's instant. */
+   loaded, rather than assuming it's instant. Also provides programmatic
+   fallback protection to the external Unsplash URL if local WebP is missing. */
 const setupImageLoadListeners = () => {
     const visuals = document.querySelectorAll(".cx-product-visual");
     visuals.forEach(visual => {
@@ -213,16 +237,27 @@ const setupImageLoadListeners = () => {
             if (skeleton) skeleton.classList.add("is-hidden");
         };
 
+        const handleImgError = () => {
+            const fallback = img.getAttribute("data-fallback");
+            if (fallback && img.src !== fallback) {
+                img.src = fallback;
+                img.addEventListener("load", reveal, { once: true });
+                img.addEventListener("error", reveal, { once: true });
+            } else {
+                reveal();
+            }
+        };
+
         if (img.complete && img.naturalWidth > 0) {
             reveal();
         } else {
             img.addEventListener("load", reveal, { once: true });
-            img.addEventListener("error", reveal, { once: true });
+            img.addEventListener("error", handleImgError, { once: true });
         }
     });
 };
 
-/* Brand logo: use the real SVG if it exists under assets/brands/,
+/* Brand logo: use the real PNG if it exists under assets/brands/,
    otherwise fall back to a visible text wordmark built from the
    brand name (kept in the sr-only span), so the card is never left
    with no brand indicator at all. */
@@ -232,10 +267,17 @@ const setupBrandLogoFallbacks = () => {
         const img = wrap.querySelector("img");
         const srText = wrap.querySelector(".cx-sr-only");
         if (!img) return;
-        img.addEventListener("error", () => {
+
+        const fallback = () => {
             const label = srText ? srText.textContent : "";
             wrap.innerHTML = `<span class="cx-brand-fallback-text">${label}</span>`;
-        }, { once: true });
+        };
+
+        if (img.complete && img.naturalWidth === 0) {
+            fallback();
+        } else {
+            img.addEventListener("error", fallback, { once: true });
+        }
     });
 };
 

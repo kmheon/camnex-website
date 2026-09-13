@@ -197,31 +197,6 @@
             width: 100%;
         }
 
-        .cx-why-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--cx-why-text-main);
-            text-decoration: none;
-            transition: color var(--cx-why-transition);
-        }
-
-        .cx-why-link svg {
-            width: 14px;
-            height: 14px;
-            transition: transform var(--cx-why-transition);
-        }
-
-        .cx-why-card:hover .cx-why-link {
-            color: var(--cx-why-primary);
-        }
-
-        .cx-why-card:hover .cx-why-link svg {
-            transform: translateX(4px);
-        }
-
         /* ========================================================
            RESPONSIVE DESIGN
            ======================================================== */
@@ -242,6 +217,9 @@
             }
             .cx-section-title {
                 font-size: 28px;
+            }
+            .cx-section-subtitle {
+                font-size: 15px;
             }
             .cx-why-card {
                 padding: 24px 20px;
@@ -270,26 +248,16 @@
                     <i data-lucide="shield-check"></i>
                 </div>
                 <h3 class="cx-why-card-title">Official Warranty</h3>
-                <p class="cx-why-card-desc">Guaranteed authentic hardware backed by manufacturer-certified warranty protection.</p>
-                <div class="cx-why-card-footer">
-                    <a href="#" class="cx-why-link" aria-label="Learn more about Official Warranty">
-                        Learn More <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
+                <p class="cx-why-card-desc">Genuine manufacturer hardware backed by official warranty support, giving customers confidence in product authenticity and after-sales coverage.</p>
             </article>
 
-            <!-- Card 2: Certified Installation -->
+            <!-- Card 2: Professional Installation -->
             <article class="cx-why-card">
                 <div class="cx-why-icon-wrapper" aria-hidden="true">
                     <i data-lucide="wrench"></i>
                 </div>
-                <h3 class="cx-why-card-title">Certified Installation</h3>
-                <p class="cx-why-card-desc">Expert deployment, clean cable management, and precise camera angle calibration.</p>
-                <div class="cx-why-card-footer">
-                    <a href="#" class="cx-why-link" aria-label="Learn more about Certified Installation">
-                        Learn More <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
+                <h3 class="cx-why-card-title">Professional Installation</h3>
+                <p class="cx-why-card-desc">Expert CCTV, access control, structured networking and fiber deployment with clean installation and careful system configuration.</p>
             </article>
 
             <!-- Card 3: Nationwide Delivery -->
@@ -298,40 +266,25 @@
                     <i data-lucide="truck"></i>
                 </div>
                 <h3 class="cx-why-card-title">Nationwide Delivery</h3>
-                <p class="cx-why-card-desc">Secure and prompt shipping of surveillance systems across every district in Bangladesh.</p>
-                <div class="cx-why-card-footer">
-                    <a href="#" class="cx-why-link" aria-label="Learn more about Nationwide Delivery">
-                        Learn More <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
+                <p class="cx-why-card-desc">Secure delivery of security, networking and IT products across Bangladesh, with fast onsite support available where service coverage allows.</p>
             </article>
 
-            <!-- Card 4: After-Sales Support -->
+            <!-- Card 4: Technical Support & Maintenance -->
             <article class="cx-why-card">
                 <div class="cx-why-icon-wrapper" aria-hidden="true">
                     <i data-lucide="headset"></i>
                 </div>
-                <h3 class="cx-why-card-title">After-Sales Support</h3>
-                <p class="cx-why-card-desc">Dedicated technical assistance and maintenance care long after your setup is complete.</p>
-                <div class="cx-why-card-footer">
-                    <a href="#" class="cx-why-link" aria-label="Learn more about After-Sales Support">
-                        Learn More <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
+                <h3 class="cx-why-card-title">Technical Support & Maintenance</h3>
+                <p class="cx-why-card-desc">Reliable technical assistance, troubleshooting and ongoing maintenance to keep your security and networking systems operating smoothly.</p>
             </article>
 
-            <!-- Card 5: Authorized Brand Partners -->
+            <!-- Card 5: Authorized Brand Expertise -->
             <article class="cx-why-card">
                 <div class="cx-why-icon-wrapper" aria-hidden="true">
                     <i data-lucide="award"></i>
                 </div>
-                <h3 class="cx-why-card-title">Authorized Brand Partners</h3>
-                <p class="cx-why-card-desc">Direct partnership with industry leaders like Hikvision, Dahua, Imou, and EZVIZ.</p>
-                <div class="cx-why-card-footer">
-                    <a href="#" class="cx-why-link" aria-label="Learn more about Authorized Brand Partners">
-                        Learn More <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
+                <h3 class="cx-why-card-title">Authorized Brand Expertise</h3>
+                <p class="cx-why-card-desc">Authorized Hikvision partnership and ZKTeco installation expertise, alongside trusted technology brands for CCTV, access control and time attendance solutions.</p>
             </article>
 
             <!-- Card 6: Flexible Payment Options -->
@@ -340,12 +293,7 @@
                     <i data-lucide="credit-card"></i>
                 </div>
                 <h3 class="cx-why-card-title">Flexible Payment Options</h3>
-                <p class="cx-why-card-desc">Convenient payment methods including digital gateways, bank transfers, and cash on delivery.</p>
-                <div class="cx-why-card-footer">
-                    <a href="#" class="cx-why-link" aria-label="Learn more about Flexible Payment Options">
-                        Learn More <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
+                <p class="cx-why-card-desc">Convenient payment options for customers, including digital payments, bank transfers, cash on delivery and business purchase arrangements where available.</p>
             </article>
 
         </div>
@@ -364,13 +312,51 @@
      */
 
     const initializeWhyChooseIcons = () => {
-        if (window.lucide) {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
             lucide.createIcons();
         }
     };
 
     const initWhyChooseComponent = () => {
         initializeWhyChooseIcons();
+
+        const section = document.querySelector(".cx-why-choose-section");
+        const cards = document.querySelectorAll(".cx-why-card");
+        if (!cards.length) return;
+
+        const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const revealCards = () => {
+            cards.forEach((card, index) => {
+                if (!card.classList.contains("animated")) {
+                    card.style.animationDelay = prefersReducedMotion ? "0ms" : `${index * 80}ms`;
+                    card.classList.add("animated");
+                }
+            });
+        };
+
+        if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+            revealCards();
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    revealCards();
+                    obs.disconnect();
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: "0px 0px -40px 0px"
+        });
+
+        if (section) {
+            observer.observe(section);
+        } else {
+            cards.forEach(card => observer.observe(card));
+        }
     };
 
     document.addEventListener("DOMContentLoaded", initWhyChooseComponent);

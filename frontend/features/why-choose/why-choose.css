@@ -9,15 +9,15 @@
     --cx-text-muted: #475569;
     --cx-border: #e8edf5;
 
-    --cx-orange: #ff5a2f;
-    --cx-orange-hover: #e04820;
-    --cx-orange-light: #fff5f2;
+    --cx-orange: #F15A24;
+    --cx-orange-hover: #D94D1C;
+    --cx-orange-light: #FFF5F2;
 
     --cx-radius-card: 20px;
     --cx-radius-icon: 14px;
 
     --cx-shadow-card: 0 10px 30px -5px rgba(11, 15, 25, 0.03);
-    --cx-shadow-card-hover: 0 25px 50px -12px rgba(255, 90, 47, 0.12);
+    --cx-shadow-card-hover: 0 25px 50px -12px rgba(241, 90, 36, 0.12);
 
     --cx-transition: 300ms cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -25,7 +25,7 @@
     width: 100%;
     background: var(--cx-bg);
     color: var(--cx-navy);
-    padding: 120px 0 140px 0;
+    padding: 90px 0 100px 0;
 
     font-family: Inter, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -33,27 +33,27 @@
 
 
 /* ============================================================
-   INTERNAL CONTAINER
-   Scoped so it cannot conflict with the site's global .container
+   SECTION CONTAINER SCOPING
+   Explicitly controls its container sizing and centering
    ============================================================ */
 
-.cx-why-choose-section .cx-why-container {
-    width: min(1360px, 92%);
-    margin: 0 auto;
+.cx-why-choose-section .container,
+.cx-why-choose-section .cx-demo {
+    width: min(1400px, 92%);
+    margin: auto;
+    padding: 0;
 }
 
-/* ------------------------------------------------------------
-   HOME PAGE COMPATIBILITY
-   The homepage embeds this section using the .cx-section-header /
-   .cx-section-badge-label / .cx-section-title / .cx-section-subtitle
-   header classes and the .cx-why-icon-wrapper / .cx-why-card-title /
-   .cx-why-link card classes. They are aliased/scoped below so the
-   section stays self-contained and no longer relies on brands.css.
-   ------------------------------------------------------------ */
+
+/* ============================================================
+   SECTION HEADER
+   Scoped header typography and badge
+   ============================================================ */
+
 .cx-why-choose-section .cx-section-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 72px auto;
+    margin: 0 auto 56px auto;
 }
 
 .cx-why-choose-section .cx-section-badge-label {
@@ -67,7 +67,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 12px;
-    box-shadow: 0 4px 12px rgba(255, 90, 47, 0.2);
+    box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
 }
 
 .cx-why-choose-section .cx-section-title {
@@ -89,74 +89,12 @@
 
 
 /* ============================================================
-   SECTION HEADER
-   ============================================================ */
-
-.cx-why-choose-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 72px;
-}
-
-.cx-why-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-
-    color: var(--cx-orange);
-
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-
-    margin-bottom: 16px;
-}
-
-.cx-eyebrow-line {
-    width: 24px;
-    height: 2px;
-
-    background: var(--cx-orange);
-    border-radius: 2px;
-}
-
-.cx-why-heading {
-    margin: 0 0 16px;
-
-    max-width: 700px;
-
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-
-    color: var(--cx-navy);
-}
-
-.cx-why-desc {
-    max-width: 640px;
-
-    margin: 0;
-
-    font-size: 17px;
-    line-height: 1.6;
-
-    color: var(--cx-text-muted);
-}
-
-
-/* ============================================================
    CARDS GRID
    ============================================================ */
 
 .cx-why-grid {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 28px;
 }
 
@@ -167,21 +105,15 @@
 
 .cx-why-card {
     min-width: 0;
-
     background: #ffffff;
-
     border: 1px solid var(--cx-border);
     border-radius: var(--cx-radius-card);
-
     padding: 36px;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    align-items: flex-start;
     box-shadow: var(--cx-shadow-card);
-
-    cursor: pointer;
+    cursor: default;
 
     opacity: 0;
     transform: translateY(20px);
@@ -206,7 +138,6 @@
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -220,60 +151,38 @@
 
 .cx-why-card:hover {
     transform: translateY(-8px);
-
     box-shadow: var(--cx-shadow-card-hover);
-
-    border-color: rgba(255, 90, 47, 0.35);
+    border-color: rgba(241, 90, 36, 0.35);
 }
 
 
 /* ============================================================
-   CARD TOP CONTENT
+   ICON WRAPPER
    ============================================================ */
 
-.cx-why-card-top {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-
-/* ============================================================
-   ICON BOX
-   ============================================================ */
-
-.cx-why-icon-box,
 .cx-why-icon-wrapper {
     width: 60px;
     height: 60px;
-
     flex: 0 0 60px;
-
     border-radius: var(--cx-radius-icon);
-
-    border: 1px solid rgba(255, 90, 47, 0.4);
-
+    border: 1px solid rgba(241, 90, 36, 0.4);
     background: #ffffff;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: var(--cx-orange);
-
+    margin-bottom: 24px;
     transition:
         background var(--cx-transition),
         color var(--cx-transition),
         border-color var(--cx-transition);
 }
 
-.cx-why-icon-box i,
 .cx-why-icon-wrapper i {
     width: 26px;
     height: 26px;
 }
 
-.cx-why-card:hover .cx-why-icon-box,
 .cx-why-card:hover .cx-why-icon-wrapper {
     background: var(--cx-orange);
     color: #ffffff;
@@ -285,124 +194,59 @@
    CARD TYPOGRAPHY
    ============================================================ */
 
-.cx-why-title,
 .cx-why-card-title {
-    margin: 0;
-
+    margin: 0 0 12px 0;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -0.01em;
-
     color: var(--cx-navy);
 }
 
 .cx-why-card-desc {
     margin: 0;
-
     font-size: 14px;
     line-height: 1.6;
-
     color: var(--cx-text-muted);
 }
 
 
 /* ============================================================
-   CTA
+   RESPONSIVE BREAKPOINTS
    ============================================================ */
 
-.cx-why-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    margin-top: 28px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    color: var(--cx-navy);
-
-    text-decoration: none;
-
-    transition: color var(--cx-transition);
-}
-
-.cx-why-card:hover .cx-why-cta,
-.cx-why-card:hover .cx-why-card-footer .cx-why-link {
-    color: var(--cx-orange);
-}
-
-.cx-why-cta i,
-.cx-why-card-footer .cx-why-link i {
-    width: 15px;
-    height: 15px;
-
-    transition: transform var(--cx-transition);
-}
-
-.cx-why-card:hover .cx-why-cta i,
-.cx-why-card:hover .cx-why-card-footer .cx-why-link i {
-    transform: translateX(5px);
-}
-
-.cx-why-card-footer .cx-why-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    margin-top: 28px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    color: var(--cx-navy);
-
-    text-decoration: none;
-
-    transition: color var(--cx-transition);
-}
-
-
-/* ============================================================
-   TABLET
-   ============================================================ */
-
+/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
-
     .cx-why-choose-section {
-        padding: 120px 0;
+        padding: 70px 0 80px 0;
+    }
+
+    .cx-why-choose-section .cx-section-header {
+        margin-bottom: 48px;
     }
 
     .cx-why-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
     }
 }
 
-
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
+/* Mobile (max-width: 680px) */
 @media (max-width: 680px) {
-
     .cx-why-choose-section {
-        padding: 100px 0;
+        padding: 60px 0 70px 0;
     }
 
-    .cx-why-choose-section .cx-why-container {
-        width: min(92%, 560px);
+    .cx-why-choose-section .cx-section-header {
+        margin-bottom: 36px;
     }
 
-    .cx-why-choose-header {
-        margin-bottom: 48px;
+    .cx-why-choose-section .cx-section-title {
+        font-size: 28px;
+        line-height: 1.25;
     }
 
-    .cx-why-heading {
-        font-size: 32px;
-    }
-
-    .cx-why-desc {
+    .cx-why-choose-section .cx-section-subtitle {
         font-size: 15px;
     }
 
@@ -416,13 +260,23 @@
     }
 }
 
+/* Small Mobile (max-width: 375px) */
+@media (max-width: 375px) {
+    .cx-why-choose-section .cx-section-title {
+        font-size: 25px;
+    }
+
+    .cx-why-card {
+        padding: 24px 20px;
+    }
+}
+
 
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-
     .cx-why-card {
         opacity: 1;
         transform: none;
@@ -430,12 +284,7 @@
     }
 
     .cx-why-card,
-    .cx-why-icon-box,
-    .cx-why-icon-wrapper,
-    .cx-why-cta,
-    .cx-why-cta i,
-    .cx-why-card-footer .cx-why-link,
-    .cx-why-card-footer .cx-why-link i {
+    .cx-why-icon-wrapper {
         transition: none;
     }
 }

@@ -6,12 +6,87 @@
  * FILE PATH MATCH: frontend/features/featured-products/data.js
  * ========================================================
  *
- * brandSlug maps to assets/brands/{slug}.svg for the card's brand
+ * brandSlug maps to assets/brands/{slug}.png for the card's brand
  * logo mark. If that file doesn't exist yet, the card falls back
  * to a styled text wordmark automatically — same drop-in pattern
  * used elsewhere in the CamneX build, so nothing looks broken
  * before real logo assets are added.
  */
+
+const FEATURED_PRODUCTS_ASSET_MAP = {
+    "prod-01": {
+        id: "prod-01",
+        name: "Hikvision ColorVu 3.0 4MP Outdoor Bullet Camera",
+        target: "../../assets/products/prod-hikvision-colorvu-bullet.webp",
+        fallback: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-02": {
+        id: "prod-02",
+        name: "Ruijie Reyee 8-Port Gigabit PoE Switch",
+        target: "../../assets/products/prod-ruijie-reyee-poe-switch.webp",
+        fallback: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-03": {
+        id: "prod-03",
+        name: "Hikvision Face Recognition Biometric Terminal",
+        target: "../../assets/products/prod-hikvision-face-terminal.webp",
+        fallback: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-04": {
+        id: "prod-04",
+        name: "EZVIZ 2K Wireless Smart Video Doorbell",
+        target: "../../assets/products/prod-ezviz-smart-doorbell.webp",
+        fallback: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-05": {
+        id: "prod-05",
+        name: "Dahua 4CH WizSense Network Video Recorder",
+        target: "../../assets/products/prod-dahua-4ch-nvr.webp",
+        fallback: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-06": {
+        id: "prod-06",
+        name: "MikroTik hEX S Gigabit Enterprise Router",
+        target: "../../assets/products/prod-mikrotik-hex-s.webp",
+        fallback: "https://images.unsplash.com/photo-1750710583720-8b3bdd0f658a?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-07": {
+        id: "prod-07",
+        name: "TP-Link Omada Gigabit Ceiling Mount Access Point",
+        target: "../../assets/products/prod-tplink-omada-ap.webp",
+        fallback: "https://images.unsplash.com/photo-1750711731797-25c3f2551ff8?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    },
+    "prod-08": {
+        id: "prod-08",
+        name: "Imou Ranger 2 1080P WiFi PTZ Camera",
+        target: "../../assets/products/prod-imou-ranger-2.webp",
+        fallback: "https://images.unsplash.com/photo-1633194883650-df448a10d554?auto=format&fit=crop&w=900&q=85",
+        recommendedResolution: "800 × 800 px",
+        aspectRatio: "1:1",
+        preferred: "Clean manufacturer product image / isolated cutout or clean white background."
+    }
+};
 
 const cxProductsData = [
     {
@@ -20,7 +95,9 @@ const cxProductsData = [
         category: "CCTV",
         brand: "Hikvision",
         brandSlug: "hikvision",
-        image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-hikvision-colorvu-bullet.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-hikvision-colorvu-bullet.webp",
         regular_price: "৳ 6,500",
         sale_price: "৳ 5,800",
         features: [
@@ -38,7 +115,9 @@ const cxProductsData = [
         category: "Networking",
         brand: "Ruijie",
         brandSlug: "ruijie",
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-ruijie-reyee-poe-switch.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-ruijie-reyee-poe-switch.webp",
         regular_price: "৳ 4,800",
         sale_price: "৳ 4,200",
         features: [
@@ -56,7 +135,9 @@ const cxProductsData = [
         category: "Access Control",
         brand: "Hikvision",
         brandSlug: "hikvision",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-hikvision-face-terminal.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-hikvision-face-terminal.webp",
         regular_price: "৳ 22,000",
         sale_price: "৳ 19,500",
         features: [
@@ -74,7 +155,9 @@ const cxProductsData = [
         category: "Smart Home",
         brand: "EZVIZ",
         brandSlug: "ezviz",
-        image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-ezviz-smart-doorbell.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-ezviz-smart-doorbell.webp",
         regular_price: "৳ 6,200",
         sale_price: "৳ 5,500",
         features: [
@@ -92,7 +175,9 @@ const cxProductsData = [
         category: "CCTV",
         brand: "Dahua",
         brandSlug: "dahua",
-        image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-dahua-4ch-nvr.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-dahua-4ch-nvr.webp",
         regular_price: "৳ 8,500",
         sale_price: "৳ 7,600",
         features: [
@@ -110,7 +195,9 @@ const cxProductsData = [
         category: "Networking",
         brand: "MikroTik",
         brandSlug: "mikrotik",
-        image: "https://images.unsplash.com/photo-1750710583720-8b3bdd0f658a?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-mikrotik-hex-s.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1750710583720-8b3bdd0f658a?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-mikrotik-hex-s.webp",
         regular_price: "৳ 7,500",
         sale_price: "৳ 6,900",
         features: [
@@ -127,8 +214,10 @@ const cxProductsData = [
         title: "TP-Link Omada Gigabit Ceiling Mount Access Point",
         category: "Networking",
         brand: "TP-Link",
-        brandSlug: "tplink",
-        image: "https://images.unsplash.com/photo-1750711731797-25c3f2551ff8?auto=format&fit=crop&w=900&q=85",
+        brandSlug: "tp-link",
+        targetImage: "../../assets/products/prod-tplink-omada-ap.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1750711731797-25c3f2551ff8?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-tplink-omada-ap.webp",
         regular_price: "৳ 9,200",
         sale_price: "৳ 8,400",
         features: [
@@ -146,7 +235,9 @@ const cxProductsData = [
         category: "Smart Home",
         brand: "Imou",
         brandSlug: "imou",
-        image: "https://images.unsplash.com/photo-1633194883650-df448a10d554?auto=format&fit=crop&w=900&q=85",
+        targetImage: "../../assets/products/prod-imou-ranger-2.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1633194883650-df448a10d554?auto=format&fit=crop&w=900&q=85",
+        image: "../../assets/products/prod-imou-ranger-2.webp",
         regular_price: "৳ 3,500",
         sale_price: "৳ 2,990",
         features: [
@@ -162,4 +253,5 @@ const cxProductsData = [
 
 if (typeof window !== "undefined") {
     window.cxProductsData = cxProductsData;
+    window.FEATURED_PRODUCTS_ASSET_MAP = FEATURED_PRODUCTS_ASSET_MAP;
 }

@@ -168,6 +168,26 @@ Future versions may introduce a dedicated Homepage Product Card optimized for qu
 
 ---
 
+## Asset Specification & Fallback Mapping
+
+Featured Products uses local manufacturer/cutout product assets under `frontend/assets/products/` with automatic, zero-flicker fallback to external Unsplash URLs until local WebP files are populated.
+
+| Product | Target Local WebP | Resolution | Aspect Ratio | Preferred Style |
+| :--- | :--- | :--- | :--- | :--- |
+| Hikvision ColorVu 3.0 4MP Outdoor Bullet Camera | `frontend/assets/products/prod-hikvision-colorvu-bullet.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| Ruijie Reyee 8-Port Gigabit PoE Switch | `frontend/assets/products/prod-ruijie-reyee-poe-switch.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| Hikvision Face Recognition Biometric Terminal | `frontend/assets/products/prod-hikvision-face-terminal.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| EZVIZ 2K Wireless Smart Video Doorbell | `frontend/assets/products/prod-ezviz-smart-doorbell.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| Dahua 4CH WizSense Network Video Recorder (NVR) | `frontend/assets/products/prod-dahua-4ch-nvr.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| MikroTik hEX S Gigabit Enterprise Router | `frontend/assets/products/prod-mikrotik-hex-s.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| TP-Link Omada Gigabit Ceiling Mount Access Point | `frontend/assets/products/prod-tplink-omada-ap.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+| Imou Ranger 2 1080P WiFi PTZ Camera | `frontend/assets/products/prod-imou-ranger-2.webp` | 800 × 800 px | 1:1 | Clean manufacturer product image / isolated cutout |
+
+### Fallback Implementation Pattern
+Each product card image tag specifies `src` set to the target local asset, with `data-fallback` and an inline `onerror="this.onerror=null;this.src='${prod.fallbackImage}'"` attribute. When local assets are added to `frontend/assets/products/`, the local images display automatically without requiring code modifications.
+
+---
+
 ## Version History
 
 ### v1.1.0 — Premium refinement pass

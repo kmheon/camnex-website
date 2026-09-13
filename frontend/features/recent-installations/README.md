@@ -130,6 +130,27 @@ This section focuses on showcasing actual completed work rather than selling pro
 
 ---
 
+## Asset Specifications & Local Asset Replacement
+
+The Recent Installations section supports local CamneX case-study/installation photographs with automated graceful fallbacks to the current Unsplash references until the physical Bangladesh project photographs are placed into `frontend/assets/projects/`.
+
+### Project Asset Mapping
+
+| # | Project Identifier | Location / Category | Target Local Asset | Recommended Specs | Preferred Style | Fallback Reference |
+|---|-------------------|-------------------|-------------------|-------------------|----------------|-------------------|
+| 1 | `feat-01` | Dhanmondi, Dhaka (Home) | `frontend/assets/projects/proj-dhanmondi-home-cctv.webp` | 1200 × 675 px (16:9) | Real residential CCTV installation photograph | Unsplash Residential CCTV (`photo-1557597774-9d273605dfa9`) |
+| 2 | `proj-01` | Banani, Dhaka (Office) | `frontend/assets/projects/proj-banani-office-cctv.webp` | 800 × 500 px (16:10) | Real corporate office CCTV deployment photograph | Unsplash Office Security (`photo-1497366216548-37526070297c`) |
+| 3 | `proj-02` | Gazipur Industrial Zone (Factory) | `frontend/assets/projects/proj-gazipur-factory-security.webp` | 800 × 500 px (16:10) | Real factory / industrial CCTV monitoring photograph | Unsplash Factory Security (`photo-1581091226825-a6a2a5aee158`) |
+| 4 | `proj-03` | Gulshan-2, Dhaka (Shop) | `frontend/assets/projects/proj-gulshan-retail-cctv.webp` | 800 × 500 px (16:10) | Real retail showroom CCTV installation photograph | Unsplash Retail Security (`photo-1441986300917-64674bd600d8`) |
+
+### Dual-Layer Fallback Architecture
+
+1. **Inline HTML Attributes**: Each `<img>` includes `data-fallback` pointing to the verified Unsplash image and `onerror="this.onerror=null;this.src='...'"` to handle missing local assets immediately without layout shift or broken-image icons.
+2. **JavaScript Event Listener**: `recent-installations.js` attaches an error event listener via `setupRecentInstallationImageFallbacks()`, ensuring fallback resilience.
+3. **Asset Registry**: `window.RECENT_INSTALLATIONS_ASSET_MAP` provides clean metadata for developer auditing and future WordPress/CMS custom post type mapping.
+
+---
+
 ## Future Improvements
 
 - Installation gallery
@@ -145,6 +166,12 @@ This section focuses on showcasing actual completed work rather than selling pro
 
 ## Version History
 
+### v1.1.0
+- Added `RECENT_INSTALLATIONS_ASSET_MAP` registry in `recent-installations.js`
+- Prepared 4 target local WebP paths in `frontend/assets/projects/`
+- Implemented robust Unsplash fallback mechanism on all project cards
+- Added WordPress/CMS migration compatibility metadata
+
 ### v1.0.0
 
 - Initial release
@@ -158,4 +185,4 @@ This section focuses on showcasing actual completed work rather than selling pro
 
 Status
 
-**Frozen**
+**Asset Ready (Awaiting Real Project Photographs)**

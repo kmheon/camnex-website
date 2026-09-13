@@ -1,13 +1,12 @@
 /* ========================================================
    COMPONENT: Brands We Work With Section
-   FILE PATH MATCH: features/brands-we-work-with/brands-we-work-with.css
+   FILE PATH MATCH: features/brands/brands.css
    ======================================================== */
 
 /* ========================================================
    SECTION ROOT (scoped design tokens for the brands feature only)
    ======================================================== */
 .cx-brands-section {
-    --cx-brand-bg: #FFFFFF;
     --cx-brand-surface: #F8FAFC;
     --cx-brand-card: #FFFFFF;
     
@@ -16,7 +15,6 @@
     --cx-brand-border: #E5E7EB;
     
     --cx-brand-primary: #F15A24;
-    --cx-brand-primary-hover: #D94D1C;
     
     --cx-brand-radius-card: 20px;
     --cx-brand-radius-pill: 999px;
@@ -76,15 +74,15 @@
 }
 
 /* ========================================================
-   BRANDS GRID & CARDS (4 Columns Desktop / 3 Tablet / 2 Mobile)
+   BRANDS GRID & CARDS (4 Columns Desktop / 2 Tablet / 2 Mobile)
    ======================================================== */
-.cx-brands-grid {
+.cx-brands-section .cx-brands-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
 }
 
-.cx-brand-card {
+.cx-brands-section .cx-brand-card {
     background: var(--cx-brand-card);
     border: 1px solid var(--cx-brand-border);
     border-radius: var(--cx-brand-radius-card);
@@ -103,13 +101,13 @@
     overflow: hidden;
 }
 
-.cx-brand-card:hover {
+.cx-brands-section .cx-brand-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--cx-brand-shadow-hover);
     border-color: var(--cx-brand-primary);
 }
 
-.cx-brand-logo-wrapper {
+.cx-brands-section .cx-brand-logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,7 +116,7 @@
     width: 100%;
 }
 
-.cx-brand-logo {
+.cx-brands-section .cx-brand-logo {
     max-height: 42px;
     max-width: 130px;
     width: auto;
@@ -126,11 +124,11 @@
     transition: transform var(--cx-brand-transition);
 }
 
-.cx-brand-card:hover .cx-brand-logo {
+.cx-brands-section .cx-brand-card:hover .cx-brand-logo {
     transform: scale(1.05);
 }
 
-.cx-brand-name {
+.cx-brands-section .cx-brand-name {
     margin: 0;
     font-size: 14px;
     font-weight: 600;
@@ -138,7 +136,7 @@
     transition: color var(--cx-brand-transition);
 }
 
-.cx-brand-card:hover .cx-brand-name {
+.cx-brands-section .cx-brand-card:hover .cx-brand-name {
     color: var(--cx-brand-text-main);
 }
 
@@ -146,8 +144,8 @@
    RESPONSIVE DESIGN
    ======================================================== */
 @media (max-width: 1024px) {
-    .cx-brands-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .cx-brands-section .cx-brands-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
 }
@@ -156,15 +154,31 @@
     .cx-brands-section {
         padding: 60px 0;
     }
-    .cx-brands-grid {
+    .cx-brands-section .cx-brands-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
     .cx-brands-section .cx-section-title {
         font-size: 28px;
     }
-    .cx-brand-card {
+    .cx-brands-section .cx-brand-card {
         padding: 24px 16px;
         height: 130px;
+    }
+}
+
+/* ========================================================
+   REDUCED MOTION SUPPORT
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .cx-brands-section .cx-brand-card,
+    .cx-brands-section .cx-brand-logo {
+        transition: none;
+    }
+    .cx-brands-section .cx-brand-card:hover {
+        transform: none;
+    }
+    .cx-brands-section .cx-brand-card:hover .cx-brand-logo {
+        transform: none;
     }
 }

@@ -1,20 +1,10 @@
-﻿"use strict";
-
-/**
- * ========================================================
- * COMPONENT: Final Call-To-Action Section JS
- * FILE PATH MATCH: features/final-cta/final-cta.js
- * ========================================================
- */
-
-const initializeFinalCtaIcons = () => {
-    if (window.lucide) {
-        lucide.createIcons();
-    }
-};
+"use strict";
 
 const initFinalCtaComponent = () => {
-    initializeFinalCtaIcons();
+    // Final CTA is static.
+    // Icons are initialized by the homepage orchestrator.
+    // Preserved for homepage compatibility.
 };
 
 window.initFinalCtaComponent = initFinalCtaComponent;
+

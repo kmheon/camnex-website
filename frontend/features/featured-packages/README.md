@@ -222,6 +222,23 @@ This approach keeps the homepage concise while encouraging visitors to explore f
 
 ---
 
+## Asset Specification & Fallback Mapping
+
+Drop future local package photograph assets directly into: `frontend/assets/packages/`
+
+| # | Package Name | Local Target Asset | Recommended Resolution / Aspect Ratio | Active Fallback Reference |
+|---|---|---|---|---|
+| 1 | 4 Camera Hikvision ColorVu Package | `frontend/assets/packages/pkg-hikvision-colorvu-4cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1557597774-9d273605dfa9`) |
+| 2 | 8 Camera Hikvision IP Package | `frontend/assets/packages/pkg-hikvision-ip-8cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1557597774-9d273605dfa9`) |
+| 3 | 4 Camera Dahua Full Color Kit | `frontend/assets/packages/pkg-dahua-fullcolor-4cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1584438784894-089d6a62b8fa`) |
+| 4 | 16 Camera Commercial CCTV Kit | `frontend/assets/packages/pkg-commercial-cctv-16cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1584438784894-089d6a62b8fa`) |
+| 5 | 2 Camera Smart Home WiFi Kit | `frontend/assets/packages/pkg-smarthome-wifi-2cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1557597774-9d273605dfa9`) |
+| 6 | 4 Camera Dahua IP System | `frontend/assets/packages/pkg-dahua-ip-4cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1584438784894-089d6a62b8fa`) |
+| 7 | 8 Camera Corporate Security Kit | `frontend/assets/packages/pkg-corporate-security-8cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1557597774-9d273605dfa9`) |
+| 8 | 32 Camera Industrial CCTV Setup | `frontend/assets/packages/pkg-industrial-cctv-32cam.webp` | 800 × 600 px (4:3 or 1:1) | Unsplash (`photo-1584438784894-089d6a62b8fa`) |
+
+---
+
 # Changelog
 
 ## Version 1.0.0

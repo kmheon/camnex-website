@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 /**
  * ========================================================
@@ -8,8 +8,11 @@
  */
 
 const initializeTestimonialIcons = () => {
-    if (window.lucide) {
-        lucide.createIcons();
+    if (
+        window.lucide &&
+        typeof window.lucide.createIcons === "function"
+    ) {
+        window.lucide.createIcons();
     }
 };
 
@@ -18,3 +21,10 @@ const initTestimonialsComponent = () => {
 };
 
 window.initTestimonialsComponent = initTestimonialsComponent;
+
+// Standalone auto-initialization
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTestimonialsComponent);
+} else {
+    initTestimonialsComponent();
+}
