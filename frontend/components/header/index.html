@@ -26,9 +26,9 @@
                     <span class="cx-top-item"><i data-lucide="headphones" aria-hidden="true"></i> 24/7 Technical Support</span>
                 </div>
                 <div class="cx-top-bar-right">
-                    <a href="/track-order" class="cx-top-link"><i data-lucide="package" aria-hidden="true"></i> Track Order</a>
+                    <a href="/track-order" class="cx-top-link cx-top-link-highlight"><i data-lucide="package" aria-hidden="true"></i> Track Order</a>
                     <span class="cx-top-divider">•</span>
-                    <a href="tel:01540535150" class="cx-top-link"><i data-lucide="phone" aria-hidden="true"></i> +880 1540-535150</a>
+                    <a href="tel:+8801540535150" class="cx-top-link"><i data-lucide="phone" aria-hidden="true"></i> +880 1540-535150</a>
                 </div>
             </div>
         </div>
@@ -44,8 +44,8 @@
                     </button>
                     <a href="/" class="cx-logo" aria-label="CamneX Home">
                         <svg class="cx-logo-svg" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12 6H6C3.79086 6 2 7.79086 2 10V26C2 28.2091 3.79086 30 6 30H12" stroke="#FF5733" stroke-width="4" stroke-linecap="round"/>
-                            <circle cx="28" cy="18" r="4" fill="#FF5733"/>
+                            <path d="M12 6H6C3.79086 6 2 7.79086 2 10V26C2 28.2091 3.79086 30 6 30H12" stroke="#F15A24" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="28" cy="18" r="4" fill="#F15A24"/>
                             <text x="42" y="25" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="22" fill="#111827" letter-spacing="-0.03em">CamneX</text>
                         </svg>
                     </a>
@@ -71,7 +71,7 @@
                 <div class="cx-header-right">
                     <div class="cx-header-phone-block">
                         <span class="cx-phone-label">Need Help?</span>
-                        <a href="tel:01540535150" class="cx-phone-number">
+                        <a href="tel:+8801540535150" class="cx-phone-number">
                             <i data-lucide="phone-call" class="cx-phone-icon" aria-hidden="true"></i>
                             +880 1540-535150
                         </a>
@@ -84,9 +84,10 @@
                         <a href="/account" class="cx-action-icon-btn" aria-label="Account">
                             <i data-lucide="user"></i>
                         </a>
-                        <a href="/cart" class="cx-action-icon-btn cx-cart-btn" aria-label="Shopping Cart">
-                            <i data-lucide="shopping-bag"></i>
-                            <span class="cx-cart-badge" aria-label="2 items in cart">2</span>
+                        <a href="/cart" class="cx-action-icon-btn cx-cart-btn" aria-label="Shopping Cart, 2 items">
+                            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+                            <span class="cx-cart-badge" aria-hidden="true">2</span>
+                            <span class="cx-sr-only">(2 items in cart)</span>
                         </a>
                     </div>
 
@@ -101,17 +102,17 @@
         <!-- Row 3: Navigation Bar -->
         <div class="cx-nav-bar-bg">
             <nav class="container cx-nav-container" aria-label="Main Navigation">
-                <ul class="cx-nav-list" role="menubar">
-                    <li class="cx-nav-item" role="none">
-                        <a href="/" class="cx-nav-link active" role="menuitem">Home</a>
+                <ul class="cx-nav-list">
+                    <li class="cx-nav-item">
+                        <a href="/" class="cx-nav-link active">Home</a>
                     </li>
 
                     <!-- 1. PRODUCTS MEGA MENU -->
-                    <li class="cx-nav-item cx-dropdown cx-products-mega-parent" role="none">
-                        <a href="/products" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <li class="cx-nav-item cx-dropdown cx-products-mega-parent">
+                        <a href="/products" class="cx-nav-link" aria-haspopup="true" aria-expanded="false">
                             Products <i data-lucide="chevron-down" aria-hidden="true"></i>
                         </a>
-                        <div class="cx-products-mega-menu" role="menu">
+                        <div class="cx-products-mega-menu">
                             <div class="cx-prod-mega-container">
                                 
                                 <!-- Main Categories Scrollable/Grid Area -->
@@ -394,7 +395,7 @@
                                         Shop by Brand <i data-lucide="arrow-right"></i>
                                     </a>
                                     <span class="cx-footer-divider">•</span>
-                                    <a href="/catalog.pdf" target="_blank" class="cx-footer-action-link">
+                                    <a href="/catalog.pdf" target="_blank" rel="noopener noreferrer" class="cx-footer-action-link">
                                         Product Catalog PDF <i data-lucide="file-text"></i>
                                     </a>
                                 </div>
@@ -405,11 +406,11 @@
                     </li>
 
                     <!-- 2. SOLUTIONS MEGA MENU -->
-                    <li class="cx-nav-item cx-dropdown cx-solutions-mega-parent" role="none">
-                        <a href="/solutions" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <li class="cx-nav-item cx-dropdown cx-solutions-mega-parent">
+                        <a href="/solutions" class="cx-nav-link" aria-haspopup="true" aria-expanded="false">
                             Solutions <i data-lucide="chevron-down" aria-hidden="true"></i>
                         </a>
-                        <div class="cx-solutions-mega-menu" role="menu">
+                        <div class="cx-solutions-mega-menu">
                             <div class="cx-sol-mega-container">
                                 
                                 <!-- Solutions Use Cases Columns -->
@@ -510,16 +511,16 @@
                         </div>
                     </li>
 
-                    <li class="cx-nav-item" role="none">
-                        <a href="/projects" class="cx-nav-link" role="menuitem">Projects</a>
+                    <li class="cx-nav-item">
+                        <a href="/projects" class="cx-nav-link">Projects</a>
                     </li>
 
                     <!-- 3. BRANDS MEGA MENU -->
-                    <li class="cx-nav-item cx-dropdown cx-mega-dropdown-parent" role="none">
-                        <a href="/brands" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <li class="cx-nav-item cx-dropdown cx-mega-dropdown-parent">
+                        <a href="/brands" class="cx-nav-link" aria-haspopup="true" aria-expanded="false">
                             Brands <i data-lucide="chevron-down" aria-hidden="true"></i>
                         </a>
-                        <div class="cx-mega-menu" role="menu">
+                        <div class="cx-mega-menu">
                             <div class="cx-mega-menu-container">
                                 <div class="cx-mega-menu-header-row">
                                     <div class="cx-mega-title-group">
@@ -531,63 +532,63 @@
                                     </a>
                                 </div>
                                 <div class="cx-brands-grid-catalog">
-                                    <a href="/brands/hikvision" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/hikvision" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/hikvision.png" alt="Hikvision logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Hikvision</span>
                                     </a>
-                                    <a href="/brands/dahua" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/dahua" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/dahua.png" alt="Dahua logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Dahua</span>
                                     </a>
-                                    <a href="/brands/ezviz" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/ezviz" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/ezviz.png" alt="EZVIZ logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">EZVIZ</span>
                                     </a>
-                                    <a href="/brands/imou" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/imou" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/imou.png" alt="IMOU logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">IMOU</span>
                                     </a>
-                                    <a href="/brands/tp-link" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/tp-link" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/tp-link.png" alt="TP-Link logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">TP-Link</span>
                                     </a>
-                                    <a href="/brands/mikrotik" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/mikrotik" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/mikrotik.png" alt="MikroTik logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">MikroTik</span>
                                     </a>
-                                    <a href="/brands/ruijie" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/ruijie" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/ruijie.png" alt="Ruijie logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Ruijie</span>
                                     </a>
-                                    <a href="/brands/ubiquiti" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/ubiquiti" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/ubiquiti.png" alt="Ubiquiti logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Ubiquiti</span>
                                     </a>
-                                    <a href="/brands/zkteco" class="cx-brand-catalog-card" role="menuitem">
-                                        <div class="cx-brand-logo-box cx-brand-text-fallback">
-                                            <span>ZKTeco</span>
+                                    <a href="/brands/zkteco" class="cx-brand-catalog-card">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/zkteco.png" alt="ZKTeco logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">ZKTeco</span>
                                     </a>
-                                    <a href="/brands/uniview" class="cx-brand-catalog-card" role="menuitem">
-                                        <div class="cx-brand-logo-box cx-brand-text-fallback">
-                                            <span>Uniview</span>
+                                    <a href="/brands/uniview" class="cx-brand-catalog-card">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/uniview.png" alt="Uniview logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Uniview</span>
                                     </a>
@@ -602,11 +603,11 @@
                         </div>
                     </li>
 
-                    <li class="cx-nav-item" role="none">
-                        <a href="/support" class="cx-nav-link" role="menuitem">Support</a>
+                    <li class="cx-nav-item">
+                        <a href="/support" class="cx-nav-link">Support</a>
                     </li>
-                    <li class="cx-nav-item" role="none">
-                        <a href="/contact" class="cx-nav-link" role="menuitem">Contact</a>
+                    <li class="cx-nav-item">
+                        <a href="/contact" class="cx-nav-link">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -699,7 +700,7 @@
                 <div class="cx-mobile-menu-footer">
                     <a href="/get-quote" class="cx-btn-quote cx-mobile-quote-btn">Get Quote</a>
                     <div class="cx-mobile-contact-info">
-                        <a href="tel:01540535150"><i data-lucide="phone"></i> +880 1540-535150</a>
+                        <a href="tel:+8801540535150"><i data-lucide="phone"></i> +880 1540-535150</a>
                         <a href="/track-order"><i data-lucide="package"></i> Track Order</a>
                     </div>
                 </div>

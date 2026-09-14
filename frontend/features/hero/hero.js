@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 /**
  * ========================================================
@@ -42,6 +42,7 @@ const heroCampaigns = [
             "Remote Monitoring"
         ],
         exploreText: "Explore CCTV",
+        exploreUrl: "/category/cctv-cameras",
         warrantyYears: "5",
         productImg: "../../assets/products/cctv-bullet-transparent.webp",
         fallbackImg: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=80",
@@ -67,6 +68,7 @@ const heroCampaigns = [
             "99.9% Uptime SLA"
         ],
         exploreText: "Explore Networking",
+        exploreUrl: "/category/networking",
         warrantyYears: "5",
         productImg: "../../assets/placeholders/Networking.png",
         fallbackImg: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=80",
@@ -92,6 +94,7 @@ const heroCampaigns = [
             "Remote Door Management"
         ],
         exploreText: "Explore Access Control",
+        exploreUrl: "/category/access-control",
         warrantyYears: "2",
         productImg: "../../assets/placeholders/Access Control.jpg",
         fallbackImg: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80",
@@ -117,6 +120,7 @@ const heroCampaigns = [
             "Instant Mobile Alerts"
         ],
         exploreText: "Explore Smart Home",
+        exploreUrl: "/category/smart-home",
         warrantyYears: "2",
         productImg: "../../assets/placeholders/Smart Home.jpg",
         fallbackImg: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80",
@@ -214,6 +218,11 @@ const renderContent = (campaign) => {
     document.getElementById("pSubtitle").textContent = campaign.subtitle;
     document.getElementById("pExploreText").textContent = campaign.exploreText;
     document.getElementById("wbNumber").textContent = campaign.warrantyYears;
+
+    const exploreLink = document.getElementById("pExploreLink");
+    if (exploreLink) {
+        exploreLink.href = campaign.exploreUrl || "/solutions";
+    }
 
     const list = document.getElementById("pChecklist");
     list.innerHTML = "";

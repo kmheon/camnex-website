@@ -61,24 +61,38 @@ const RECENT_INSTALLATIONS_ASSET_MAP = {
 };
 
 const setupRecentInstallationImageFallbacks = () => {
-    const images = document.querySelectorAll(".cx-recent-projects-section img[data-fallback]");
-    images.forEach((img) => {
-        img.addEventListener("error", function handleImgError() {
-            const fallbackSrc = this.getAttribute("data-fallback");
-            if (fallbackSrc && this.src !== fallbackSrc) {
-                this.src = fallbackSrc;
-            }
-        }, { once: true });
+    const section = document.querySelector(".cx-recent-projects-section");
+    if (!section) return;
+
+    const cards = section.querySelectorAll("[data-project-id]");
+    cards.forEach((card) => {
+        const projId = card.getAttribute("data-project-id");
+        const meta = RECENT_INSTALLATIONS_ASSET_MAP[projId];
+        if (!meta) return;
+
+        const img = card.querySelector("img");
+        if (img) {
+            img.addEventListener("error", function handleImgError() {
+                if (meta.fallback && this.src !== meta.fallback) {
+                    this.src = meta.fallback;
+                }
+            }, { once: true });
+        }
     });
 };
 
 const initializeRecentProjectIcons = () => {
-    if (window.lucide) {
-        lucide.createIcons();
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
     }
 };
 
 const initRecentProjectsComponent = () => {
+    const section = document.querySelector(".cx-recent-projects-section");
+    if (!section) return;
+    if (section.dataset.initialized === "true") return;
+    section.dataset.initialized = "true";
+
     initializeRecentProjectIcons();
     setupRecentInstallationImageFallbacks();
 };
@@ -86,5 +100,13 @@ const initRecentProjectsComponent = () => {
 if (typeof window !== "undefined") {
     window.initRecentProjectsComponent = initRecentProjectsComponent;
     window.RECENT_INSTALLATIONS_ASSET_MAP = RECENT_INSTALLATIONS_ASSET_MAP;
+}
+
+if (typeof document !== "undefined") {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initRecentProjectsComponent);
+    } else {
+        initRecentProjectsComponent();
+    }
 }
 

@@ -27,7 +27,7 @@ main {
 
 @media (max-width: 1024px) {
     main {
-        padding-top: 72px;
+        padding-top: 96px;
     }
 }
 
@@ -51,7 +51,7 @@ main {
     padding: 24px;
     margin: 0;
     background: #fff4f2;
-    border: 1px solid #ff5733;
+    border: 1px solid #f15a24;
     color: #8a2412;
     font-size: 14px;
     line-height: 1.5;

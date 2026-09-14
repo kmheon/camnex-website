@@ -13,12 +13,23 @@ const initializeWhyChooseIcons = () => {
     }
 };
 
+let whyChooseInitialized = false;
+
 const initWhyChooseComponent = () => {
     initializeWhyChooseIcons();
 
+    if (whyChooseInitialized) return;
+
     const section = document.querySelector(".cx-why-choose-section");
+    if (section && section.dataset.whyChooseInitialized === "true") return;
+
     const cards = document.querySelectorAll(".cx-why-card");
     if (!cards.length) return;
+
+    whyChooseInitialized = true;
+    if (section) {
+        section.dataset.whyChooseInitialized = "true";
+    }
 
     const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

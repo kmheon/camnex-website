@@ -18,8 +18,8 @@
     --cx-border: #ECECEF;
     --cx-paper: #FFFFFF;
 
-    --cx-orange: #FF5A2B;
-    --cx-orange-dark: #E8471C;
+    --cx-orange: #F15A24;
+    --cx-orange-dark: #D94D1C;
     --cx-orange-soft: #FFF1EC;
 
     --cx-font: 'Inter', Arial, sans-serif;
@@ -31,7 +31,7 @@
     overflow: hidden;
     max-width: 100vw;
     background:
-        radial-gradient(ellipse 900px 500px at 88% 30%, rgba(255, 90, 43, 0.07), transparent 60%);
+        radial-gradient(ellipse 900px 500px at 88% 30%, rgba(241, 90, 36, 0.07), transparent 60%);
 }
 
 .cx-hero *, 
@@ -71,7 +71,7 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    border: 1px solid rgba(255, 90, 43, 0.35);
+    border: 1px solid rgba(241, 90, 36, 0.35);
     background: #FFFFFF;
     color: var(--cx-orange);
     font-size: 13.5px;
@@ -154,7 +154,7 @@
 .cx-hero .cx-btn-primary {
     background: var(--cx-orange);
     color: #FFFFFF;
-    box-shadow: 0 10px 24px rgba(255, 90, 43, 0.28);
+    box-shadow: 0 10px 24px rgba(241, 90, 36, 0.28);
 }
 
 .cx-hero .cx-hero-btn-primary:hover,

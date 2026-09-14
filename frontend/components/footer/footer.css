@@ -1,9 +1,9 @@
 /* ========================================================
    COMPONENT: Professional Footer Section
-   FILE PATH MATCH: sections/footer/footer.css
+   FILE PATH MATCH: components/footer/footer.css
    ======================================================== */
 
-:root {
+.cx-footer-section {
     --cx-foot-bg: #0F172A;
     --cx-foot-surface: #111827;
     
@@ -19,26 +19,19 @@
     --cx-foot-radius-card: 12px;
     
     --cx-foot-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    background: var(--cx-foot-bg);
+    color: var(--cx-foot-text-muted);
+    padding: 80px 0 30px 0;
+    border-top: 1px solid #1E293B;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: #FFFFFF;
-    font-family: Inter, Arial, sans-serif;
-    color: #111827;
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
+.cx-footer-section .container {
     width: min(1400px, 92%);
     margin: auto;
 }
 
-.cx-sr-only {
+.cx-footer-section .cx-sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -53,17 +46,6 @@ body {
 /* ========================================================
    FOOTER CONTAINER & GRID (5 COLUMNS DESKTOP)
    ======================================================== */
-.cx-footer-section {
-    background: var(--cx-foot-bg);
-    color: var(--cx-foot-text-muted);
-    padding: 80px 0 30px 0;
-    border-top: 1px solid #1E293B;
-}
-
-.cx-demo {
-    padding: 0;
-}
-
 .cx-footer-grid {
     display: grid;
     grid-template-columns: 1.4fr 0.8fr 0.9fr 1fr 1.2fr;
@@ -280,7 +262,7 @@ a.cx-footer-contact-link:hover {
 
 .cx-newsletter-note {
     font-size: 12px;
-    color: #6B7280;
+    color: #9CA3AF;
 }
 
 /* ========================================================
@@ -387,6 +369,10 @@ a.cx-footer-contact-link:hover {
     }
     .cx-footer-col-company {
         grid-column: span 1;
+    }
+    .cx-social-icon {
+        width: 44px;
+        height: 44px;
     }
     .cx-footer-section {
         padding: 60px 0 24px 0;

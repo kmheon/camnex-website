@@ -58,9 +58,9 @@
                     <span class="cx-top-item"><i data-lucide="headphones" aria-hidden="true"></i> 24/7 Technical Support</span>
                 </div>
                 <div class="cx-top-bar-right">
-                    <a href="/track-order" class="cx-top-link"><i data-lucide="package" aria-hidden="true"></i> Track Order</a>
+                    <a href="/track-order" class="cx-top-link cx-top-link-highlight"><i data-lucide="package" aria-hidden="true"></i> Track Order</a>
                     <span class="cx-top-divider">•</span>
-                    <a href="tel:01540535150" class="cx-top-link"><i data-lucide="phone" aria-hidden="true"></i> +880 1540-535150</a>
+                    <a href="tel:+8801540535150" class="cx-top-link"><i data-lucide="phone" aria-hidden="true"></i> +880 1540-535150</a>
                 </div>
             </div>
         </div>
@@ -76,8 +76,8 @@
                     </button>
                     <a href="/" class="cx-logo" aria-label="CamneX Home">
                         <svg class="cx-logo-svg" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12 6H6C3.79086 6 2 7.79086 2 10V26C2 28.2091 3.79086 30 6 30H12" stroke="#FF5733" stroke-width="4" stroke-linecap="round"/>
-                            <circle cx="28" cy="18" r="4" fill="#FF5733"/>
+                            <path d="M12 6H6C3.79086 6 2 7.79086 2 10V26C2 28.2091 3.79086 30 6 30H12" stroke="#F15A24" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="28" cy="18" r="4" fill="#F15A24"/>
                             <text x="42" y="25" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="22" fill="#111827" letter-spacing="-0.03em">CamneX</text>
                         </svg>
                     </a>
@@ -103,7 +103,7 @@
                 <div class="cx-header-right">
                     <div class="cx-header-phone-block">
                         <span class="cx-phone-label">Need Help?</span>
-                        <a href="tel:01540535150" class="cx-phone-number">
+                        <a href="tel:+8801540535150" class="cx-phone-number">
                             <i data-lucide="phone-call" class="cx-phone-icon" aria-hidden="true"></i>
                             +880 1540-535150
                         </a>
@@ -116,9 +116,10 @@
                         <a href="/account" class="cx-action-icon-btn" aria-label="Account">
                             <i data-lucide="user"></i>
                         </a>
-                        <a href="/cart" class="cx-action-icon-btn cx-cart-btn" aria-label="Shopping Cart">
-                            <i data-lucide="shopping-bag"></i>
-                            <span class="cx-cart-badge" aria-label="2 items in cart">2</span>
+                        <a href="/cart" class="cx-action-icon-btn cx-cart-btn" aria-label="Shopping Cart, 2 items">
+                            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+                            <span class="cx-cart-badge" aria-hidden="true">2</span>
+                            <span class="cx-sr-only">(2 items in cart)</span>
                         </a>
                     </div>
 
@@ -133,17 +134,17 @@
         <!-- Row 3: Navigation Bar -->
         <div class="cx-nav-bar-bg">
             <nav class="container cx-nav-container" aria-label="Main Navigation">
-                <ul class="cx-nav-list" role="menubar">
-                    <li class="cx-nav-item" role="none">
-                        <a href="/" class="cx-nav-link active" role="menuitem">Home</a>
+                <ul class="cx-nav-list">
+                    <li class="cx-nav-item">
+                        <a href="/" class="cx-nav-link active">Home</a>
                     </li>
 
                     <!-- 1. PRODUCTS MEGA MENU -->
-                    <li class="cx-nav-item cx-dropdown cx-products-mega-parent" role="none">
-                        <a href="/products" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <li class="cx-nav-item cx-dropdown cx-products-mega-parent">
+                        <a href="/products" class="cx-nav-link" aria-haspopup="true" aria-expanded="false">
                             Products <i data-lucide="chevron-down" aria-hidden="true"></i>
                         </a>
-                        <div class="cx-products-mega-menu" role="menu">
+                        <div class="cx-products-mega-menu">
                             <div class="cx-prod-mega-container">
                                 
                                 <!-- Main Categories Scrollable/Grid Area -->
@@ -426,7 +427,7 @@
                                         Shop by Brand <i data-lucide="arrow-right"></i>
                                     </a>
                                     <span class="cx-footer-divider">•</span>
-                                    <a href="/catalog.pdf" target="_blank" class="cx-footer-action-link">
+                                    <a href="/catalog.pdf" target="_blank" rel="noopener noreferrer" class="cx-footer-action-link">
                                         Product Catalog PDF <i data-lucide="file-text"></i>
                                     </a>
                                 </div>
@@ -437,11 +438,11 @@
                     </li>
 
                     <!-- 2. SOLUTIONS MEGA MENU -->
-                    <li class="cx-nav-item cx-dropdown cx-solutions-mega-parent" role="none">
-                        <a href="/solutions" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <li class="cx-nav-item cx-dropdown cx-solutions-mega-parent">
+                        <a href="/solutions" class="cx-nav-link" aria-haspopup="true" aria-expanded="false">
                             Solutions <i data-lucide="chevron-down" aria-hidden="true"></i>
                         </a>
-                        <div class="cx-solutions-mega-menu" role="menu">
+                        <div class="cx-solutions-mega-menu">
                             <div class="cx-sol-mega-container">
                                 
                                 <!-- Solutions Use Cases Columns -->
@@ -542,16 +543,16 @@
                         </div>
                     </li>
 
-                    <li class="cx-nav-item" role="none">
-                        <a href="/projects" class="cx-nav-link" role="menuitem">Projects</a>
+                    <li class="cx-nav-item">
+                        <a href="/projects" class="cx-nav-link">Projects</a>
                     </li>
 
                     <!-- 3. BRANDS MEGA MENU -->
-                    <li class="cx-nav-item cx-dropdown cx-mega-dropdown-parent" role="none">
-                        <a href="/brands" class="cx-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <li class="cx-nav-item cx-dropdown cx-mega-dropdown-parent">
+                        <a href="/brands" class="cx-nav-link" aria-haspopup="true" aria-expanded="false">
                             Brands <i data-lucide="chevron-down" aria-hidden="true"></i>
                         </a>
-                        <div class="cx-mega-menu" role="menu">
+                        <div class="cx-mega-menu">
                             <div class="cx-mega-menu-container">
                                 <div class="cx-mega-menu-header-row">
                                     <div class="cx-mega-title-group">
@@ -563,63 +564,63 @@
                                     </a>
                                 </div>
                                 <div class="cx-brands-grid-catalog">
-                                    <a href="/brands/hikvision" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/hikvision" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/hikvision.png" alt="Hikvision logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Hikvision</span>
                                     </a>
-                                    <a href="/brands/dahua" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/dahua" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/dahua.png" alt="Dahua logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Dahua</span>
                                     </a>
-                                    <a href="/brands/ezviz" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/ezviz" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/ezviz.png" alt="EZVIZ logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">EZVIZ</span>
                                     </a>
-                                    <a href="/brands/imou" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/imou" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/imou.png" alt="IMOU logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">IMOU</span>
                                     </a>
-                                    <a href="/brands/tp-link" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/tp-link" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/tp-link.png" alt="TP-Link logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">TP-Link</span>
                                     </a>
-                                    <a href="/brands/mikrotik" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/mikrotik" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/mikrotik.png" alt="MikroTik logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">MikroTik</span>
                                     </a>
-                                    <a href="/brands/ruijie" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/ruijie" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/ruijie.png" alt="Ruijie logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Ruijie</span>
                                     </a>
-                                    <a href="/brands/ubiquiti" class="cx-brand-catalog-card" role="menuitem">
+                                    <a href="/brands/ubiquiti" class="cx-brand-catalog-card">
                                         <div class="cx-brand-logo-box">
                                             <img src="../../assets/brands/ubiquiti.png" alt="Ubiquiti logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Ubiquiti</span>
                                     </a>
-                                    <a href="/brands/zkteco" class="cx-brand-catalog-card" role="menuitem">
-                                        <div class="cx-brand-logo-box cx-brand-text-fallback">
-                                            <span>ZKTeco</span>
+                                    <a href="/brands/zkteco" class="cx-brand-catalog-card">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/zkteco.png" alt="ZKTeco logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">ZKTeco</span>
                                     </a>
-                                    <a href="/brands/uniview" class="cx-brand-catalog-card" role="menuitem">
-                                        <div class="cx-brand-logo-box cx-brand-text-fallback">
-                                            <span>Uniview</span>
+                                    <a href="/brands/uniview" class="cx-brand-catalog-card">
+                                        <div class="cx-brand-logo-box">
+                                            <img src="../../assets/brands/uniview.png" alt="Uniview logo" loading="lazy">
                                         </div>
                                         <span class="cx-brand-catalog-name">Uniview</span>
                                     </a>
@@ -634,11 +635,11 @@
                         </div>
                     </li>
 
-                    <li class="cx-nav-item" role="none">
-                        <a href="/support" class="cx-nav-link" role="menuitem">Support</a>
+                    <li class="cx-nav-item">
+                        <a href="/support" class="cx-nav-link">Support</a>
                     </li>
-                    <li class="cx-nav-item" role="none">
-                        <a href="/contact" class="cx-nav-link" role="menuitem">Contact</a>
+                    <li class="cx-nav-item">
+                        <a href="/contact" class="cx-nav-link">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -731,7 +732,7 @@
                 <div class="cx-mobile-menu-footer">
                     <a href="/get-quote" class="cx-btn-quote cx-mobile-quote-btn">Get Quote</a>
                     <div class="cx-mobile-contact-info">
-                        <a href="tel:01540535150"><i data-lucide="phone"></i> +880 1540-535150</a>
+                        <a href="tel:+8801540535150"><i data-lucide="phone"></i> +880 1540-535150</a>
                         <a href="/track-order"><i data-lucide="package"></i> Track Order</a>
                     </div>
                 </div>
@@ -819,7 +820,7 @@
                     </span>
                 </div>
                 <div class="cx-card-visual">
-                    <img src="../../assets/products/cat-cctv-packages-kit.webp" alt="CCTV Packages" loading="lazy" data-fallback="../../assets/products/cctv-kit-transparent.webp" onerror="this.onerror=null;this.src='../../assets/products/cctv-kit-transparent.webp'">
+                    <img src="../../assets/products/cctv-kit-transparent.webp" alt="CCTV Packages" loading="lazy" data-fallback="../../assets/products/cctv-kit-transparent.webp" onerror="this.onerror=null;this.src='../../assets/placeholders/camera.png'">
                 </div>
             </a>
 
@@ -835,7 +836,7 @@
                     </span>
                 </div>
                 <div class="cx-card-visual">
-                    <img src="../../assets/products/cat-access-control-terminal.webp" alt="Hikvision Face Terminal" loading="lazy" data-fallback="../../assets/products/face-terminal-transparent.webp" onerror="this.onerror=null;this.src='../../assets/products/face-terminal-transparent.webp'">
+                    <img src="../../assets/products/face-terminal-transparent.webp" alt="Hikvision Face Terminal" loading="lazy" data-fallback="../../assets/products/face-terminal-transparent.webp" onerror="this.onerror=null;this.src='../../assets/placeholders/camera.png'">
                 </div>
             </a>
 
@@ -851,7 +852,7 @@
                     </span>
                 </div>
                 <div class="cx-card-visual">
-                    <img src="../../assets/products/cat-smart-home-doorbell.webp" alt="EZVIZ Doorbell" loading="lazy" data-fallback="../../assets/products/smart-doorbell-transparent.webp" onerror="this.onerror=null;this.src='../../assets/products/smart-doorbell-transparent.webp'">
+                    <img src="../../assets/products/smart-doorbell-transparent.webp" alt="EZVIZ Doorbell" loading="lazy" data-fallback="../../assets/products/smart-doorbell-transparent.webp" onerror="this.onerror=null;this.src='../../assets/placeholders/camera.png'">
                 </div>
             </a>
 
@@ -895,7 +896,7 @@
                     </span>
                 </div>
                 <div class="cx-card-visual">
-                    <img src="../../assets/products/cat-fingerprint-attendance.webp" alt="Fingerprint Device" loading="lazy" data-fallback="../../assets/products/fingerprint-transparent.webp" onerror="this.onerror=null;this.src='../../assets/products/fingerprint-transparent.webp'">
+                    <img src="../../assets/products/fingerprint-transparent.webp" alt="Fingerprint Device" loading="lazy" data-fallback="../../assets/products/fingerprint-transparent.webp" onerror="this.onerror=null;this.src='../../assets/placeholders/camera.png'">
                 </div>
             </a>
 
@@ -909,7 +910,7 @@
                     </span>
                 </div>
                 <div class="cx-card-visual">
-                    <img src="../../assets/products/cat-video-intercom-monitor.webp" alt="Indoor Monitor" loading="lazy" data-fallback="../../assets/products/indoor-monitor-transparent.webp" onerror="this.onerror=null;this.src='../../assets/products/indoor-monitor-transparent.webp'">
+                    <img src="../../assets/products/indoor-monitor-transparent.webp" alt="Indoor Monitor" loading="lazy" data-fallback="../../assets/products/indoor-monitor-transparent.webp" onerror="this.onerror=null;this.src='../../assets/placeholders/camera.png'">
                 </div>
             </a>
 
@@ -923,7 +924,7 @@
                     </span>
                 </div>
                 <div class="cx-card-visual">
-                    <img src="../../assets/products/cat-accessories-hdd.webp" alt="HDD & Adapters" loading="lazy" data-fallback="../../assets/products/hdd-adapter-transparent.webp" onerror="this.onerror=null;this.src='../../assets/products/hdd-adapter-transparent.webp'">
+                    <img src="../../assets/products/hdd-adapter-transparent.webp" alt="HDD & Adapters" loading="lazy" data-fallback="../../assets/products/hdd-adapter-transparent.webp" onerror="this.onerror=null;this.src='../../assets/placeholders/camera.png'">
                 </div>
             </a>
 
@@ -961,7 +962,7 @@
             <!-- 1. HOME (Large Featured Card) -->
             <a href="/solutions/home" class="cx-property-card cx-prop-large" aria-label="Explore Home Solutions">
                 <div class="cx-card-bg-image">
-                    <img src="../../assets/solutions/solution-home.webp" alt="Modern Smart Home" loading="lazy" data-fallback="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85'">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85" alt="Modern Smart Home" loading="lazy">
                     <div class="cx-card-gradient-overlay"></div>
                 </div>
                 <div class="cx-card-top">
@@ -985,7 +986,7 @@
             <!-- 2. OFFICE (Large Featured Card) -->
             <a href="/solutions/office" class="cx-property-card cx-prop-large" aria-label="Explore Office Solutions">
                 <div class="cx-card-bg-image">
-                    <img src="../../assets/solutions/solution-office.webp" alt="Corporate Office" loading="lazy" data-fallback="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=85" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=85'">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=85" alt="Corporate Office" loading="lazy">
                     <div class="cx-card-gradient-overlay"></div>
                 </div>
                 <div class="cx-card-top">
@@ -1010,7 +1011,7 @@
             <!-- 3. RETAIL SHOP (Medium Card) -->
             <a href="/solutions/retail-shop" class="cx-property-card cx-prop-medium" aria-label="Explore Retail Shop Solutions">
                 <div class="cx-card-bg-image">
-                    <img src="../../assets/solutions/solution-retail-shop.webp" alt="Retail Shop" loading="lazy" data-fallback="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=1000&q=85" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=1000&q=85'">
+                    <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=1000&q=85" alt="Retail Shop" loading="lazy">
                     <div class="cx-card-gradient-overlay"></div>
                 </div>
                 <div class="cx-card-top">
@@ -1034,7 +1035,7 @@
             <!-- 4. WAREHOUSE (Medium Card) -->
             <a href="/solutions/warehouse" class="cx-property-card cx-prop-medium" aria-label="Explore Warehouse Solutions">
                 <div class="cx-card-bg-image">
-                    <img src="../../assets/solutions/solution-warehouse.webp" alt="Large Warehouse" loading="lazy" data-fallback="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85'">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85" alt="Large Warehouse" loading="lazy">
                     <div class="cx-card-gradient-overlay"></div>
                 </div>
                 <div class="cx-card-top">
@@ -1058,7 +1059,7 @@
             <!-- 5. FACTORY (Medium Card) -->
             <a href="/solutions/factory" class="cx-property-card cx-prop-medium" aria-label="Explore Factory Solutions">
                 <div class="cx-card-bg-image">
-                    <img src="../../assets/solutions/solution-factory.webp" alt="Industrial Factory" loading="lazy" data-fallback="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=85" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=85'">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=85" alt="Industrial Factory" loading="lazy">
                     <div class="cx-card-gradient-overlay"></div>
                 </div>
                 <div class="cx-card-top">
@@ -1082,7 +1083,7 @@
             <!-- 6. EDUCATIONAL INSTITUTE (Medium Card) -->
             <a href="/solutions/educational-institute" class="cx-property-card cx-prop-medium" aria-label="Explore Educational Institute Solutions">
                 <div class="cx-card-bg-image">
-                    <img src="../../assets/solutions/solution-education.webp" alt="Educational Campus" loading="lazy" data-fallback="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85'">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85" alt="Educational Campus" loading="lazy">
                     <div class="cx-card-gradient-overlay"></div>
                 </div>
                 <div class="cx-card-top">
@@ -1396,7 +1397,7 @@
 
         <!-- Recent Installations -->
         <section class="cx-recent-projects-section" aria-labelledby="recent-projects-title">
-    <div class="container cx-demo">
+    <div class="container">
         
         <!-- Section Header -->
         <div class="cx-section-header">
@@ -1415,12 +1416,12 @@
                 <span class="cx-project-badge cx-badge-home">Home</span>
                 
                 <img class="cx-featured-img" 
-                     src="../../assets/projects/proj-dhanmondi-home-cctv.webp" 
+                     src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80" 
                      alt="Home CCTV Installation in Dhanmondi, Dhaka" 
+                     width="1200" 
+                     height="675" 
                      loading="lazy" 
-                     decoding="async"
-                     data-fallback="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80"
-                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80'">
+                     decoding="async">
             </div>
 
             <div class="cx-featured-content">
@@ -1454,17 +1455,17 @@
                 <div class="cx-card-media">
                     <span class="cx-project-badge cx-badge-office">Office</span>
                     <img class="cx-card-img" 
-                         src="../../assets/projects/proj-banani-office-cctv.webp" 
-                         alt="Corporate Office CCTV Installation in Banani" 
+                         src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Corporate Office CCTV Installation in Banani, Dhaka" 
+                         width="800" 
+                         height="500" 
                          loading="lazy" 
-                         decoding="async"
-                         data-fallback="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'">
+                         decoding="async">
                 </div>
 
                 <div class="cx-project-content">
                     <div class="cx-project-location"><i data-lucide="map-pin" aria-hidden="true"></i> Banani, Dhaka</div>
-                    <h4 class="cx-project-name">Corporate Office CCTV</h4>
+                    <h3 class="cx-project-name">Corporate Office CCTV</h3>
                     <p class="cx-project-desc">16 Camera IP Surveillance infrastructure setup with centralized NVR management and secure rack deployment.</p>
                 </div>
 
@@ -1486,17 +1487,17 @@
                 <div class="cx-card-media">
                     <span class="cx-project-badge cx-badge-factory">Factory</span>
                     <img class="cx-card-img" 
-                         src="../../assets/projects/proj-gazipur-factory-security.webp" 
-                         alt="Industrial Factory Surveillance in Gazipur" 
+                         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+                         alt="Industrial Factory Surveillance in Gazipur Industrial Zone" 
+                         width="800" 
+                         height="500" 
                          loading="lazy" 
-                         decoding="async"
-                         data-fallback="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'">
+                         decoding="async">
                 </div>
 
                 <div class="cx-project-content">
                     <div class="cx-project-location"><i data-lucide="map-pin" aria-hidden="true"></i> Gazipur Industrial Zone</div>
-                    <h4 class="cx-project-name">Garments Factory Security</h4>
+                    <h3 class="cx-project-name">Garments Factory Security</h3>
                     <p class="cx-project-desc">Comprehensive optical fiber backbone and 64-channel Dahua PTZ security monitoring system.</p>
                 </div>
 
@@ -1518,17 +1519,17 @@
                 <div class="cx-card-media">
                     <span class="cx-project-badge cx-badge-shop">Shop</span>
                     <img class="cx-card-img" 
-                         src="../../assets/projects/proj-gulshan-retail-cctv.webp" 
-                         alt="Retail Showroom Security in Gulshan" 
+                         src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" 
+                         alt="Retail Showroom Security in Gulshan-2, Dhaka" 
+                         width="800" 
+                         height="500" 
                          loading="lazy" 
-                         decoding="async"
-                         data-fallback="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'">
+                         decoding="async">
                 </div>
 
                 <div class="cx-project-content">
                     <div class="cx-project-location"><i data-lucide="map-pin" aria-hidden="true"></i> Gulshan-2, Dhaka</div>
-                    <h4 class="cx-project-name">Retail Showroom Setup</h4>
+                    <h3 class="cx-project-name">Retail Showroom Setup</h3>
                     <p class="cx-project-desc">High-definition audio-enabled dome cameras and integrated retail access point Wi-Fi networking.</p>
                 </div>
 
@@ -1809,7 +1810,7 @@
     <!-- Footer -->
     <footer class="cx-footer-section" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="cx-sr-only">Site Footer</h2>
-    <div class="container cx-demo">
+    <div class="container">
         
         <!-- Main Footer Columns Grid (5 Columns Desktop) -->
         <div class="cx-footer-grid" role="region" aria-label="Footer navigation links and info">
@@ -1822,11 +1823,11 @@
                 <p class="cx-footer-desc">Professional IT, networking, and surveillance systems specialist delivering trusted security solutions across Bangladesh.</p>
                 
                 <div class="cx-footer-contact-info">
-                    <a href="tel:01540535150" class="cx-footer-contact-link">
-                        <i data-lucide="phone" aria-hidden="true"></i> 01540-535150
+                    <a href="tel:+8801540535150" class="cx-footer-contact-link">
+                        <i data-lucide="phone" aria-hidden="true"></i> +880 1540-535150
                     </a>
-                    <a href="mailto:support@camnex.com.bd" class="cx-footer-contact-link">
-                        <i data-lucide="mail" aria-hidden="true"></i> support@camnex.com.bd
+                    <a href="mailto:contact@camnexbd.com" class="cx-footer-contact-link">
+                        <i data-lucide="mail" aria-hidden="true"></i> contact@camnexbd.com
                     </a>
                     <div class="cx-footer-contact-link">
                         <i data-lucide="map-pin" aria-hidden="true"></i> Chandrima Model Town, Dhaka
@@ -1840,7 +1841,7 @@
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="cx-social-icon" aria-label="Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="cx-social-icon" aria-label="WhatsApp">
+                    <a href="https://wa.me/8801540535150" target="_blank" rel="noopener noreferrer" class="cx-social-icon" aria-label="WhatsApp">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                     </a>
                     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="cx-social-icon" aria-label="YouTube">
@@ -1887,7 +1888,7 @@
                     <li><a href="/support/warranty" class="cx-footer-link">Warranty</a></li>
                     <li><a href="/support/tech" class="cx-footer-link">Technical Support</a></li>
                     <li><a href="/support/faqs" class="cx-footer-link">FAQs</a></li>
-                    <li><a href="/support/track-order" class="cx-footer-link">Track Order</a></li>
+                    <li><a href="/track-order" class="cx-footer-link">Track Order</a></li>
                     <li><a href="/legal/privacy" class="cx-footer-link">Privacy Policy</a></li>
                     <li><a href="/legal/terms" class="cx-footer-link">Terms & Conditions</a></li>
                     <li><a href="/legal/refund" class="cx-footer-link">Refund Policy</a></li>
@@ -1967,6 +1968,7 @@
             if (window.ComponentLoader) {
                 await ComponentLoader.load("#hero-root", "../../features/hero/hero.html");
             }
+            if (typeof window.initHeaderComponent === "function") window.initHeaderComponent();
             if (typeof window.initHeroComponent === "function") window.initHeroComponent();
             if (typeof window.initCategoryComponent === "function") window.initCategoryComponent();
             if (typeof window.initPropertyComponent === "function") window.initPropertyComponent();
@@ -1978,6 +1980,7 @@
             if (typeof window.initRecentProjectsComponent === "function") window.initRecentProjectsComponent();
             if (typeof window.initTestimonialsComponent === "function") window.initTestimonialsComponent();
             if (typeof window.initFinalCtaComponent === "function") window.initFinalCtaComponent();
+            if (typeof window.initFooterComponent === "function") window.initFooterComponent();
 
             if (window.lucide) window.lucide.createIcons();
         });

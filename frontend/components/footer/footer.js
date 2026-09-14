@@ -3,7 +3,7 @@
 /**
  * ========================================================
  * COMPONENT: Footer Section JS
- * FILE PATH MATCH: sections/footer/footer.js
+ * FILE PATH MATCH: components/footer/footer.js
  * ========================================================
  */
 
@@ -13,8 +13,8 @@ const initializeFooterIcons = () => {
     }
 };
 
-const setupBackToTop = () => {
-    const backBtn = document.getElementById("backToTopBtn");
+const setupBackToTop = (section) => {
+    const backBtn = section ? section.querySelector("#backToTopBtn") : document.getElementById("backToTopBtn");
     if (backBtn) {
         backBtn.addEventListener("click", () => {
             window.scrollTo({
@@ -25,9 +25,21 @@ const setupBackToTop = () => {
     }
 };
 
-const initFooterComponent = () => {
-    initializeFooterIcons();
-    setupBackToTop();
-};
+function initFooterComponent(root = document) {
+    const section = root.querySelector ? root.querySelector(".cx-footer-section") : document.querySelector(".cx-footer-section");
+    if (!section) return;
 
-document.addEventListener("DOMContentLoaded", initFooterComponent);
+    if (section.dataset.initialized === "true") return;
+    section.dataset.initialized = "true";
+
+    initializeFooterIcons();
+    setupBackToTop(section);
+}
+
+window.initFooterComponent = initFooterComponent;
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => initFooterComponent());
+} else {
+    initFooterComponent();
+}
