@@ -1,0 +1,82 @@
+/**
+ * ============================================================
+ * CamneX Bangladesh
+ * Typography
+ * Version: 1.0
+ * ============================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body{
+    font-family:var(--cx-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:var(--cx-text);
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:-0.02em;
+}
+
+h1{
+    font-size:var(--cx-text-3xl);
+}
+
+h2{
+    font-size:var(--cx-text-2xl);
+}
+
+h3{
+    font-size:var(--cx-text-xl);
+}
+
+h4{
+    font-size:var(--cx-text-lg);
+}
+
+h5{
+    font-size:var(--cx-text-md);
+}
+
+h6{
+    font-size:var(--cx-text-base);
+}
+
+p{
+    color:var(--cx-text-light);
+    margin-bottom:1rem;
+}
+
+small{
+    font-size:var(--cx-text-sm);
+}
+
+strong{
+    font-weight:700;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.text-right{
+    text-align:right;
+}
+
+.text-primary{
+    color:var(--cx-primary);
+}
+
+.text-muted{
+    color:var(--cx-text-muted);
+}
+
+.text-light{
+    color:var(--cx-text-light);
+}

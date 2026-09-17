@@ -1,0 +1,65 @@
+/**
+============================================================
+CamneX Icon System
+============================================================
+*/
+
+.cx-icon{
+
+    width:24px;
+
+    height:24px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:currentColor;
+
+    flex-shrink:0;
+
+}
+
+.cx-icon svg{
+
+    width:100%;
+
+    height:100%;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    fill:none;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+}
+
+.cx-icon-sm{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+.cx-icon-lg{
+
+    width:32px;
+
+    height:32px;
+
+}
+
+.cx-icon-xl{
+
+    width:42px;
+
+    height:42px;
+
+}

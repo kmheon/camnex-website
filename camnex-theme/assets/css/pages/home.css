@@ -1,0 +1,58 @@
+/* ============================================================
+   CamneX Homepage
+   Page-level layout only.
+   Feature styling remains inside each feature CSS file.
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #ffffff;
+    color: #0b0f19;
+    font-family: Inter, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 158px;
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding-top: 96px;
+    }
+}
+
+#header-root,
+#footer-root,
+#hero-root,
+#shop-category-root,
+#property-solutions-root,
+#featured-packages-root,
+#featured-products-root,
+#why-choose-root,
+#brands-root,
+#recent-installations-root,
+#testimonials-root,
+#final-cta-root {
+    width: 100%;
+}
+
+.component-loader-error {
+    width: 100%;
+    padding: 24px;
+    margin: 0;
+    background: #fff4f2;
+    border: 1px solid #f15a24;
+    color: #8a2412;
+    font-size: 14px;
+    line-height: 1.5;
+}

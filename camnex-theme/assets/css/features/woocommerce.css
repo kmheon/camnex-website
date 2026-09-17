@@ -1,0 +1,552 @@
+/**
+ * CamneX Bangladesh — WooCommerce Scoped Stylesheet
+ *
+ * Exclusively styles WooCommerce archive, single product, cart, checkout,
+ * and presentation components using strictly scoped selectors.
+ *
+ * Primary Brand Orange: #F15A24
+ * Primary Brand Orange Hover: #D94D1C
+ *
+ * @package CamneX
+ * @version 1.0.0
+ */
+
+/* ---------------- Main Layout Wrapper ---------------- */
+.cx-woocommerce-main {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    min-height: 60vh;
+}
+
+/* ---------------- Breadcrumbs ---------------- */
+.cx-woocommerce-breadcrumb,
+.woocommerce-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #64748B;
+    margin-bottom: 1.5rem;
+}
+
+.cx-woocommerce-breadcrumb a,
+.woocommerce-breadcrumb a {
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.cx-woocommerce-breadcrumb a:hover,
+.woocommerce-breadcrumb a:hover {
+    color: #F15A24;
+}
+
+.cx-breadcrumb-sep {
+    color: #94A3B8;
+    user-select: none;
+}
+
+.cx-breadcrumb-item {
+    color: #1E293B;
+    font-weight: 500;
+}
+
+/* ---------------- Shop Archive Header & Toolbar ---------------- */
+.cx-shop-archive .cx-shop-header {
+    margin-bottom: 2rem;
+}
+
+.cx-shop-archive .cx-shop-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5rem 0;
+}
+
+.cx-shop-archive .cx-shop-header p {
+    color: #64748B;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.cx-shop-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.cx-shop-toolbar .woocommerce-result-count {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #64748B;
+}
+
+.cx-shop-toolbar .woocommerce-ordering {
+    margin: 0;
+}
+
+.cx-shop-toolbar select.orderby {
+    padding: 0.5rem 2rem 0.5rem 0.875rem;
+    font-size: 0.875rem;
+    color: #1E293B;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cx-shop-toolbar select.orderby:focus-visible {
+    border-color: #F15A24;
+    box-shadow: 0 0 0 3px rgba(241, 90, 36, 0.15);
+}
+
+/* ---------------- Shop Product Grid ---------------- */
+.cx-shop-archive ul.products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+}
+
+.cx-shop-archive ul.products::before,
+.cx-shop-archive ul.products::after {
+    display: none;
+}
+
+.cx-shop-archive ul.products li.product {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    float: none !important;
+}
+
+/* ---------------- Reusable CamneX Product Card ---------------- */
+.cx-product-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+}
+
+.cx-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    border-color: #CBD5E1;
+}
+
+.cx-card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    min-height: 28px;
+}
+
+.cx-product-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.cx-badge-sale {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.cx-badge-official {
+    background-color: #ECFDF5;
+    color: #059669;
+}
+
+.cx-wishlist-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94A3B8;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.cx-wishlist-btn:hover {
+    color: #DC2626;
+    background-color: #FEE2E2;
+}
+
+.cx-wishlist-btn:focus-visible {
+    outline: 2px solid #F15A24;
+    outline-offset: 2px;
+}
+
+.cx-product-visual {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background: #F8FAFC;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cx-product-img-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cx-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.cx-product-card:hover .cx-product-img {
+    transform: scale(1.05);
+}
+
+.cx-product-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #94A3B8;
+}
+
+.cx-product-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cx-product-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+}
+
+.cx-product-category {
+    color: #64748B;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.cx-product-category a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cx-product-category a:hover {
+    color: #F15A24;
+}
+
+.cx-stock-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-weight: 600;
+}
+
+.cx-stock-indicator.in-stock {
+    color: #059669;
+}
+
+.cx-stock-indicator.out-of-stock {
+    color: #DC2626;
+}
+
+.cx-stock-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.cx-brand-row {
+    margin-bottom: 0.25rem;
+}
+
+.cx-brand-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #F15A24;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.cx-product-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 0.25rem 0;
+    color: #0F172A;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cx-product-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.cx-product-title a:hover {
+    color: #F15A24;
+}
+
+.cx-product-title a:focus-visible {
+    outline: 2px solid #F15A24;
+    outline-offset: 2px;
+}
+
+.cx-product-sku {
+    display: block;
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin-bottom: 0.75rem;
+}
+
+.cx-product-footer {
+    margin-top: auto;
+    padding-top: 0.875rem;
+    border-top: 1px solid #F1F5F9;
+}
+
+.cx-product-price-row {
+    margin-bottom: 0.875rem;
+}
+
+.cx-price-group {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.cx-price-group del {
+    color: #94A3B8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 0.375rem;
+}
+
+.cx-price-group ins {
+    color: #F15A24;
+    text-decoration: none;
+}
+
+.cx-product-cta-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.cx-btn-product-primary,
+.cx-btn-product-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+    line-height: 1.25;
+}
+
+.cx-btn-product-primary {
+    background-color: #0F172A;
+    color: #FFFFFF;
+    border: 1px solid #0F172A;
+}
+
+.cx-btn-product-primary:hover {
+    background-color: #1E293B;
+    border-color: #1E293B;
+    color: #FFFFFF;
+}
+
+.cx-btn-product-secondary,
+.cx-shop-archive ul.products li.product .button.cx-add-to-cart-btn {
+    background-color: #FFF7ED;
+    color: #F15A24;
+    border: 1px solid #FFEDD5;
+}
+
+.cx-btn-product-secondary:hover,
+.cx-shop-archive ul.products li.product .button.cx-add-to-cart-btn:hover {
+    background-color: #F15A24;
+    color: #FFFFFF;
+    border-color: #F15A24;
+}
+
+.cx-btn-product-primary:focus-visible,
+.cx-btn-product-secondary:focus-visible,
+.cx-shop-archive ul.products li.product .button.cx-add-to-cart-btn:focus-visible {
+    outline: 2px solid #F15A24;
+    outline-offset: 2px;
+}
+
+/* ---------------- Single Product Layout ---------------- */
+.cx-single-product div.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.cx-single-product .woocommerce-product-gallery {
+    margin-bottom: 0;
+}
+
+.cx-single-product .entry-summary h1.product_title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+
+.cx-single-product .entry-summary .price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #F15A24;
+    margin-bottom: 1.25rem;
+}
+
+.cx-single-product .entry-summary button.single_add_to_cart_button {
+    background-color: #F15A24;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.cx-single-product .entry-summary button.single_add_to_cart_button:hover {
+    background-color: #D94D1C;
+}
+
+.cx-single-product .entry-summary button.single_add_to_cart_button:focus-visible {
+    outline: 2px solid #F15A24;
+    outline-offset: 2px;
+}
+
+/* ---------------- Pagination ---------------- */
+.cx-shop-pagination-wrap nav.woocommerce-pagination ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.375rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+}
+
+.cx-shop-pagination-wrap nav.woocommerce-pagination ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.cx-shop-pagination-wrap nav.woocommerce-pagination ul li a,
+.cx-shop-pagination-wrap nav.woocommerce-pagination ul li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #475569;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    transition: all 0.15s ease;
+}
+
+.cx-shop-pagination-wrap nav.woocommerce-pagination ul li span.current {
+    background-color: #F15A24;
+    color: #FFFFFF;
+    border-color: #F15A24;
+}
+
+.cx-shop-pagination-wrap nav.woocommerce-pagination ul li a:hover {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+    color: #0F172A;
+}
+
+/* ---------------- Responsive Rules ---------------- */
+@media (max-width: 1024px) {
+    .cx-shop-archive ul.products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+    .cx-single-product div.product {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cx-shop-archive ul.products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+    .cx-single-product div.product {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .cx-product-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cx-shop-archive ul.products {
+        grid-template-columns: 1fr;
+    }
+    .cx-product-cta-group {
+        grid-template-columns: 1fr;
+    }
+}
