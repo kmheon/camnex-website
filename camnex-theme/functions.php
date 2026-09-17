@@ -28,12 +28,14 @@ require_once CAMNEX_DIR . '/inc/enqueue.php';
  * Modular Includes (Loaded as respective phases are activated)
  */
 $camnex_modules = [
+    '/inc/migration-state.php',
     '/inc/helpers.php',
     '/inc/customizer.php',
     '/inc/post-types.php',
     '/inc/taxonomies.php',
     '/inc/mega-menu-walker.php',
     '/inc/woocommerce-hooks.php',
+    '/inc/woocommerce-catalog.php',
     '/inc/quote-handler.php',
     '/inc/schema.php',
     '/inc/security.php',

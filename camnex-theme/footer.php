@@ -34,6 +34,11 @@ if (!defined('ABSPATH')) {
     </div>
 </footer>
 
-<?php wp_footer(); ?>
+<?php
+// Universal Quote & Site Visit Modal
+get_template_part('template-parts/common/quote-modal');
+
+wp_footer();
+?>
 </body>
 </html>

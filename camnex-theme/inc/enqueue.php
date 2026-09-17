@@ -57,6 +57,22 @@ function camnex_enqueue_scripts() {
         wp_enqueue_style('camnex-woocommerce', CAMNEX_ASSETS_URI . '/css/features/woocommerce.css', ['camnex-layout'], $ver);
     }
 
+    // 5b. CCTV Package Stylesheet
+    if (is_singular('cctv_package') || is_post_type_archive('cctv_package')) {
+        wp_enqueue_style('camnex-packages-system', CAMNEX_ASSETS_URI . '/css/features/packages-system.css', ['camnex-layout'], $ver);
+    }
+
+    // 5c. Solutions, Projects & Testimonials CPT Stylesheets
+    if (is_singular('solutions') || is_post_type_archive('solutions')) {
+        wp_enqueue_style('camnex-property', CAMNEX_ASSETS_URI . '/css/features/property-solutions.css', ['camnex-layout'], $ver);
+    }
+    if (is_singular('projects') || is_post_type_archive('projects')) {
+        wp_enqueue_style('camnex-recent-installations', CAMNEX_ASSETS_URI . '/css/features/recent-installations.css', ['camnex-layout'], $ver);
+    }
+    if (is_singular('testimonials') || is_post_type_archive('testimonials')) {
+        wp_enqueue_style('camnex-testimonials', CAMNEX_ASSETS_URI . '/css/features/customer-testimonials.css', ['camnex-layout'], $ver);
+    }
+
     // 6. Main Theme Registration Stylesheet
     wp_enqueue_style('camnex-style', get_stylesheet_uri(), ['camnex-utilities'], $ver);
 
@@ -82,6 +98,14 @@ function camnex_enqueue_scripts() {
         'camnex-footer',
         CAMNEX_ASSETS_URI . '/js/footer.js',
         ['lucide-icons'],
+        $ver,
+        true
+    );
+
+    wp_enqueue_script(
+        'camnex-quote-modal',
+        CAMNEX_ASSETS_URI . '/js/quote-modal.js',
+        ['camnex-header'],
         $ver,
         true
     );

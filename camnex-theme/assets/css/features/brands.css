@@ -101,6 +101,17 @@
     overflow: hidden;
 }
 
+.cx-brands-section .cx-brand-card-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
 .cx-brands-section .cx-brand-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--cx-brand-shadow-hover);

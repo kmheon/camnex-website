@@ -64,3 +64,227 @@
     }
 
 }
+
+/* ============================================================
+   UNIVERSAL QUOTE & SITE VISIT MODAL
+   ============================================================ */
+.cx-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.cx-modal-backdrop.cx-modal-active {
+    display: flex;
+}
+
+.cx-modal-dialog {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    animation: cxModalSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cxModalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cx-modal-content {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 2.25rem;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.cx-modal-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: #F1F5F9;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.cx-modal-close-btn:hover {
+    background-color: #E2E8F0;
+    color: #0F172A;
+}
+
+.cx-modal-header {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.cx-modal-title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.cx-modal-subtitle {
+    font-size: 0.875rem;
+    color: #64748B;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cx-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.cx-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.cx-form-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.375rem;
+}
+
+.cx-req {
+    color: #EF4444;
+}
+
+.cx-opt {
+    color: #94A3B8;
+    font-weight: 400;
+}
+
+.cx-form-input,
+.cx-form-select,
+.cx-form-textarea {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #0F172A;
+    background-color: #FFFFFF;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
+}
+
+.cx-form-input:focus,
+.cx-form-select:focus,
+.cx-form-textarea:focus {
+    outline: none;
+    border-color: #F15A24;
+    box-shadow: 0 0 0 3px rgba(241, 90, 36, 0.15);
+}
+
+.cx-btn-submit-quote {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #F15A24;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    margin-top: 0.5rem;
+}
+
+.cx-btn-submit-quote:hover {
+    background-color: #D94D1C;
+}
+
+.cx-btn-submit-quote:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.cx-form-feedback {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.cx-feedback-success {
+    background-color: #DCFCE7;
+    color: #166534;
+    border: 1px solid #BBF7D0;
+}
+
+.cx-feedback-error {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+.cx-modal-direct-call {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #64748B;
+}
+
+.cx-modal-call-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #0F172A;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.cx-modal-call-link:hover {
+    color: #F15A24;
+}
+
+@media (max-width: 600px) {
+    .cx-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .cx-modal-content {
+        padding: 1.5rem;
+    }
+}
