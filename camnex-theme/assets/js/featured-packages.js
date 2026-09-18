@@ -108,7 +108,7 @@ const cctvPackagesData = [
         socialProof: "Installed 5,000+ Times",
         description: "Ideal compact surveillance setup for small retail shops, apartments, and studio homes.",
         componentRows: [
-            ["2x HD Cameras", "1x 4CH DVR"],
+            ["2x HD Bullet Cams", "1x 4CH DVR"],
             ["500GB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
@@ -127,8 +127,8 @@ const cctvPackagesData = [
         socialProof: "Installed 8,400+ Times",
         description: "Comprehensive perimeter coverage designed for medium-sized shops, offices, and residences.",
         componentRows: [
-            ["4x HD Cameras", "1x 4CH DVR"],
-            ["1TB HDD", "Power Supply"]
+            ["4x HD Bullet Cams", "1x 4CH DVR"],
+            ["500GB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 14,500",
@@ -146,8 +146,8 @@ const cctvPackagesData = [
         socialProof: "Installed 3,200+ Times",
         description: "Robust multi-zone security system built for large commercial floors, warehouses, and schools.",
         componentRows: [
-            ["8x HD Cameras", "1x 8CH DVR"],
-            ["2TB HDD", "Power Supply"]
+            ["8x HD Bullet Cams", "1x 8CH DVR"],
+            ["1TB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 28,000",
@@ -165,8 +165,8 @@ const cctvPackagesData = [
         socialProof: "Installed 1,500+ Times",
         description: "Maximum coverage security architecture for sprawling factories, large commercial buildings, and estates.",
         componentRows: [
-            ["16x HD Cameras", "1x 16CH NVR"],
-            ["4TB HDD", "Power Supply"]
+            ["16x HD Bullet Cams", "1x 16CH NVR"],
+            ["2TB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 55,000",
@@ -184,8 +184,8 @@ const cctvPackagesData = [
         socialProof: "Installed 6,100+ Times",
         description: "Advanced Hikvision ColorVu technology providing bright, colorful night vision in zero-light conditions.",
         componentRows: [
-            ["4x ColorVu Cams", "1x 4CH DVR"],
-            ["1TB HDD", "Power Supply"]
+            ["4x ColorVu Bullet Cams", "1x 4CH DVR"],
+            ["500GB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 18,500",
@@ -201,10 +201,10 @@ const cctvPackagesData = [
         badge: "Night Vision",
         camerasCount: "4 Cameras",
         socialProof: "Installed 4,500+ Times",
-        description: "Smart IR illumination cameras engineered for sharp clarity across complete darkness up to 30 meters.",
+        description: "IRPF-series infrared-only smart IR illumination cameras engineered for crystal-clear night capture in total darkness without visible light.",
         componentRows: [
-            ["4x IR Cameras", "1x 4CH DVR"],
-            ["1TB HDD", "Power Supply"]
+            ["4x IR Bullet Cams", "1x 4CH DVR"],
+            ["500GB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 12,500",
@@ -218,12 +218,12 @@ const cctvPackagesData = [
         id: "pkg-business",
         title: "Corporate Business Bundle",
         badge: "Professional",
-        camerasCount: "6 Cameras",
+        camerasCount: "8 Cameras",
         socialProof: "Installed 2,900+ Times",
         description: "Optimized corporate surveillance solution with remote mobile monitoring and high-speed storage.",
         componentRows: [
-            ["6x HD Cameras", "1x 8CH DVR"],
-            ["2TB HDD", "Power Supply"]
+            ["8x HD Bullet Cams", "1x 8CH DVR"],
+            ["1TB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 22,000",
@@ -237,12 +237,12 @@ const cctvPackagesData = [
         id: "pkg-warehouse",
         title: "Warehouse Long-Range Kit",
         badge: "Enterprise",
-        camerasCount: "8 Cameras",
+        camerasCount: "16 Cameras",
         socialProof: "Installed 1,800+ Times",
         description: "Heavy-duty varifocal lens and waterproof bullet cameras tailored for vast industrial perimeters.",
         componentRows: [
-            ["8x Long-Range", "1x 8CH NVR"],
-            ["4TB HDD", "Power Supply"]
+            ["16x HD Bullet Cams", "1x 16CH NVR"],
+            ["2TB HDD", "Power Supply"]
         ],
         moreCount: "+ 2 More Included",
         price: "৳ 38,000",

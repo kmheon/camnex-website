@@ -76,7 +76,7 @@ function camnex_customize_register($wp_customize) {
 
     // Physical Office Address
     $wp_customize->add_setting('camnex_address', [
-        'default'           => 'Dhanmondi, Dhaka - 1209, Bangladesh',
+        'default'           => 'Block A, Chandrima Model Town, Shop 01, 1st Floor, House 22, Road 06 Main Rd, Dhaka 1207, Bangladesh',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport'         => 'postMessage',
     ]);

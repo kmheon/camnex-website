@@ -59,7 +59,7 @@ function camnex_get_email() {
  * Get physical office address.
  */
 function camnex_get_address() {
-    return camnex_get_option('camnex_address', 'Dhanmondi, Dhaka - 1209, Bangladesh');
+    return camnex_get_option('camnex_address', 'Block A, Chandrima Model Town, Shop 01, 1st Floor, House 22, Road 06 Main Rd, Dhaka 1207, Bangladesh');
 }
 
 /**
@@ -84,4 +84,29 @@ function camnex_price_format($amount) {
         return '৳0';
     }
     return '৳' . number_format_i18n((float)$amount);
+}
+
+/**
+ * Get approved base HDD storage capacity by camera count.
+ *
+ * Strict CamneX Approved Rules:
+ * - 2-camera  = 500GB HDD
+ * - 4-camera  = 500GB HDD
+ * - 8-camera  = 1TB HDD
+ * - 16-camera = 2TB HDD
+ *
+ * @param int|string $camera_count
+ * @return string
+ */
+function camnex_get_package_base_hdd($camera_count) {
+    $count = (int)$camera_count;
+    if ($count <= 2) {
+        return '500GB Surveillance HDD';
+    } elseif ($count <= 4) {
+        return '500GB Surveillance HDD';
+    } elseif ($count <= 8) {
+        return '1TB Surveillance HDD';
+    } else {
+        return '2TB Surveillance HDD';
+    }
 }

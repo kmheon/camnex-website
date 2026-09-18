@@ -41,9 +41,9 @@ function camnex_output_schema_jsonld() {
         'paymentAccepted' => 'Cash, Credit Card, bKash, Nagad, Bank Transfer',
         'address'         => [
             '@type'           => 'PostalAddress',
-            'streetAddress'   => 'Dhanmondi',
+            'streetAddress'   => 'Block A, Chandrima Model Town, Shop 01, 1st Floor, House 22, Road 06 Main Rd',
             'addressLocality'  => 'Dhaka',
-            'postalCode'      => '1209',
+            'postalCode'      => '1207',
             'addressCountry'  => 'BD',
         ],
         'geo'             => [

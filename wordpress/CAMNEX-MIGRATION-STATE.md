@@ -91,9 +91,68 @@
 
 ---
 
-## 5. Runtime Limitations & External Dependencies
-- **WordPress Runtime**: PENDING_SERVER_ENVIRONMENT (Static linting and TypeScript compilation active; PHP linting verified).
-- **WooCommerce Runtime**: PENDING_SERVER_ENVIRONMENT (All WooCommerce function calls guarded with `function_exists` and `class_exists`).
-- **SEO Layer**: Rank Math (Planned external plugin; non-blocking fallback schema provided).
-- **Mail Layer**: WP Mail SMTP (Planned external plugin; native `wp_mail` integration provided).
-- **Payment Gateway**: bKash, Nagad, Rocket, SSLCommerz (Deployment phase dependency).
+## 5. Master Release Status & Governance
+
+**Release Status**: `RELEASE CANDIDATE — DEPLOYMENT ITEMS REMAIN`
+
+- **CODE IMPLEMENTATION**: `COMPLETE`
+- **CURRENT STAGE**: `DEPLOYMENT PREPARATION`
+- **RUNTIME**: `Pending live WordPress/WooCommerce environment` (Do not mark runtime validation as passed)
+
+### Status Categorization
+
+#### A. CODE COMPLETE
+- Classic WordPress Theme structure (`camnex-theme/`) with standard template hierarchy.
+- 10-section Homepage parity strictly matching frozen frontend (`frontend/pages/home/index.html`).
+- Header (Top bar, main navbar, mega menu, mobile drawer) and 5-column Footer with Back-to-Top.
+- WooCommerce wrappers, conditional asset loading, loop overrides, dynamic cart fragment AJAX.
+- Brand custom taxonomy (`brand`) registered for products and packages.
+- CCTV Package engine (`cctv_package`) with strict base storage tiers:
+  - 2-camera: 500GB HDD
+  - 4-camera: 500GB HDD
+  - 8-camera: 1TB HDD
+  - 16-camera: 2TB HDD
+  - Cable: 10m high-purity copper cable per camera.
+  - Baluns & adapters: camera-count dependent.
+  - Default camera: Bullet. Optional: Dome/Turret.
+  - Night Vision: IRPF-series infrared-only architecture (no audio, no ColorVu, no dual-light).
+  - No invented model numbers: Package engine data-driven; real product/model data pending.
+- Auxiliary CPTs: Solutions, Projects, Testimonials, Quote Request.
+- Quote & Site Visit modal inquiry system with nonce, honeypot, sanitization, and dual `wp_mail()` dispatch.
+- LocalBusiness / SecuritySystemSupplier JSON-LD schema with address:
+  `Block A, Chandrima Model Town, Shop 01, 1st Floor, House 22, Road 06 Main Rd, Dhaka 1207, Bangladesh` (Postal Code: 1207).
+  Centralized business profile remains the authoritative source.
+- Security hardening: XML-RPC disabled, version disclosure removed, user enumeration blocked, security HTTP headers.
+
+#### B. RUNTIME VALIDATION REQUIRED (Deployment Verification)
+- Live WordPress core runtime initialization.
+- WooCommerce plugin activation & database table creation.
+- Permalinks / rewrite rule flushing (`/packages/`, `/solutions/`, `/installations/`, `/brand/`).
+- Database persistence for posts, metadata, custom fields, and WooCommerce options.
+- Dynamic WooCommerce cart operations, session handling, and mini-cart fragment testing.
+- WooCommerce checkout and order placement workflow.
+- WooCommerce "My Account" portal login and dashboard views.
+- Native product search (`/?s={term}&post_type=product`) and live search autocomplete.
+- Product catalog archive rendering and brand archive rendering.
+- CCTV package archive rendering and single package specification tables.
+- AJAX quote submission verification under live server environment.
+- Production HTTPS certificates and server-level HTTP security header propagation.
+
+#### C. BUSINESS CONFIGURATION REQUIRED
+- Payment gateways: bKash Merchant API, Nagad Gateway, Rocket, SSLCommerz credentials.
+- Delivery zones & shipping rates for Dhaka metro vs nationwide courier.
+- Tax/VAT rules (if applicable).
+- Store manager user roles & administrative access controls.
+
+#### D. EXTERNAL SERVICE REQUIRED
+- SMTP delivery credentials (WP Mail SMTP / Brevo / Google Workspace SMTP) for `contact@camnexbd.com`.
+- Google Search Console property verification & XML sitemap submission.
+- Rank Math SEO plugin activation & compatibility review.
+- External Google Rich Results test validation for structured JSON-LD data.
+
+#### E. REAL PRODUCT DATA REQUIRED
+- Live WooCommerce product database import with authentic SKUs, distributor pricing, and official distributor warranty terms.
+- CCTV Package engine ready; real product/model data pending.
+
+#### F. REAL PROJECT PHOTOGRAPHY REQUIRED
+- Authentic CamneX on-site deployment photographs to replace demonstration/Unsplash placeholder images currently in Recent Installations and showcase templates. Demonstration imagery must not be represented as verified CamneX field photography.

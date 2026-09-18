@@ -16,10 +16,10 @@ if (!defined('ABSPATH')) {
 
 $pkg_id = get_the_ID();
 $camera_count = get_post_meta($pkg_id, '_camnex_camera_count', true) ?: '4';
-$camera_type  = get_post_meta($pkg_id, '_camnex_camera_type', true) ?: 'Full HD Night Vision';
+$camera_type  = get_post_meta($pkg_id, '_camnex_camera_type', true) ?: 'Bullet (Smart IR Night Vision)';
 $regular_price = get_post_meta($pkg_id, '_camnex_price', true);
 $sale_price    = get_post_meta($pkg_id, '_camnex_sale_price', true);
-$hdd_size      = get_post_meta($pkg_id, '_camnex_hdd', true) ?: '1TB Surveillance HDD';
+$hdd_size      = get_post_meta($pkg_id, '_camnex_hdd', true) ?: (function_exists('camnex_get_package_base_hdd') ? camnex_get_package_base_hdd($camera_count) : '500GB Surveillance HDD');
 $dvr_nvr       = get_post_meta($pkg_id, '_camnex_dvr_nvr', true) ?: sprintf(__('%s-Channel Digital Video Recorder', 'camnex'), $camera_count);
 $warranty      = get_post_meta($pkg_id, '_camnex_warranty', true) ?: __('1 Year Official Warranty', 'camnex');
 $linked_prod   = get_post_meta($pkg_id, '_camnex_linked_product_id', true);
