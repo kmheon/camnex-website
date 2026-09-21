@@ -14,43 +14,57 @@
 const CATEGORY_ASSET_MAP = {
     "cctv-packages": {
         title: "CCTV Packages",
-        target: "cat-cctv-packages-kit.webp",
-        fallback: "cctv-kit-transparent.webp",
+        target: "cat-cctv-packages-kit.png",
+        fallback: "cctv-kit-transparent.png",
         recommendedSize: "800 × 600 px",
         ratio: "16:9 or 1:1"
     },
     "access-control": {
-        title: "Access Control",
-        target: "cat-access-control-terminal.webp",
-        fallback: "face-terminal-transparent.webp",
+        title: "Access Control & Time Attendance",
+        target: "cat-access-control-terminal.png",
+        fallback: "face-terminal-transparent.png",
+        recommendedSize: "600 × 600 px",
+        ratio: "1:1"
+    },
+    "fire-alarm": {
+        title: "Fire Safety & Alarm System",
+        target: "cat-fire-alarm-detector.png",
+        fallback: "fire-alarm-transparent.png",
+        recommendedSize: "600 × 600 px",
+        ratio: "1:1"
+    },
+    "physical-security": {
+        title: "Physical Security",
+        target: "cat-physical-security.png",
+        fallback: "physical-security-transparent.png",
         recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
     "smart-home": {
         title: "Smart Home",
-        target: "cat-smart-home-doorbell.webp",
-        fallback: "smart-doorbell-transparent.webp",
+        target: "cat-smart-home-doorbell.png",
+        fallback: "smart-doorbell-transparent.png",
         recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
-    "time-attendance": {
-        title: "Time Attendance",
-        target: "cat-fingerprint-attendance.webp",
-        fallback: "fingerprint-transparent.webp",
-        recommendedSize: "500 × 500 px",
+    "communication-systems": {
+        title: "Communication Systems",
+        target: "cat-communication-systems.png",
+        fallback: "communication-systems-transparent.png",
+        recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
-    "video-intercom": {
-        title: "Video Intercom",
-        target: "cat-video-intercom-monitor.webp",
-        fallback: "indoor-monitor-transparent.webp",
+    "wifi-cameras": {
+        title: "WiFi Cameras",
+        target: "cat-wifi-camera.png",
+        fallback: "wifi-camera-transparent.png",
         recommendedSize: "500 × 500 px",
         ratio: "1:1"
     },
     "accessories": {
         title: "Accessories",
-        target: "cat-accessories-hdd.webp",
-        fallback: "hdd-adapter-transparent.webp",
+        target: "cat-accessories-hdd.png",
+        fallback: "hdd-adapter-transparent.png",
         recommendedSize: "500 × 500 px",
         ratio: "1:1"
     }

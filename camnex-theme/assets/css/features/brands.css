@@ -45,10 +45,10 @@
 
 .cx-brands-section .cx-section-badge-label {
     display: inline-block;
-    background: var(--cx-brand-primary);
+    background: var(--cx-brand-primary, #F15A24);
     color: #FFFFFF;
     padding: 6px 14px;
-    border-radius: var(--cx-brand-radius-pill);
+    border-radius: var(--cx-brand-radius-pill, 9999px);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;

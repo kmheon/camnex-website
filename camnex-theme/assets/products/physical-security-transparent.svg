@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" width="560" height="480" fill="none">
+  <defs>
+    <!-- Ground Shadows -->
+    <radialGradient id="phys-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0B192C" stop-opacity="0.3"/>
+      <stop offset="65%" stop-color="#0B192C" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0B192C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Metallic Archway Gradients -->
+    <linearGradient id="gate-pillar-left" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="35%" stop-color="#64748B"/>
+      <stop offset="70%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="gate-pillar-right" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="40%" stop-color="#94A3B8"/>
+      <stop offset="80%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="gate-top-beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Baggage Scanner Gradients -->
+    <linearGradient id="scanner-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <linearGradient id="tunnel-shroud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="conveyor-roller" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="50%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+
+    <linearGradient id="screen-display" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="60%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+
+    <filter id="phys-3d-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="3" dy="14" stdDeviation="12" flood-color="#0B192C" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ground Shadows -->
+  <ellipse cx="140" cy="435" rx="105" ry="18" fill="url(#phys-shadow)"/>
+  <ellipse cx="380" cy="440" rx="145" ry="22" fill="url(#phys-shadow)"/>
+
+  <!-- ==============================================
+       1. WALK-THROUGH ARCHWAY METAL DETECTOR GATE
+       ============================================== -->
+  <g filter="url(#phys-3d-shadow)">
+    <!-- Base Foot Pads -->
+    <rect x="52" y="420" width="46" height="14" rx="3" fill="#0F172A"/>
+    <rect x="182" y="420" width="46" height="14" rx="3" fill="#0F172A"/>
+
+    <!-- Left Pillar (Vertical Zone Column) -->
+    <rect x="58" y="90" width="34" height="332" rx="4" fill="url(#gate-pillar-left)"/>
+    <!-- Left Multi-Zone LED Strip -->
+    <rect x="85" y="105" width="4" height="300" rx="2" fill="#10B981" opacity="0.9"/>
+    <!-- Zone LED Segment Dividers -->
+    <line x1="84" y1="145" x2="90" y2="145" stroke="#0F172A" stroke-width="2"/>
+    <line x1="84" y1="185" x2="90" y2="185" stroke="#0F172A" stroke-width="2"/>
+    <line x1="84" y1="225" x2="90" y2="225" stroke="#0F172A" stroke-width="2"/>
+    <line x1="84" y1="265" x2="90" y2="265" stroke="#0F172A" stroke-width="2"/>
+    <line x1="84" y1="305" x2="90" y2="305" stroke="#0F172A" stroke-width="2"/>
+    <line x1="84" y1="345" x2="90" y2="345" stroke="#0F172A" stroke-width="2"/>
+    <line x1="84" y1="385" x2="90" y2="385" stroke="#0F172A" stroke-width="2"/>
+
+    <!-- Right Pillar (Vertical Zone Column) -->
+    <rect x="188" y="90" width="34" height="332" rx="4" fill="url(#gate-pillar-right)"/>
+    <!-- Right Multi-Zone LED Strip -->
+    <rect x="191" y="105" width="4" height="300" rx="2" fill="#10B981" opacity="0.9"/>
+    <line x1="190" y1="145" x2="196" y2="145" stroke="#0F172A" stroke-width="2"/>
+    <line x1="190" y1="185" x2="196" y2="185" stroke="#0F172A" stroke-width="2"/>
+    <line x1="190" y1="225" x2="196" y2="225" stroke="#0F172A" stroke-width="2"/>
+    <line x1="190" y1="265" x2="196" y2="265" stroke="#0F172A" stroke-width="2"/>
+    <line x1="190" y1="305" x2="196" y2="305" stroke="#0F172A" stroke-width="2"/>
+    <line x1="190" y1="345" x2="196" y2="345" stroke="#0F172A" stroke-width="2"/>
+    <line x1="190" y1="385" x2="196" y2="385" stroke="#0F172A" stroke-width="2"/>
+
+    <!-- Top Crossbar Control Header Module -->
+    <rect x="52" y="60" width="176" height="42" rx="6" fill="url(#gate-top-beam)"/>
+    <rect x="54" y="62" width="172" height="38" rx="5" fill="none" stroke="#64748B" stroke-width="1.5"/>
+
+    <!-- Center Control Display & Keypad on Header -->
+    <rect x="105" y="68" width="70" height="26" rx="4" fill="#020617"/>
+    <!-- Digital Transit Passenger Counter -->
+    <text x="122" y="85" font-family="'Courier New', monospace" font-size="12" font-weight="900" fill="#22C55E">0842</text>
+    <circle cx="162" cy="81" r="4" fill="#EF4444"/>
+    <circle cx="162" cy="81" r="7" fill="#EF4444" opacity="0.25"/>
+
+    <!-- Subtle Brand Wordmark on Gate -->
+    <text x="70" y="83" font-family="sans-serif" font-size="6.5" font-weight="800" fill="#94A3B8" letter-spacing="1">CAMNEX</text>
+  </g>
+
+  <!-- ==============================================
+       2. BAGGAGE X-RAY INSPECTION SCANNER
+       ============================================== -->
+  <g filter="url(#phys-3d-shadow)">
+    <!-- Scanner Main Chassis Base Box -->
+    <rect x="260" y="240" width="250" height="175" rx="10" fill="url(#scanner-body)"/>
+    <rect x="262" y="242" width="246" height="171" rx="8" fill="none" stroke="#64748B" stroke-width="1.5"/>
+
+    <!-- Support Heavy Duty Lockable Casters / Feet -->
+    <rect x="280" y="415" width="24" height="20" rx="4" fill="#1E293B"/>
+    <circle cx="292" cy="432" r="6" fill="#0F172A"/>
+    <rect x="465" y="415" width="24" height="20" rx="4" fill="#1E293B"/>
+    <circle cx="477" cy="432" r="6" fill="#0F172A"/>
+
+    <!-- Center X-Ray Tunnel Enclosure (Raised Top Arch) -->
+    <path d="M 315 240 L 315 170 Q 385 140 455 170 L 455 240 Z" fill="url(#scanner-body)"/>
+    <!-- Tunnel Opening Aperture -->
+    <path d="M 330 240 L 330 185 Q 385 160 440 185 L 440 240 Z" fill="url(#tunnel-shroud)"/>
+    <!-- Lead Curtain Slits in Tunnel -->
+    <line x1="350" y1="180" x2="350" y2="240" stroke="#334155" stroke-width="3"/>
+    <line x1="368" y1="172" x2="368" y2="240" stroke="#334155" stroke-width="3"/>
+    <line x1="385" y1="168" x2="385" y2="240" stroke="#334155" stroke-width="3"/>
+    <line x1="402" y1="172" x2="402" y2="240" stroke="#334155" stroke-width="3"/>
+    <line x1="420" y1="180" x2="420" y2="240" stroke="#334155" stroke-width="3"/>
+
+    <!-- Conveyor Belt Tray Extension (Right side entry bed) -->
+    <rect x="445" y="235" width="75" height="18" rx="3" fill="url(#conveyor-roller)"/>
+    <line x1="460" y1="237" x2="460" y2="251" stroke="#475569" stroke-width="2"/>
+    <line x1="480" y1="237" x2="480" y2="251" stroke="#475569" stroke-width="2"/>
+    <line x1="500" y1="237" x2="500" y2="251" stroke="#475569" stroke-width="2"/>
+
+    <!-- Operator Screen Articulated Arm & Dual Monitor -->
+    <!-- Steel Mounting Pole -->
+    <path d="M 285 240 L 285 150 L 315 130" fill="none" stroke="#64748B" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- High-Resolution Inspection Monitor Screen -->
+    <rect x="300" y="90" width="90" height="62" rx="6" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+    <rect x="304" y="94" width="82" height="54" rx="4" fill="url(#screen-display)"/>
+    <!-- Simulated False-Color Organic/Inorganic X-Ray Luggage View -->
+    <rect x="312" y="105" width="40" height="28" rx="4" fill="#F59E0B" opacity="0.85"/>
+    <circle cx="362" cy="120" r="11" fill="#10B981" opacity="0.8"/>
+    <line x1="316" y1="118" x2="346" y2="118" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="378" cy="102" r="3" fill="#22C55E"/>
+
+    <!-- Emergency Stop Mushroom Button -->
+    <circle cx="282" cy="275" r="10" fill="#DC2626" stroke="#991B1B" stroke-width="2"/>
+    <circle cx="282" cy="275" r="5" fill="#EF4444"/>
+
+    <!-- Maintenance Ventilation Louvers -->
+    <g stroke="#1E293B" stroke-width="2.5" stroke-linecap="round">
+      <line x1="315" y1="320" x2="400" y2="320"/>
+      <line x1="315" y1="332" x2="400" y2="332"/>
+      <line x1="315" y1="344" x2="400" y2="344"/>
+      <line x1="315" y1="356" x2="400" y2="356"/>
+    </g>
+
+    <text x="357" y="385" font-family="sans-serif" font-size="8" font-weight="800" fill="#94A3B8" text-anchor="middle" letter-spacing="1.5">X-RAY INSPECTION SYSTEM</text>
+  </g>
+</svg>

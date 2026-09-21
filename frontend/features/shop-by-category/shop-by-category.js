@@ -12,45 +12,88 @@
  */
 
 const CATEGORY_ASSET_MAP = {
-    "cctv-packages": {
-        title: "CCTV Packages",
-        target: "cat-cctv-packages-kit.webp",
-        fallback: "cctv-kit-transparent.webp",
+    "cctv-cameras": {
+        title: "CCTV Cameras",
+        target: "cctv-bullet-transparent.png",
+        solutionAlias: "cctv_solution.png",
+        fallback: "cctv-bullet-transparent.png",
         recommendedSize: "800 × 600 px",
-        ratio: "16:9 or 1:1"
+        ratio: "16:9"
     },
-    "access-control": {
-        title: "Access Control",
-        target: "cat-access-control-terminal.webp",
-        fallback: "face-terminal-transparent.webp",
+    "networking": {
+        title: "Networking",
+        target: "poe-switch-transparent.png",
+        fallback: "poe-switch-transparent.png",
+        recommendedSize: "800 × 600 px",
+        ratio: "16:9"
+    },
+    "wifi-cameras": {
+        title: "WiFi Cameras",
+        target: "wifi-camera-transparent.png",
+        solutionAlias: "wifi_camera_solution.png",
+        fallback: "wifi-camera-transparent.png",
         recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
     "smart-home": {
         title: "Smart Home",
-        target: "cat-smart-home-doorbell.webp",
-        fallback: "smart-doorbell-transparent.webp",
+        target: "smart-doorbell-transparent.png",
+        solutionAlias: "smart_home_solution.png",
+        fallback: "smart-doorbell-transparent.png",
         recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
-    "time-attendance": {
-        title: "Time Attendance",
-        target: "cat-fingerprint-attendance.webp",
-        fallback: "fingerprint-transparent.webp",
-        recommendedSize: "500 × 500 px",
+    "access-control": {
+        title: "Access Control & Time Attendance",
+        target: "face-terminal-transparent.png",
+        solutionAlias: "access_controll_solution.png",
+        fallback: "face-terminal-transparent.png",
+        recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
-    "video-intercom": {
-        title: "Video Intercom",
-        target: "cat-video-intercom-monitor.webp",
-        fallback: "indoor-monitor-transparent.webp",
-        recommendedSize: "500 × 500 px",
+    "physical-security": {
+        title: "Physical Security",
+        target: "physical-security-transparent.png",
+        solutionAlias: "phycical_security_solution.png",
+        fallback: "physical-security-transparent.png",
+        recommendedSize: "600 × 600 px",
+        ratio: "1:1"
+    },
+    "fire-alarm": {
+        title: "Fire Safety & Alarm System",
+        target: "fire-alarm-transparent.png",
+        fallback: "fire-alarm-transparent.png",
+        recommendedSize: "600 × 600 px",
+        ratio: "1:1"
+    },
+    "communication-systems": {
+        title: "Communication Systems",
+        target: "communication-systems-transparent.png",
+        solutionAlias: "comunication_solution.png",
+        fallback: "communication-systems-transparent.png",
+        recommendedSize: "600 × 600 px",
+        ratio: "1:1"
+    },
+    "servers-storage": {
+        title: "Enterprise Servers and Storage",
+        target: "server-storage-transparent.png",
+        solutionAlias: "server_solution.png",
+        fallback: "server-storage-transparent.png",
+        recommendedSize: "600 × 600 px",
+        ratio: "1:1"
+    },
+    "interactive-flat-panel": {
+        title: "Interactive Flat Panels and Displays",
+        target: "interactive-panel-transparent.png",
+        solutionAlias: "Interactive_panels_solution.png",
+        fallback: "interactive-panel-transparent.png",
+        recommendedSize: "600 × 600 px",
         ratio: "1:1"
     },
     "accessories": {
         title: "Accessories",
-        target: "cat-accessories-hdd.webp",
-        fallback: "hdd-adapter-transparent.webp",
+        target: "hdd-adapter-transparent.png",
+        fallback: "hdd-adapter-transparent.png",
         recommendedSize: "500 × 500 px",
         ratio: "1:1"
     }

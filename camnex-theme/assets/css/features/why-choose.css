@@ -25,7 +25,7 @@
     width: 100%;
     background: var(--cx-bg);
     color: var(--cx-navy);
-    padding: 90px 0 100px 0;
+    padding: 64px 0;
 
     font-family: Inter, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -58,7 +58,7 @@
 
 .cx-why-choose-section .cx-section-badge-label {
     display: inline-block;
-    background: var(--cx-orange);
+    background: var(--cx-orange, #F15A24);
     color: #ffffff;
     padding: 6px 14px;
     border-radius: 999px;
@@ -218,7 +218,7 @@
 /* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
     .cx-why-choose-section {
-        padding: 70px 0 80px 0;
+        padding: 56px 0;
     }
 
     .cx-why-choose-section .cx-section-header {
@@ -234,7 +234,7 @@
 /* Mobile (max-width: 680px) */
 @media (max-width: 680px) {
     .cx-why-choose-section {
-        padding: 60px 0 70px 0;
+        padding: 48px 0;
     }
 
     .cx-why-choose-section .cx-section-header {

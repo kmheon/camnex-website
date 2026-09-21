@@ -24,7 +24,7 @@
 
     position: relative;
     background: var(--cx-cat-bg);
-    padding: 100px 0 120px 0;
+    padding: 64px 0;
     overflow: hidden;
 }
 
@@ -58,23 +58,31 @@
     margin-bottom: 56px;
 }
 
+.cx-shop-by-category .cx-section-eyebrow,
 .cx-section-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    color: var(--cx-orange);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    justify-content: center;
+    background: var(--cx-orange, #F15A24);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
 }
 
+.cx-shop-by-category .cx-section-eyebrow span,
+.cx-section-eyebrow span {
+    color: #ffffff;
+}
+
+.cx-shop-by-category .cx-eyebrow-line,
 .cx-eyebrow-line {
-    width: 24px;
-    height: 2px;
-    background: var(--cx-orange);
-    border-radius: 2px;
+    display: none;
 }
 
 .cx-section-heading {
@@ -145,14 +153,14 @@
 }
 
 .cx-card-medium {
-    grid-column: span 3;
+    grid-column: span 4;
     height: 280px;
 }
 
 .cx-card-compact {
-    grid-column: span 3;
-    height: 150px;
-    padding: 24px 28px;
+    grid-column: span 6;
+    height: 155px;
+    padding: 24px 32px;
     flex-direction: row;
     align-items: center;
 }
@@ -173,9 +181,9 @@
 }
 
 .cx-card-compact .cx-card-content {
-    max-width: 58%;
+    max-width: 65%;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 /* Clean, Smaller Premium Badges */
@@ -194,10 +202,70 @@
     border: 1px solid rgba(100, 116, 139, 0.12);
 }
 
-.cx-card-large .cx-pill-badge {
-    color: var(--cx-orange);
-    background: var(--cx-orange-light);
-    border-color: rgba(241, 90, 36, 0.2);
+.cx-pill-badge.cx-badge-cctv {
+    color: #EA580C;
+    background: rgba(234, 88, 12, 0.1);
+    border-color: rgba(234, 88, 12, 0.25);
+}
+
+.cx-pill-badge.cx-badge-network {
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.cx-pill-badge.cx-badge-wifi {
+    color: #6366F1;
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.cx-pill-badge.cx-badge-smarthome {
+    color: #0D9488;
+    background: rgba(13, 148, 136, 0.1);
+    border-color: rgba(13, 148, 136, 0.25);
+}
+
+.cx-pill-badge.cx-badge-bio {
+    color: #059669;
+    background: rgba(5, 150, 105, 0.1);
+    border-color: rgba(5, 150, 105, 0.25);
+}
+
+.cx-pill-badge.cx-badge-physical {
+    color: #D97706;
+    background: rgba(217, 119, 6, 0.1);
+    border-color: rgba(217, 119, 6, 0.25);
+}
+
+.cx-pill-badge.cx-badge-safety {
+    color: #DC2626;
+    background: rgba(220, 38, 38, 0.1);
+    border-color: rgba(220, 38, 38, 0.25);
+}
+
+.cx-pill-badge.cx-badge-comm {
+    color: #0284C7;
+    background: rgba(2, 132, 199, 0.1);
+    border-color: rgba(2, 132, 199, 0.25);
+}
+
+.cx-pill-badge.cx-badge-server {
+    color: #7C3AED;
+    background: rgba(124, 58, 237, 0.1);
+    border-color: rgba(124, 58, 237, 0.25);
+}
+
+.cx-pill-badge.cx-badge-display {
+    color: #E11D48;
+    background: rgba(225, 29, 72, 0.1);
+    border-color: rgba(225, 29, 72, 0.25);
+}
+
+.cx-pill-badge.cx-badge-accessories {
+    color: #475569;
+    background: rgba(71, 85, 105, 0.1);
+    border-color: rgba(71, 85, 105, 0.25);
 }
 
 .cx-card-title {
@@ -214,7 +282,7 @@
 }
 
 .cx-card-compact .cx-card-title {
-    font-size: 15px;
+    font-size: 17px;
     margin-bottom: 0;
 }
 
@@ -262,10 +330,10 @@
 }
 
 .cx-card-compact .cx-card-visual {
-    width: 130px;
-    height: 120px;
-    bottom: 5px;
-    right: -5px;
+    width: 145px;
+    height: 130px;
+    bottom: 8px;
+    right: 15px;
 }
 
 .cx-card-visual img {
@@ -362,7 +430,7 @@
 
 @media (max-width: 768px) {
     .cx-shop-by-category {
-        padding: 80px 0;
+        padding: 48px 0;
     }
     .cx-section-heading {
         font-size: 32px;

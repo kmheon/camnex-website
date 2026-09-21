@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" width="560" height="480" fill="none">
+  <defs>
+    <!-- Ground Soft Shadows -->
+    <radialGradient id="comm-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0B192C" stop-opacity="0.32"/>
+      <stop offset="65%" stop-color="#0B192C" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0B192C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- IP Phone Housing Gradients -->
+    <linearGradient id="phone-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="phone-screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="60%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+
+    <linearGradient id="handset-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="40%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- PA Speaker Horn Gradients -->
+    <radialGradient id="pa-flare" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F1F5F9"/>
+      <stop offset="85%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </radialGradient>
+
+    <linearGradient id="pa-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+
+    <linearGradient id="pa-throat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="comm-3d-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="4" dy="16" stdDeviation="14" flood-color="#0B192C" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ground Shadows -->
+  <ellipse cx="230" cy="420" rx="160" ry="24" fill="url(#comm-shadow)"/>
+  <ellipse cx="430" cy="405" rx="90" ry="18" fill="url(#comm-shadow)"/>
+
+  <!-- ==============================================
+       1. COMMERCIAL PUBLIC ADDRESS (PA) HORN SPEAKER
+       ============================================== -->
+  <g filter="url(#comm-3d-shadow)">
+    <!-- PA Speaker Mounting Arm / Bracket -->
+    <path d="M 470 380 L 470 290 L 430 270" fill="none" stroke="#475569" stroke-width="12" stroke-linecap="round"/>
+    <rect x="450" y="370" width="40" height="20" rx="4" fill="#1E293B"/>
+
+    <!-- Driver Chamber (Rear Cylinder) -->
+    <rect x="400" y="240" width="55" height="50" rx="6" fill="url(#pa-body)"/>
+    <rect x="445" y="245" width="15" height="40" rx="4" fill="#64748B"/>
+
+    <!-- Flared Metal Horn Bell Flare -->
+    <path d="M 400 245 L 320 200 L 320 330 L 400 285 Z" fill="url(#pa-flare)"/>
+    <ellipse cx="320" cy="265" rx="16" ry="65" fill="url(#pa-throat)"/>
+
+    <!-- Front Acoustic Re-entrant Sound Core Disc -->
+    <ellipse cx="328" cy="265" rx="8" ry="32" fill="url(#pa-body)" stroke="#64748B" stroke-width="2"/>
+    <ellipse cx="330" cy="265" rx="4" ry="16" fill="#F1F5F9"/>
+
+    <!-- Acoustic Sound Wave Accent Lines -->
+    <path d="M 285 220 A 55 55 0 0 0 285 310" fill="none" stroke="#0284C7" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 265 195 A 90 90 0 0 0 265 335" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+  </g>
+
+  <!-- ==============================================
+       2. ENTERPRISE IP-PBX / PABX TELEPHONE CONSOLE
+       ============================================== -->
+  <g filter="url(#comm-3d-shadow)">
+    <!-- Base Chassis (Angled Desktop Wedge) -->
+    <polygon points="90,390 320,390 300,190 120,190" fill="url(#phone-body)"/>
+    <polygon points="90,390 320,390 300,190 120,190" fill="none" stroke="#475569" stroke-width="2"/>
+
+    <!-- High-Resolution Color IP Display Screen (Pivot Panel) -->
+    <rect x="170" y="145" width="125" height="95" rx="8" fill="#0F172A" stroke="#475569" stroke-width="2"/>
+    <rect x="175" y="150" width="115" height="85" rx="6" fill="url(#phone-screen)"/>
+
+    <!-- Screen UI Details -->
+    <rect x="175" y="150" width="115" height="18" fill="#0C4A6E"/>
+    <text x="182" y="163" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8.5" font-weight="700" fill="#FFFFFF">CAMNEX IP-PBX</text>
+    <text x="268" y="163" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#38BDF8">10:45</text>
+
+    <!-- Active Line Extensions on Display -->
+    <rect x="180" y="174" width="48" height="15" rx="3" fill="#0369A1"/>
+    <circle cx="186" cy="181.5" r="3" fill="#22C55E"/>
+    <text x="194" y="184" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="700" fill="#FFFFFF">Ext 101</text>
+
+    <rect x="236" y="174" width="48" height="15" rx="3" fill="#075985"/>
+    <circle cx="242" cy="181.5" r="3" fill="#22C55E"/>
+    <text x="250" y="184" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" fill="#E0F2FE">Ext 102</text>
+
+    <rect x="180" y="193" width="104" height="20" rx="3" fill="#0C4A6E" opacity="0.6"/>
+    <text x="186" y="206" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="600" fill="#BAE6FD">Line 1: Ready to Call</text>
+
+    <!-- Soft Display Touch Keys Under Screen -->
+    <rect x="180" y="222" width="22" height="7" rx="2" fill="#0284C7"/>
+    <rect x="208" y="222" width="22" height="7" rx="2" fill="#0284C7"/>
+    <rect x="236" y="222" width="22" height="7" rx="2" fill="#0284C7"/>
+    <rect x="264" y="222" width="22" height="7" rx="2" fill="#0284C7"/>
+
+    <!-- 4-Way Navigation D-Pad -->
+    <circle cx="230" cy="270" r="22" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+    <circle cx="230" cy="270" r="10" fill="#334155"/>
+    <text x="230" y="273" font-family="sans-serif" font-size="7" font-weight="900" fill="#94A3B8" text-anchor="middle">OK</text>
+
+    <!-- Numeric Keypad Grid (Standard DTMF 3x4) -->
+    <!-- Row 1: 1 2 3 -->
+    <rect x="170" y="302" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="181" y="312" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">1</text>
+    <rect x="200" y="302" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="211" y="312" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">2</text>
+    <rect x="230" y="302" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="241" y="312" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">3</text>
+
+    <!-- Row 2: 4 5 6 -->
+    <rect x="170" y="322" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="181" y="332" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">4</text>
+    <rect x="200" y="322" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="211" y="332" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">5</text>
+    <rect x="230" y="322" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="241" y="332" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">6</text>
+
+    <!-- Row 3: 7 8 9 -->
+    <rect x="170" y="342" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="181" y="352" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">7</text>
+    <rect x="200" y="342" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="211" y="352" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">8</text>
+    <rect x="230" y="342" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="241" y="352" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">9</text>
+
+    <!-- Row 4: * 0 # -->
+    <rect x="170" y="362" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="181" y="372" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">*</text>
+    <rect x="200" y="362" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="211" y="372" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">0</text>
+    <rect x="230" y="362" width="22" height="14" rx="3" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <text x="241" y="372" font-family="sans-serif" font-size="8" font-weight="bold" fill="#F1F5F9" text-anchor="middle">#</text>
+
+    <!-- Speed Dial Function Keys (Right Column) -->
+    <rect x="262" y="302" width="30" height="14" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <circle cx="286" cy="309" r="2.5" fill="#22C55E"/>
+    <rect x="262" y="322" width="30" height="14" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <circle cx="286" cy="329" r="2.5" fill="#22C55E"/>
+    <rect x="262" y="342" width="30" height="14" rx="3" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <circle cx="286" cy="349" r="2.5" fill="#64748B"/>
+    <!-- Speakerphone Button (Illuminated Green) -->
+    <rect x="262" y="362" width="30" height="14" rx="3" fill="#15803D" stroke="#22C55E" stroke-width="1"/>
+    <circle cx="277" cy="369" r="4" fill="#FFFFFF"/>
+
+    <!-- Left Handset Cradle & Cord -->
+    <!-- Handset Body (Earpiece, Handle, Mouthpiece) -->
+    <path d="M 105 180 Q 115 170 135 175 Q 145 185 140 215 L 132 290 Q 145 350 145 380 Q 145 405 125 405 Q 105 405 105 380 Q 108 350 118 290 L 112 215 Q 102 185 105 180 Z" fill="url(#handset-grad)" stroke="#475569" stroke-width="1.5"/>
+
+    <!-- Earpiece Top Recess -->
+    <ellipse cx="125" cy="195" rx="12" ry="16" fill="#0F172A"/>
+    <!-- Mouthpiece Bottom Recess -->
+    <ellipse cx="125" cy="385" rx="12" ry="16" fill="#0F172A"/>
+
+    <!-- Handset Coiled Cord -->
+    <path d="M 125 405 Q 115 425 120 435 Q 130 445 110 448 Q 95 440 90 420 Q 95 405 92 390" fill="none" stroke="#1E293B" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

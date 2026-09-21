@@ -18,14 +18,14 @@ get_header();
     // 1. Hero
     get_template_part('template-parts/home/hero');
 
-    // 2. Shop by Category
+    // 2. Featured Packages
+    get_template_part('template-parts/home/featured-packages');
+
+    // 3. Shop by Category
     get_template_part('template-parts/home/shop-by-category');
 
-    // 3. Property Solutions
+    // 4. Property Solutions
     get_template_part('template-parts/home/property-solutions');
-
-    // 4. Featured Packages
-    get_template_part('template-parts/home/featured-packages');
 
     // 5. Featured Products
     get_template_part('template-parts/home/featured-products');

@@ -12,6 +12,7 @@ if (!defined('ABSPATH')) {
 ?>
 <!-- CamneX Hero -->
 <section class="cx-hero" id="camnexHero">
+    <div class="cx-hero-ambient-bridge" aria-hidden="true"></div>
     <div class="container cx-hero-grid">
 
         <!-- ============ LEFT: static brand column ============ -->
@@ -79,7 +80,8 @@ if (!defined('ABSPATH')) {
                 </div>
 
                 <div class="cx-stage">
-                    <div class="cx-stage-blob"></div>
+                    <div class="cx-stage-blob" aria-hidden="true"></div>
+                    <div class="cx-stage-rings" aria-hidden="true"></div>
                     <div class="cx-stage-image-wrap" id="stageImageWrap">
                         <img class="cx-stage-image" id="stageImage" src="" alt="">
                     </div>

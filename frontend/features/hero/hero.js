@@ -44,7 +44,7 @@ const heroCampaigns = [
         exploreText: "Explore CCTV",
         exploreUrl: "/category/cctv-cameras",
         warrantyYears: "5",
-        productImg: "../../assets/products/cctv-bullet-transparent.webp",
+        productImg: "../../assets/products/cctv-bullet-transparent.png",
         fallbackImg: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=80",
         chips: [
             { variant: "icon-top", icon: "colorwheel", l1: "ColorVu", l2: "" },
@@ -70,7 +70,7 @@ const heroCampaigns = [
         exploreText: "Explore Networking",
         exploreUrl: "/category/networking",
         warrantyYears: "5",
-        productImg: "../../assets/placeholders/Networking.png",
+        productImg: "../../assets/products/poe-switch-transparent.png",
         fallbackImg: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=80",
         chips: [
             { variant: "icon-top", icon: "cloud", l1: "ReyeeCloud", l2: "" },
@@ -96,7 +96,7 @@ const heroCampaigns = [
         exploreText: "Explore Access Control",
         exploreUrl: "/category/access-control",
         warrantyYears: "2",
-        productImg: "../../assets/placeholders/Access Control.jpg",
+        productImg: "../../assets/products/face-terminal-transparent.png",
         fallbackImg: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80",
         chips: [
             { variant: "icon-top", icon: "scanFace", l1: "FaceID", l2: "" },
@@ -122,7 +122,7 @@ const heroCampaigns = [
         exploreText: "Explore Smart Home",
         exploreUrl: "/category/smart-home",
         warrantyYears: "2",
-        productImg: "../../assets/placeholders/Smart Home.jpg",
+        productImg: "../../assets/products/smart-doorbell-transparent.png",
         fallbackImg: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80",
         chips: [
             { variant: "icon-top", icon: "video", l1: "EZVIZ App", l2: "" },
@@ -322,6 +322,35 @@ const setupHeroInteractivity = () => {
             if (!tab) return;
             stopAutoRotate();
             switchToCampaign(Number(tab.dataset.index));
+            startAutoRotate();
+        });
+
+        bar.addEventListener("keydown", (e) => {
+            const tabs = Array.from(bar.querySelectorAll(".cx-tab"));
+            if (!tabs.length) return;
+            let nextIndex = activeIndex;
+
+            if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+                e.preventDefault();
+                nextIndex = (activeIndex + 1) % heroCampaigns.length;
+            } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+                e.preventDefault();
+                nextIndex = (activeIndex - 1 + heroCampaigns.length) % heroCampaigns.length;
+            } else if (e.key === "Home") {
+                e.preventDefault();
+                nextIndex = 0;
+            } else if (e.key === "End") {
+                e.preventDefault();
+                nextIndex = heroCampaigns.length - 1;
+            } else {
+                return;
+            }
+
+            stopAutoRotate();
+            switchToCampaign(nextIndex);
+            if (tabs[nextIndex]) {
+                tabs[nextIndex].focus();
+            }
             startAutoRotate();
         });
     }
