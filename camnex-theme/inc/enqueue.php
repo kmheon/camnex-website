@@ -112,7 +112,14 @@ function camnex_enqueue_scripts() {
 
     // 8. Homepage Component Scripts
     if (is_front_page() || is_home()) {
-        wp_enqueue_script('camnex-hero', CAMNEX_ASSETS_URI . '/js/hero.js', ['camnex-header'], $ver, true);
+        wp_enqueue_script(
+            'gsap',
+            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+            [],
+            '3.12.5',
+            true
+        );
+        wp_enqueue_script('camnex-hero', CAMNEX_ASSETS_URI . '/js/hero.js', ['camnex-header', 'gsap'], $ver, true);
         wp_enqueue_script('camnex-shop-by-category', CAMNEX_ASSETS_URI . '/js/shop-by-category.js', ['camnex-header'], $ver, true);
         wp_enqueue_script('camnex-property-solutions', CAMNEX_ASSETS_URI . '/js/property-solutions.js', ['camnex-header'], $ver, true);
         wp_enqueue_script('camnex-featured-packages', CAMNEX_ASSETS_URI . '/js/featured-packages.js', ['camnex-header'], $ver, true);

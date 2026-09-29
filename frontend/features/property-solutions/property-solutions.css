@@ -1,29 +1,27 @@
 /* ========================================================
-   COMPONENT: Property Solutions (Polished & Streamlined Bento Grid)
+   COMPONENT: Property Solutions (Premium Technology Card Grid)
    FILE PATH MATCH: frontend/features/property-solutions/property-solutions.css
    ======================================================== */
 
-/* ========================================================
-   SECTION ROOT (scoped design tokens for the property-solutions feature only)
-   ======================================================== */
 .cx-property-solutions {
     --cx-prop-bg: #FFFFFF;
     --cx-navy: #0B0F19;
-    --cx-text-muted: #CBD5E1; /* Increased contrast for readability over dark gradient overlay */
+    --cx-text-muted: #64748B;
     --cx-border: #E2E8F0;
     
     --cx-orange: #F15A24;
     --cx-orange-hover: #D94D1C;
+    --cx-orange-light: #FFF5F2;
     
-    --cx-radius-card: 24px; /* Exactly the same border radius across all cards */
-    --cx-shadow-card: 0 15px 35px -5px rgba(11, 15, 25, 0.1);
-    --cx-shadow-card-hover: 0 35px 65px -12px rgba(241, 90, 36, 0.28);
+    --cx-radius-card: 20px;
+    --cx-shadow-card: 0 4px 20px rgba(15, 23, 42, 0.03);
+    --cx-shadow-card-hover: 0 16px 35px rgba(241, 90, 36, 0.08);
     
-    --cx-transition: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    --cx-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
     position: relative;
     background: var(--cx-prop-bg);
-    padding: 64px 0;
+    padding: 52px 0 60px;
     overflow: hidden;
 }
 
@@ -32,14 +30,15 @@
     margin: auto;
 }
 
+/* Subtle ambient backdrop matching surrounding CamneX sections */
 .cx-property-bg-glow {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(241, 90, 36, 0.04) 0%, transparent 70%);
+    width: 900px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(241, 90, 36, 0.035) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -49,15 +48,18 @@
     z-index: 1;
 }
 
+/* ========================================================
+   SECTION HEADER (Matches Shop by Category & Packages)
+   ======================================================== */
 .cx-property-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 38px;
 }
 
-.cx-section-eyebrow {
+.cx-property-solutions .cx-section-eyebrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -73,263 +75,419 @@
     box-shadow: 0 4px 12px rgba(241, 90, 36, 0.2);
 }
 
-.cx-section-eyebrow span {
+.cx-property-solutions .cx-section-eyebrow span {
     color: #ffffff;
 }
 
-.cx-eyebrow-line {
-    display: none;
-}
-
-.cx-section-heading {
-    margin: 0 0 16px 0;
-    font-size: 42px;
+.cx-property-solutions .cx-section-heading {
+    margin: 0 0 12px 0;
+    font-size: 38px;
     font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
     color: var(--cx-navy);
 }
 
-.cx-section-desc {
+.cx-property-solutions .cx-section-desc {
     margin: 0;
-    font-size: 17px;
-    line-height: 1.6;
-    color: #64748B;
-    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cx-text-muted);
+    max-width: 640px;
 }
 
 /* ========================================================
-   BENTO GRID LAYOUT
+   COMPACT 3 × 2 GRID LAYOUT
    ======================================================== */
-.cx-property-bento-grid {
+.cx-property-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
 
-/* Base Property Card Style - Consistent Height & Radius */
+/* ========================================================
+   TECHNOLOGY CARD DESIGN & INDIVIDUAL COLOR PALETTES
+   ======================================================== */
 .cx-property-card {
+    --card-accent: var(--cx-orange, #F15A24);
+    --card-accent-rgb: 241, 90, 36;
+    --card-light: #FFF5F2;
+    --card-badge-bg: #FFF5F2;
+    --card-badge-text: #EA580C;
+    --card-badge-border: rgba(241, 90, 36, 0.2);
+    --card-tag-bg: #FEF3C7;
+    --card-tag-text: #B45309;
+    --card-tag-border: #FDE68A;
+    
     position: relative;
-    background: var(--cx-navy);
+    background: #FFFFFF;
+    border: 1px solid var(--cx-border);
     border-radius: var(--cx-radius-card);
-    overflow: hidden;
+    padding: 24px 22px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 36px;
     text-decoration: none;
-    color: #FFFFFF;
-    height: 400px; /* Ensures consistent height across all cards */
-    box-shadow: var(--cx-shadow-card);
-    border: 1px solid transparent;
-    transition: transform var(--cx-transition), box-shadow var(--cx-transition), border-color var(--cx-transition);
-}
-
-/* Soft orange glow and lift on hover */
-.cx-property-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--cx-shadow-card-hover);
-    border-color: rgba(241, 90, 36, 0.4);
-}
-
-/* Grid Spanning (Balanced 2-column bento setup for core business targets) */
-.cx-prop-large {
-    grid-column: span 6;
-}
-
-.cx-prop-medium {
-    grid-column: span 6;
-}
-
-/* High-Quality Environment Photography & Parallax/Zoom Effect */
-.cx-card-bg-image {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+    color: var(--cx-navy);
     overflow: hidden;
+    box-shadow: var(--cx-shadow-card);
+    transition: transform var(--cx-transition), 
+                box-shadow var(--cx-transition), 
+                border-color var(--cx-transition),
+                background var(--cx-transition);
 }
 
-.cx-card-bg-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transform: scale(1);
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+/* 1. HOME — Residential (Warm CamneX Orange) */
+.cx-property-card.cx-card-home,
+.cx-property-grid > :nth-child(1) {
+    --card-accent: #F15A24;
+    --card-accent-rgb: 241, 90, 36;
+    --card-light: #FFF5F2;
+    --card-badge-bg: #FFF5F2;
+    --card-badge-text: #EA580C;
+    --card-badge-border: rgba(241, 90, 36, 0.22);
+    --card-tag-bg: #FEF3C7;
+    --card-tag-text: #B45309;
+    --card-tag-border: #FDE68A;
 }
 
-.cx-property-card:hover .cx-card-bg-image img {
-    transform: scale(1.08); /* Subtle zoom/parallax effect on image hover */
+/* 2. OFFICE — Commercial (Enterprise Royal Blue) */
+.cx-property-card.cx-card-office,
+.cx-property-grid > :nth-child(2) {
+    --card-accent: #2563EB;
+    --card-accent-rgb: 37, 99, 235;
+    --card-light: #EFF6FF;
+    --card-badge-bg: #EFF6FF;
+    --card-badge-text: #1D4ED8;
+    --card-badge-border: rgba(37, 99, 235, 0.22);
+    --card-tag-bg: #DBEAFE;
+    --card-tag-text: #1E40AF;
+    --card-tag-border: #BFDBFE;
 }
 
-.cx-card-gradient-overlay {
+/* 3. RETAIL SHOP — Retail & POS (Emerald Green) */
+.cx-property-card.cx-card-retail,
+.cx-property-grid > :nth-child(3) {
+    --card-accent: #059669;
+    --card-accent-rgb: 5, 150, 105;
+    --card-light: #ECFDF5;
+    --card-badge-bg: #ECFDF5;
+    --card-badge-text: #047857;
+    --card-badge-border: rgba(5, 150, 105, 0.22);
+    --card-tag-bg: #D1FAE5;
+    --card-tag-text: #065F46;
+    --card-tag-border: #A7F3D0;
+}
+
+/* 4. WAREHOUSE — Logistics (Amber Gold) */
+.cx-property-card.cx-card-warehouse,
+.cx-property-grid > :nth-child(4) {
+    --card-accent: #D97706;
+    --card-accent-rgb: 217, 119, 6;
+    --card-light: #FFFBEB;
+    --card-badge-bg: #FFFBEB;
+    --card-badge-text: #B45309;
+    --card-badge-border: rgba(217, 119, 6, 0.22);
+    --card-tag-bg: #FEF3C7;
+    --card-tag-text: #92400E;
+    --card-tag-border: #FDE68A;
+}
+
+/* 5. FACTORY — Industrial (Violet Purple) */
+.cx-property-card.cx-card-factory,
+.cx-property-grid > :nth-child(5) {
+    --card-accent: #7C3AED;
+    --card-accent-rgb: 124, 58, 237;
+    --card-light: #F5F3FF;
+    --card-badge-bg: #F5F3FF;
+    --card-badge-text: #6D28D9;
+    --card-badge-border: rgba(124, 58, 237, 0.22);
+    --card-tag-bg: #EDE9FE;
+    --card-tag-text: #5B21B6;
+    --card-tag-border: #DDD6FE;
+}
+
+/* 6. EDUCATIONAL INSTITUTE — Institutional (Cyan / Teal) */
+.cx-property-card.cx-card-education,
+.cx-property-grid > :nth-child(6) {
+    --card-accent: #0891B2;
+    --card-accent-rgb: 8, 145, 178;
+    --card-light: #ECFEFF;
+    --card-badge-bg: #ECFEFF;
+    --card-badge-text: #0E7490;
+    --card-badge-border: rgba(8, 145, 178, 0.22);
+    --card-tag-bg: #CFFAFE;
+    --card-tag-text: #155E75;
+    --card-tag-border: #A5F3FC;
+}
+
+/* Top accent bar indicator */
+.cx-card-accent-bar {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(11, 15, 25, 0.94) 0%, rgba(11, 15, 25, 0.5) 60%, rgba(11, 15, 25, 0.25) 100%);
-    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
     transition: background var(--cx-transition);
 }
 
-.cx-property-card:hover .cx-card-gradient-overlay {
-    background: linear-gradient(to top, rgba(11, 15, 25, 0.96) 0%, rgba(11, 15, 25, 0.6) 70%, rgba(11, 15, 25, 0.35) 100%);
+/* Card Hover — Matched with Brand Logos and Bento Sections */
+.cx-property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(var(--card-accent-rgb), 0.12), 0 4px 14px rgba(15, 23, 42, 0.04);
+    border-color: var(--card-accent);
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--card-light) 100%);
 }
 
-/* Card Content Structure & Spacing */
-.cx-card-top,
-.cx-card-bottom {
-    position: relative;
-    z-index: 2;
+.cx-property-card:hover .cx-card-accent-bar {
+    background: var(--card-accent);
 }
 
-.cx-card-top {
+/* Card Header: Category Marker & Badge */
+.cx-card-top-row {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
-/* Premium Solution Badge */
-.cx-package-badge {
-    display: inline-block;
+.cx-category-marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 11px;
-    font-weight: 800;
-    color: #FFFFFF;
-    background: rgba(241, 90, 36, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 6px 14px;
-    border-radius: 999px;
-    letter-spacing: 0.06em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(241, 90, 36, 0.3);
+    color: var(--card-badge-text);
+    background: var(--card-badge-bg);
+    padding: 3.5px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--card-badge-border);
+    transition: all var(--cx-transition);
+}
+
+.cx-marker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--card-accent);
+    flex-shrink: 0;
+    transition: background var(--cx-transition);
+}
+
+.cx-card-tag-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--card-tag-text);
+    background: var(--card-tag-bg);
+    padding: 3.5px 8.5px;
+    border-radius: 6px;
+    border: 1px solid var(--card-tag-border);
+    white-space: nowrap;
+    transition: all var(--cx-transition);
+}
+
+/* Visual / Icon Row */
+.cx-card-visual-row {
+    margin-bottom: 12px;
+}
+
+.cx-prop-icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--card-light);
+    border: 1px solid var(--card-badge-border);
+    color: var(--card-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--cx-transition), 
+                background var(--cx-transition), 
+                color var(--cx-transition), 
+                border-color var(--cx-transition), 
+                box-shadow var(--cx-transition);
+}
+
+.cx-prop-icon {
+    width: 22px;
+    height: 22px;
+    transition: transform var(--cx-transition);
+}
+
+.cx-property-card:hover .cx-prop-icon-box {
+    background: var(--card-accent);
+    color: #FFFFFF;
+    border-color: var(--card-accent);
+    box-shadow: 0 8px 20px -2px rgba(var(--card-accent-rgb), 0.38);
+    transform: translateY(-2px) scale(1.06);
+}
+
+.cx-property-card:hover .cx-prop-icon {
+    transform: scale(1.05);
+}
+
+/* Card Content: Title & Description */
+.cx-card-content {
+    flex-grow: 1;
+    margin-bottom: 14px;
 }
 
 .cx-prop-title {
-    margin: 0 0 10px 0;
-    font-size: 32px;
-    font-weight: 800; /* Increased heading weight */
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
-    line-height: 1.1;
-}
-
-.cx-prop-desc {
-    margin: 0 0 18px 0;
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--cx-text-muted); /* Higher text contrast */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Recommended Technologies Feature Chips with increased padding */
-.cx-tech-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 22px;
-}
-
-.cx-tech-chips span {
-    font-size: 11px;
+    margin: 0 0 6px 0;
+    font-size: 20px;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.14);
-    color: #FFFFFF;
-    padding: 7px 14px; /* Increased chip padding */
-    border-radius: 8px;
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Premium CTA with Animated Arrow */
-.cx-property-card .cx-explore-action {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #FFFFFF;
-    position: relative;
-    width: fit-content;
+    letter-spacing: -0.015em;
+    color: var(--cx-navy);
+    line-height: 1.25;
     transition: color var(--cx-transition);
 }
 
-.cx-property-card .cx-explore-action::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--cx-orange);
-    transition: width var(--cx-transition);
+.cx-property-card:hover .cx-prop-title {
+    color: var(--card-accent);
+}
+
+.cx-prop-desc {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--cx-text-muted);
+}
+
+/* Card Footer: Tech Chips & CTA */
+.cx-card-footer {
+    padding-top: 14px;
+    border-top: 1px solid #F1F5F9;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cx-tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.cx-tech-chip {
+    font-size: 11px;
+    font-weight: 600;
+    background: #F8FAFC;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+    transition: border-color var(--cx-transition), color var(--cx-transition), background var(--cx-transition);
+}
+
+.cx-property-card:hover .cx-tech-chip {
+    border-color: rgba(var(--card-accent-rgb), 0.28);
+    background: #FFFFFF;
+    color: var(--cx-navy);
+}
+
+.cx-explore-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--cx-navy);
+    transition: color var(--cx-transition);
+    width: fit-content;
+}
+
+.cx-explore-arrow {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--cx-transition), stroke var(--cx-transition);
 }
 
 .cx-property-card:hover .cx-explore-action {
-    color: var(--cx-orange);
+    color: var(--card-accent);
 }
 
-.cx-property-card:hover .cx-explore-action::after {
-    width: 100%;
-}
-
-.cx-explore-action i {
-    width: 16px;
-    height: 16px;
-    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cx-property-card:hover .cx-explore-action i {
-    transform: translateX(6px); /* Animated CTA arrow */
+.cx-property-card:hover .cx-explore-arrow {
+    transform: translateX(4px);
+    stroke: var(--card-accent);
 }
 
 /* ========================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (Desktop 3x2, Tablet 2x3, Mobile 1-col)
    ======================================================== */
-@media (max-width: 1200px) {
-    .cx-prop-large,
-    .cx-prop-medium {
-        grid-column: span 12;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .cx-property-solutions {
-        padding: 48px 0;
+        padding: 48px 0 54px;
     }
-    .cx-section-heading {
-        font-size: 32px;
+    
+    .cx-property-solutions .cx-section-heading {
+        font-size: 34px;
     }
-    /* Mobile Horizontal Snap Carousel for Property Solutions */
-    .cx-property-bento-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 16px;
-        padding-bottom: 20px;
-        scrollbar-width: none;
-    }
-    .cx-property-bento-grid::-webkit-scrollbar {
-        display: none;
-    }
-    .cx-property-card {
-        min-width: 300px;
-        height: 400px !important;
-        grid-column: auto !important;
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        padding: 28px !important;
-    }
-    .cx-prop-title {
-        font-size: 26px !important;
+
+    .cx-property-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
     }
 }
 
+@media (max-width: 640px) {
+    .cx-property-solutions {
+        padding: 40px 0 46px;
+    }
+
+    .cx-property-header {
+        margin-bottom: 28px;
+    }
+
+    .cx-property-solutions .cx-section-heading {
+        font-size: 28px;
+    }
+
+    .cx-property-solutions .cx-section-desc {
+        font-size: 14.5px;
+    }
+
+    .cx-property-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .cx-property-card {
+        padding: 20px 18px 16px;
+    }
+
+    .cx-prop-title {
+        font-size: 18px;
+    }
+}
+
+/* Extra small devices (320px - 375px) */
+@media (max-width: 375px) {
+    .cx-property-solutions .cx-section-heading {
+        font-size: 24px;
+    }
+
+    .cx-card-top-row {
+        flex-wrap: wrap;
+    }
+}
+
+/* ========================================================
+   REDUCED MOTION SUPPORT
+   ======================================================== */
 @media (prefers-reduced-motion: reduce) {
     .cx-property-card,
-    .cx-card-bg-image img,
-    .cx-explore-action i,
-    .cx-explore-action::after {
-        transition: none;
+    .cx-card-accent-bar,
+    .cx-prop-icon-box,
+    .cx-prop-title,
+    .cx-tech-chip,
+    .cx-explore-action,
+    .cx-explore-arrow {
+        transition: none !important;
+        transform: none !important;
     }
 }

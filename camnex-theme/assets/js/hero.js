@@ -2,401 +2,341 @@
 
 /**
  * ========================================================
- * COMPONENT: CamneX Hero JS
- * FILE PATH MATCH: frontend/features/hero/hero.js
+ * COMPONENT: CamneX Bangladesh — Product-First Launch Hero
+ * WordPress Theme Feature JavaScript
  * ========================================================
- *
- * Product images: point at local transparent PNGs under
- * assets/products/. Drop the real official cutout in at that
- * path and it's picked up automatically. Until it exists, a
- * photographic fallback is shown (framed as a photo, not a
- * floating cutout) so nothing looks broken.
  */
 
-const SWITCH_MS = 500; // must match --cx-speed in hero.css
-
-const ICONS = {
-    camera: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8a2 2 0 0 1 2-2h2l2-2h4l2 2h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z"/><circle cx="12" cy="13" r="3.5"/></svg>',
-    network: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1.5"/><rect x="3" y="15" width="18" height="5" rx="1.5"/><path d="M7 9v6M17 9v6"/></svg>',
-    fingerprint: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6c0 3.5-1 6-2 8"/><path d="M12 3a6 6 0 0 1 6 6c0 1.5.1 2.7.3 3.7"/><path d="M9 21c.7-1.5 1-3 1-6a2 2 0 1 1 4 0c0 1 0 1.7-.1 2.3"/><path d="M6 21a13 13 0 0 0 1.5-6 4.5 4.5 0 0 1 9 0c0 .8 0 1.5.1 2.2"/></svg>',
-    home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg>',
-    cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.4-1.5A4.5 4.5 0 0 0 6.5 19h11Z"/></svg>',
-    mic: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3"/></svg>',
-    scanFace: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M9 10v1M15 10v1"/><path d="M9 15c.7.7 1.7 1 3 1s2.3-.3 3-1"/></svg>',
-    lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>',
-    video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4Z"/></svg>'
-};
-
-const heroCampaigns = [
+const HERO_PRODUCTS = [
     {
-        tabLabel: "CCTV",
-        tabIcon: "camera",
-        eyebrow: "New Arrival",
-        title: "Hikvision ColorVu 3.0",
-        subtitle: "Full Color Security Camera",
-        checklist: [
-            "24/7 Full Color Imaging",
-            "AI Human & Vehicle Detection",
-            "Active Deterrence with Audio",
-            "IP67 Weatherproof",
-            "Remote Monitoring"
+        badge: "NEW ARRIVAL",
+        category: "CCTV & Video Surveillance",
+        pretitle: "Meet the New",
+        title: "Hikvision ColorVu Camera",
+        desc: "Advanced color night vision, AI detection and reliable 24/7 surveillance for modern security.",
+        primaryCtaText: "View Product",
+        primaryCtaUrl: "/category/cctv-cameras",
+        specs: [
+            { val: "2MP", lbl: "Resolution" },
+            { val: "ColorVu", lbl: "Night Vision" },
+            { val: "AI Detection", lbl: "Smart Analytics" },
+            { val: "30m", lbl: "IR Range" }
         ],
-        exploreText: "Explore CCTV",
-        exploreUrl: "/category/cctv-cameras",
-        warrantyYears: "5",
-        productImg: "../../assets/products/cctv-bullet-transparent.png",
-        fallbackImg: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=80",
-        chips: [
-            { variant: "icon-top", icon: "colorwheel", l1: "ColorVu", l2: "" },
-            { variant: "plain", l1: "4K", l2: "UHD" },
-            { variant: "plain", l1: "AI", l2: "Detection" },
-            { variant: "plain", l1: "IP67", l2: "Weatherproof" },
-            { variant: "icon-left", icon: "mic", l1: "Audio", l2: "Built-in Mic" }
-        ]
+        image: "assets/products/cctv-bullet-transparent.png",
+        alt: "Hikvision ColorVu Camera"
     },
     {
-        tabLabel: "Networking",
-        tabIcon: "network",
-        eyebrow: "Enterprise Grade",
-        title: "Ruijie Reyee Switch",
-        subtitle: "Enterprise Cloud Switch",
-        checklist: [
-            "Gigabit PoE+ Ports",
-            "Cloud Managed Setup",
-            "Zero-Touch Deployment",
-            "Built-in Surge Protection",
-            "99.9% Uptime SLA"
+        badge: "FEATURED LAUNCH",
+        category: "Access Control & Time Attendance",
+        pretitle: "Next-Gen Security",
+        title: "SpeedFace Touchless Terminal",
+        desc: "Sub-second 3D liveness facial recognition and palm authentication with automated shift attendance tracking.",
+        primaryCtaText: "View Product",
+        primaryCtaUrl: "/category/access-control",
+        specs: [
+            { val: "<0.2s", lbl: "Verify Speed" },
+            { val: "Dual-Lens IR", lbl: "Anti-Spoofing" },
+            { val: "5,000 Faces", lbl: "Face Capacity" },
+            { val: "Automated", lbl: "Shift Payroll" }
         ],
-        exploreText: "Explore Networking",
-        exploreUrl: "/category/networking",
-        warrantyYears: "5",
-        productImg: "../../assets/products/poe-switch-transparent.png",
-        fallbackImg: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=80",
-        chips: [
-            { variant: "icon-top", icon: "cloud", l1: "ReyeeCloud", l2: "" },
-            { variant: "plain", l1: "24", l2: "Ports" },
-            { variant: "plain", l1: "PoE+", l2: "802.3at" },
-            { variant: "plain", l1: "99.9%", l2: "Uptime" },
-            { variant: "icon-left", icon: "lock", l1: "Surge", l2: "Protected" }
-        ]
+        image: "assets/products/face-terminal-transparent.png",
+        alt: "SpeedFace Touchless Biometric Terminal"
     },
     {
-        tabLabel: "Access Control",
-        tabIcon: "fingerprint",
-        eyebrow: "Best Seller",
-        title: "ZKTeco Face Terminal",
-        subtitle: "AI Facial Recognition Terminal",
-        checklist: [
-            "0.2s Facial Verification",
-            "50,000 User Capacity",
-            "Deep Learning Anti-Spoofing",
-            "Touchless Attendance Logs",
-            "Remote Door Management"
+        badge: "ENTERPRISE NETWORK",
+        category: "Enterprise Networking",
+        pretitle: "Power & Speed",
+        title: "Reyee Cloud 24-Port PoE+ Switch",
+        desc: "370W high-budget gigabit PoE+ with zero-configuration cloud management and 250m long-distance transmission.",
+        primaryCtaText: "View Product",
+        primaryCtaUrl: "/category/networking-equipment",
+        specs: [
+            { val: "370W", lbl: "PoE+ Budget" },
+            { val: "Gigabit", lbl: "24-Port Matrix" },
+            { val: "Cloud App", lbl: "Zero-Touch" },
+            { val: "250m", lbl: "Long Reach PoE" }
         ],
-        exploreText: "Explore Access Control",
-        exploreUrl: "/category/access-control",
-        warrantyYears: "2",
-        productImg: "../../assets/products/face-terminal-transparent.png",
-        fallbackImg: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80",
-        chips: [
-            { variant: "icon-top", icon: "scanFace", l1: "FaceID", l2: "" },
-            { variant: "plain", l1: "0.2s", l2: "Match Speed" },
-            { variant: "plain", l1: "50K", l2: "Users" },
-            { variant: "plain", l1: "IP65", l2: "Rated" },
-            { variant: "icon-left", icon: "lock", l1: "Anti", l2: "Spoofing" }
-        ]
+        image: "assets/products/poe-switch-transparent.png",
+        alt: "Ruijie Reyee Cloud Managed PoE+ Switch"
     },
     {
-        tabLabel: "Smart Home",
-        tabIcon: "home",
-        eyebrow: "Smart Choice",
-        title: "EZVIZ Smart Doorbell",
-        subtitle: "2K Smart Video Doorbell",
-        checklist: [
-            "2K Ultra-HD Resolution",
-            "Two-Way Talk & Voice Changer",
-            "Smart PIR Motion Detection",
-            "Encrypted Cloud Storage",
-            "Instant Mobile Alerts"
+        badge: "SMART SECURITY",
+        category: "Video Intercom & Smart Home",
+        pretitle: "Smart Front-Door",
+        title: "EZVIZ 2K Video Doorbell",
+        desc: "Ultra-wide 2K crystal video with two-way talk, PIR motion human detection, and instant phone alert notifications.",
+        primaryCtaText: "View Product",
+        primaryCtaUrl: "/category/video-intercom",
+        specs: [
+            { val: "2K UHD", lbl: "Crystal Video" },
+            { val: "PIR Sensor", lbl: "Human Detect" },
+            { val: "Two-Way", lbl: "Full Duplex" },
+            { val: "Dual-Band", lbl: "2.4G & 5G WiFi" }
         ],
-        exploreText: "Explore Smart Home",
-        exploreUrl: "/category/smart-home",
-        warrantyYears: "2",
-        productImg: "../../assets/products/smart-doorbell-transparent.png",
-        fallbackImg: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80",
-        chips: [
-            { variant: "icon-top", icon: "video", l1: "EZVIZ App", l2: "" },
-            { variant: "plain", l1: "2K", l2: "Ultra HD" },
-            { variant: "plain", l1: "PIR", l2: "Motion" },
-            { variant: "plain", l1: "IP65", l2: "Weatherproof" },
-            { variant: "icon-left", icon: "cloud", l1: "Cloud", l2: "Storage" }
-        ]
+        image: "assets/products/smart-doorbell-transparent.png",
+        alt: "EZVIZ 2K Smart Video Doorbell"
     }
 ];
 
-const partnerBrands = [
-    { name: "HIKVISION", slug: "hikvision", file: "hikvision.png" },
-    { name: "Dahua", slug: "dahua", file: "dahua.png" },
-    { name: "EZVIZ", slug: "ezviz", file: "Ezviz.png" },
-    { name: "RUIJIE", slug: "ruijie", file: "ruijie.png" },
-    { name: "tp-link", slug: "tp-link", file: "tp-link.png" },
-    { name: "MikroTik", slug: "mikrotik", file: "mikrotik.png" }
-];
+class HeroComponent {
+    constructor() {
+        this.currentIndex = 0;
+        this.products = HERO_PRODUCTS;
+        this.autoPlayInterval = null;
+        this.isPaused = false;
+        this.themeUri = window.camnexData && window.camnexData.themeUri ? window.camnexData.themeUri : (window.CAMNEX_THEME_URI || "");
 
-let activeIndex = 0;
-let isAnimating = false;
-let autoTimer = null;
-let initialized = false;
-let interactivityBound = false;
-const AUTO_INTERVAL = 6500;
-
-/* ---------------- Tab bar ---------------- */
-
-const buildTabbar = () => {
-    const bar = document.getElementById("heroTabbar");
-    if (!bar) return;
-    bar.innerHTML = "";
-    heroCampaigns.forEach((c, idx) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "cx-tab" + (idx === 0 ? " active" : "");
-        btn.setAttribute("role", "tab");
-        btn.setAttribute("aria-selected", idx === 0 ? "true" : "false");
-        btn.dataset.index = String(idx);
-        btn.innerHTML = `${ICONS[c.tabIcon] || ""}<span>${c.tabLabel}</span>`;
-        bar.appendChild(btn);
-    });
-};
-
-/* ---------------- Chip rendering ---------------- */
-
-const renderChipIcon = (chip) => {
-    if (chip.icon === "colorwheel") {
-        return '<span class="cx-chip-colorwheel"></span>';
-    }
-    if (chip.icon && ICONS[chip.icon]) {
-        return `<span class="cx-chip-icon">${ICONS[chip.icon]}</span>`;
-    }
-    return "";
-};
-
-const renderChips = (campaign) => {
-    const row = document.getElementById("chipRow");
-    if (!row) return;
-    row.innerHTML = "";
-    campaign.chips.forEach((chip) => {
-        const card = document.createElement("div");
-        card.className = "cx-chip variant-" + chip.variant;
-        const iconHtml = renderChipIcon(chip);
-        const textHtml = `<span class="cx-chip-text"><span class="l1">${chip.l1}</span>${chip.l2 ? `<span class="l2">${chip.l2}</span>` : ""}</span>`;
-        card.innerHTML = iconHtml + textHtml;
-        row.appendChild(card);
-    });
-};
-
-/* ---------------- Product stage ---------------- */
-
-const resolveAssetPath = (path) => {
-    if (!path) return "";
-    if (window.camnexTheme && window.camnexTheme.themeUri) {
-        return path.replace(/^\.\.\/\.\.\//, window.camnexTheme.themeUri + "/");
-    }
-    return path;
-};
-
-const loadProductImage = (campaign) => {
-    const wrap = document.getElementById("stageImageWrap");
-    const img = document.getElementById("stageImage");
-    if (!wrap || !img) return;
-    wrap.classList.remove("is-fallback");
-    img.onerror = () => {
-        img.onerror = null;
-        img.src = resolveAssetPath(campaign.fallbackImg);
-        wrap.classList.add("is-fallback");
-    };
-    img.src = resolveAssetPath(campaign.productImg);
-    img.alt = campaign.title;
-};
-
-/* ---------------- Content ---------------- */
-
-const renderContent = (campaign) => {
-    document.getElementById("pEyebrow").textContent = campaign.eyebrow;
-    document.getElementById("pTitle").textContent = campaign.title;
-    document.getElementById("pSubtitle").textContent = campaign.subtitle;
-    document.getElementById("pExploreText").textContent = campaign.exploreText;
-    document.getElementById("wbNumber").textContent = campaign.warrantyYears;
-
-    const exploreLink = document.getElementById("pExploreLink");
-    if (exploreLink) {
-        exploreLink.href = campaign.exploreUrl || "/solutions";
+        this.init();
     }
 
-    const list = document.getElementById("pChecklist");
-    list.innerHTML = "";
-    campaign.checklist.forEach((item) => {
-        const li = document.createElement("li");
-        li.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>' + item + "</span>";
-        list.appendChild(li);
-    });
+    init() {
+        this.cacheDom();
+        if (!this.heroSection) return;
 
-    renderChips(campaign);
-};
-
-/* ---------------- Orchestration ---------------- */
-
-const applyCampaign = (index) => {
-    const campaign = heroCampaigns[index];
-    if (!campaign) return;
-    renderContent(campaign);
-    loadProductImage(campaign);
-};
-
-const switchToCampaign = (index) => {
-    if (index === activeIndex || isAnimating) return;
-    const hero = document.getElementById("camnexHero");
-    if (!hero) return;
-
-    isAnimating = true;
-    hero.classList.add("is-switching");
-
-    document.querySelectorAll(".cx-tab").forEach((tab, idx) => {
-        tab.classList.toggle("active", idx === index);
-        tab.setAttribute("aria-selected", idx === index ? "true" : "false");
-    });
-    activeIndex = index;
-
-    setTimeout(() => {
-        applyCampaign(activeIndex);
-        hero.classList.remove("is-switching");
-        isAnimating = false;
-    }, SWITCH_MS);
-};
-
-const startAutoRotate = () => {
-    stopAutoRotate();
-    autoTimer = setInterval(() => {
-        switchToCampaign((activeIndex + 1) % heroCampaigns.length);
-    }, AUTO_INTERVAL);
-};
-
-const stopAutoRotate = () => {
-    if (autoTimer) {
-        clearInterval(autoTimer);
-        autoTimer = null;
+        this.bindEvents();
+        this.renderProduct(0, false);
+        this.initGsapEntrance();
+        this.startAutoPlay();
     }
-};
 
-/* ---------------- Partner logos ---------------- */
+    initGsapEntrance() {
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return;
 
-const buildPartnerStrip = () => {
-    const strip = document.getElementById("partnerStrip");
-    if (!strip) return;
-    strip.innerHTML = "";
-    partnerBrands.forEach((brand) => {
-        const wrap = document.createElement("div");
-        wrap.className = "cx-partner-logo";
+        const animateElements = () => {
+            if (typeof window.gsap === "undefined") return;
 
-        const img = document.createElement("img");
-        img.src = resolveAssetPath(`../../assets/brands/${brand.file}`);
-        img.alt = brand.name;
-        img.onerror = () => {
-            const span = document.createElement("span");
-            span.className = "cx-partner-fallback-text";
-            span.textContent = brand.name;
-            img.replaceWith(span);
+            const eyebrow = this.heroSection.querySelector(".cx-hero-eyebrow");
+            const headlineGroup = this.heroSection.querySelector(".cx-hero-headline-group");
+            const desc = this.heroSection.querySelector(".cx-hero-desc");
+            const ctaGroup = this.heroSection.querySelector(".cx-hero-actions");
+            const visual = this.heroSection.querySelector(".cx-hero-image");
+            const specsRail = this.heroSection.querySelector(".cx-hero-specs-rail");
+            const nav = this.heroSection.querySelector(".cx-hero-nav");
+
+            const tl = window.gsap.timeline({
+                defaults: {
+                    ease: "power2.out"
+                }
+            });
+
+            if (eyebrow) {
+                tl.fromTo(eyebrow, 
+                    { opacity: 0, y: 12 }, 
+                    { opacity: 1, y: 0, duration: 0.5 }, 
+                    0.05
+                );
+            }
+
+            if (headlineGroup) {
+                tl.fromTo(headlineGroup, 
+                    { opacity: 0, y: 20 }, 
+                    { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" }, 
+                    0.15
+                );
+            }
+
+            if (desc) {
+                tl.fromTo(desc, 
+                    { opacity: 0, y: 12 }, 
+                    { opacity: 1, y: 0, duration: 0.55 }, 
+                    0.28
+                );
+            }
+
+            if (ctaGroup) {
+                tl.fromTo(ctaGroup, 
+                    { opacity: 0, y: 14 }, 
+                    { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 
+                    0.38
+                );
+            }
+
+            if (visual) {
+                tl.fromTo(visual, 
+                    { opacity: 0, y: 18, scale: 0.95 }, 
+                    { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: "power2.out" }, 
+                    0.2
+                );
+            }
+
+            if (specsRail) {
+                tl.fromTo(specsRail, 
+                    { opacity: 0, x: 14 }, 
+                    { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 
+                    0.32
+                );
+            }
+
+            if (nav) {
+                tl.fromTo(nav, 
+                    { opacity: 0, y: 10 }, 
+                    { opacity: 1, y: 0, duration: 0.5 }, 
+                    0.55
+                );
+            }
         };
 
-        const caption = document.createElement("span");
-        caption.className = "cx-partner-caption";
-        caption.textContent = "Authorised Partner";
+        if (typeof window.gsap !== "undefined") {
+            animateElements();
+        } else {
+            const script = document.createElement("script");
+            script.src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js";
+            script.onload = () => animateElements();
+            document.head.appendChild(script);
+        }
+    }
 
-        wrap.appendChild(img);
-        wrap.appendChild(caption);
-        strip.appendChild(wrap);
-    });
-};
+    cacheDom() {
+        this.heroSection = document.getElementById("camnexHero");
+        if (!this.heroSection) return;
 
-/* ---------------- Init ---------------- */
+        this.badgeEl = document.getElementById("heroBadge");
+        this.categoryEl = document.getElementById("heroCategory");
+        this.pretitleEl = document.getElementById("heroPretitle");
+        this.titleEl = document.getElementById("heroTitle");
+        this.descEl = document.getElementById("heroDesc");
+        this.specsRail = document.getElementById("heroSpecsRail");
+        this.primaryCta = document.getElementById("heroPrimaryCta");
+        this.primaryCtaText = document.getElementById("heroPrimaryCtaText");
+        this.productImg = document.getElementById("heroProductImg");
+        this.navButtons = this.heroSection.querySelectorAll(".cx-hero-nav-btn");
+    }
 
-const setupHeroInteractivity = () => {
-    if (interactivityBound) return;
-    interactivityBound = true;
-
-    const bar = document.getElementById("heroTabbar");
-    if (bar) {
-        bar.addEventListener("click", (e) => {
-            const tab = e.target.closest(".cx-tab");
-            if (!tab) return;
-            stopAutoRotate();
-            switchToCampaign(Number(tab.dataset.index));
-            startAutoRotate();
+    bindEvents() {
+        this.navButtons.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                this.goToSlide(index);
+                this.resetAutoPlay();
+            });
         });
 
-        bar.addEventListener("keydown", (e) => {
-            const tabs = Array.from(bar.querySelectorAll(".cx-tab"));
-            if (!tabs.length) return;
-            let nextIndex = activeIndex;
+        this.heroSection.addEventListener("mouseenter", () => {
+            this.isPaused = true;
+        });
 
-            if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-                e.preventDefault();
-                nextIndex = (activeIndex + 1) % heroCampaigns.length;
-            } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-                e.preventDefault();
-                nextIndex = (activeIndex - 1 + heroCampaigns.length) % heroCampaigns.length;
-            } else if (e.key === "Home") {
-                e.preventDefault();
-                nextIndex = 0;
-            } else if (e.key === "End") {
-                e.preventDefault();
-                nextIndex = heroCampaigns.length - 1;
-            } else {
-                return;
-            }
+        this.heroSection.addEventListener("mouseleave", () => {
+            this.isPaused = false;
+        });
 
-            stopAutoRotate();
-            switchToCampaign(nextIndex);
-            if (tabs[nextIndex]) {
-                tabs[nextIndex].focus();
+        this.heroSection.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowRight") {
+                this.nextSlide();
+                this.resetAutoPlay();
+            } else if (e.key === "ArrowLeft") {
+                this.prevSlide();
+                this.resetAutoPlay();
             }
-            startAutoRotate();
         });
     }
 
-    const hero = document.getElementById("camnexHero");
-    if (hero) {
-        hero.addEventListener("mouseenter", stopAutoRotate);
-        hero.addEventListener("mouseleave", startAutoRotate);
+    goToSlide(index) {
+        if (index === this.currentIndex || index < 0 || index >= this.products.length) return;
+        this.currentIndex = index;
+        this.renderProduct(this.currentIndex, true);
     }
-};
 
-const initHeroComponent = () => {
-    if (initialized) return;
-    if (!document.getElementById("camnexHero")) {
-        console.warn("[CamneX Hero] #camnexHero not found; skipping init.");
-        return;
+    nextSlide() {
+        const next = (this.currentIndex + 1) % this.products.length;
+        this.goToSlide(next);
     }
-    initialized = true;
-    buildTabbar();
-    buildPartnerStrip();
-    applyCampaign(0);
-    setupHeroInteractivity();
-    startAutoRotate();
-};
 
-window.initHeroComponent = initHeroComponent;
+    prevSlide() {
+        const prev = (this.currentIndex - 1 + this.products.length) % this.products.length;
+        this.goToSlide(prev);
+    }
 
-/*
- * Standalone preview support.
- * In frontend/features/hero/index.html the component markup is already in the
- * DOM when this script runs (script tag sits at the end of body), so the
- * module initializes immediately - no DOMContentLoaded dependency.
- *
- * On the homepage, #camnexHero is mounted asynchronously by the ComponentLoader,
- * so this guard no-ops there and the orchestrator drives init.
- * The initialized + interactivityBound flags make repeated calls harmless.
- */
-if (document.getElementById("camnexHero")) {
-    initHeroComponent();
+    renderProduct(index, animate = true) {
+        const p = this.products[index];
+        if (!p) return;
+
+        this.navButtons.forEach((btn, idx) => {
+            const isActive = (idx === index);
+            btn.classList.toggle("active", isActive);
+            btn.setAttribute("aria-selected", isActive ? "true" : "false");
+            if (isActive) btn.focus({ preventScroll: true });
+        });
+
+        let imgSrc = p.image;
+        if (this.themeUri) {
+            imgSrc = this.themeUri.replace(/\/+$/, "") + "/" + p.image;
+        }
+
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (animate && !prefersReducedMotion && this.productImg) {
+            this.productImg.classList.add("cx-fade-out");
+            setTimeout(() => {
+                this.applyData(p, imgSrc);
+                this.productImg.classList.remove("cx-fade-out");
+            }, 200);
+        } else {
+            this.applyData(p, imgSrc);
+        }
+    }
+
+    applyData(p, imgSrc) {
+        if (this.badgeEl) this.badgeEl.textContent = p.badge;
+        if (this.categoryEl) this.categoryEl.textContent = p.category;
+        if (this.pretitleEl) this.pretitleEl.textContent = p.pretitle;
+        if (this.titleEl) this.titleEl.textContent = p.title;
+        if (this.descEl) this.descEl.textContent = p.desc;
+
+        if (this.primaryCta) this.primaryCta.setAttribute("href", p.primaryCtaUrl);
+        if (this.primaryCtaText) this.primaryCtaText.textContent = p.primaryCtaText;
+
+        // Render compact vertical specs rail
+        if (this.specsRail && p.specs && p.specs.length > 0) {
+            this.specsRail.innerHTML = p.specs.map(spec => `
+                <div class="cx-spec-rail-item">
+                    <div class="cx-spec-rail-head">
+                        <span class="cx-spec-dot" aria-hidden="true">●</span>
+                        <span class="cx-spec-rail-val">${spec.val}</span>
+                    </div>
+                    <span class="cx-spec-rail-lbl">${spec.lbl}</span>
+                </div>
+            `).join("");
+        }
+
+        if (this.productImg) {
+            this.productImg.src = imgSrc;
+            this.productImg.alt = p.alt;
+        }
+    }
+
+    startAutoPlay() {
+        this.stopAutoPlay();
+        this.autoPlayInterval = setInterval(() => {
+            if (!this.isPaused && document.visibilityState === "visible") {
+                this.nextSlide();
+            }
+        }, 5000);
+    }
+
+    stopAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+
+    resetAutoPlay() {
+        this.startAutoPlay();
+    }
 }
 
+window.initHeroComponent = function() {
+    return new HeroComponent();
+};
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+        if (document.getElementById("camnexHero")) {
+            window.initHeroComponent();
+        }
+    });
+} else {
+    if (document.getElementById("camnexHero")) {
+        window.initHeroComponent();
+    }
+}

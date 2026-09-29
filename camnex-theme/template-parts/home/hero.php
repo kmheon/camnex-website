@@ -1,105 +1,126 @@
 <?php
 /**
  * CamneX Bangladesh — Homepage Hero Section Template Part
+ * Product-First Launch Hero
  *
  * @package CamneX
- * @version 1.0.0
+ * @version 5.2.0
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+$theme_uri = get_template_directory_uri();
 ?>
-<!-- CamneX Hero -->
-<section class="cx-hero" id="camnexHero">
-    <div class="cx-hero-ambient-bridge" aria-hidden="true"></div>
-    <div class="container cx-hero-grid">
+<!-- CamneX Bangladesh — Premium Product-First Launch Hero -->
+<section class="cx-hero" id="camnexHero" aria-label="<?php esc_attr_e('Featured Technology Products', 'camnex'); ?>">
+    <div class="container cx-hero-container">
 
-        <!-- ============ LEFT: static brand column ============ -->
-        <div class="cx-hero-left">
-            <span class="cx-badge-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-                <?php esc_html_e("Bangladesh's Trusted Technology Partner", 'camnex'); ?>
-            </span>
+        <!-- Product Launch Stage Card -->
+        <div class="cx-hero-card" id="heroProductStage">
 
-            <h1 class="cx-hero-headline">
-                <span class="cx-line-ink"><?php esc_html_e('Securing What', 'camnex'); ?></span>
-                <span class="cx-line-ink"><?php esc_html_e('Matters.', 'camnex'); ?></span>
-                <span class="cx-line-orange"><?php esc_html_e('Connected for', 'camnex'); ?></span>
-                <span class="cx-line-orange"><?php esc_html_e('Tomorrow.', 'camnex'); ?></span>
-            </h1>
+            <!-- LEFT: Product Story & Actions -->
+            <div class="cx-hero-content">
 
-            <p class="cx-hero-body"><?php esc_html_e('CamneX delivers high-performance security, networking and smart technology solutions with reliable products and expert installation across Bangladesh.', 'camnex'); ?></p>
+                <!-- Eyebrow Tag -->
+                <div class="cx-hero-eyebrow">
+                    <span class="cx-hero-badge" id="heroBadge"><?php esc_html_e('NEW ARRIVAL', 'camnex'); ?></span>
+                    <span class="cx-hero-category" id="heroCategory"><?php esc_html_e('CCTV & Video Surveillance', 'camnex'); ?></span>
+                </div>
 
-            <div class="cx-hero-cta-row">
-                <a href="<?php echo esc_url(home_url('/get-quote')); ?>" class="cx-btn cx-hero-btn cx-hero-btn-primary">
-                    <?php esc_html_e('Get Free Quote', 'camnex'); ?>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
-                </a>
-                <a href="<?php echo esc_url(home_url('/solutions')); ?>" class="cx-btn cx-hero-btn cx-hero-btn-secondary">
-                    <?php esc_html_e('Explore Solutions', 'camnex'); ?>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
-                </a>
-            </div>
+                <!-- Product Headline (Meet the New ...) -->
+                <div class="cx-hero-headline-group">
+                    <span class="cx-hero-pretitle" id="heroPretitle"><?php esc_html_e('Meet the New', 'camnex'); ?></span>
+                    <h1 class="cx-hero-title" id="heroTitle"><?php esc_html_e('Hikvision ColorVu Camera', 'camnex'); ?></h1>
+                </div>
 
-            <ul class="cx-trust-row">
-                <li class="cx-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
-                    <span class="cx-trust-label"><span class="l1"><?php esc_html_e('Official', 'camnex'); ?></span><span class="l2"><?php esc_html_e('Warranty', 'camnex'); ?></span></span>
-                </li>
-                <li class="cx-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span class="cx-trust-label"><span class="l1"><?php esc_html_e('Nationwide', 'camnex'); ?></span><span class="l2"><?php esc_html_e('Installation', 'camnex'); ?></span></span>
-                </li>
-                <li class="cx-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-                    <span class="cx-trust-label"><span class="l1"><?php esc_html_e('Certified', 'camnex'); ?></span><span class="l2"><?php esc_html_e('Engineers', 'camnex'); ?></span></span>
-                </li>
-                <li class="cx-trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg>
-                    <span class="cx-trust-label"><span class="l1"><?php esc_html_e('Genuine', 'camnex'); ?></span><span class="l2"><?php esc_html_e('Products', 'camnex'); ?></span></span>
-                </li>
-            </ul>
-        </div>
+                <!-- Short Product Description -->
+                <p class="cx-hero-desc" id="heroDesc">
+                    <?php esc_html_e('Advanced color night vision, AI detection and reliable 24/7 surveillance for modern security.', 'camnex'); ?>
+                </p>
 
-        <!-- ============ RIGHT: dynamic product spotlight ============ -->
-        <div class="cx-hero-right">
-
-            <div class="cx-tabbar" id="heroTabbar" role="tablist" aria-label="<?php esc_attr_e('Solution categories', 'camnex'); ?>"></div>
-
-            <div class="cx-product-panel">
-                <div class="cx-product-info">
-                    <p class="cx-hero-eyebrow" id="pEyebrow"></p>
-                    <h2 class="cx-product-title" id="pTitle"></h2>
-                    <p class="cx-product-subtitle" id="pSubtitle"></p>
-                    <ul class="cx-checklist" id="pChecklist"></ul>
-                    <a href="<?php echo esc_url(home_url('/solutions')); ?>" class="cx-explore-link" id="pExploreLink">
-                        <span id="pExploreText"></span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+                <!-- Primary & Secondary CTAs -->
+                <div class="cx-hero-actions">
+                    <a href="<?php echo esc_url(home_url('/category/cctv-cameras')); ?>" class="cx-btn-hero cx-btn-primary" id="heroPrimaryCta">
+                        <span id="heroPrimaryCtaText"><?php esc_html_e('View Product', 'camnex'); ?></span>
+                        <svg class="cx-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="<?php echo esc_url(home_url('/get-quote')); ?>" class="cx-btn-hero cx-btn-secondary" id="heroSecondaryCta">
+                        <span><?php esc_html_e('Get a Quote', 'camnex'); ?></span>
                     </a>
                 </div>
 
-                <div class="cx-stage">
-                    <div class="cx-stage-blob" aria-hidden="true"></div>
-                    <div class="cx-stage-rings" aria-hidden="true"></div>
-                    <div class="cx-stage-image-wrap" id="stageImageWrap">
-                        <img class="cx-stage-image" id="stageImage" src="" alt="">
-                    </div>
-                    <div class="cx-warranty-badge" id="warrantyBadge">
-                        <span class="cx-wb-number" id="wbNumber"></span>
-                        <span class="cx-wb-year"><?php esc_html_e('YEAR', 'camnex'); ?></span>
-                        <span class="cx-wb-word"><?php esc_html_e('WARRANTY', 'camnex'); ?></span>
-                    </div>
-                </div>
-
-                <div class="cx-chip-row" id="chipRow"></div>
             </div>
+
+            <!-- CENTER: Large Product Image Showcase -->
+            <div class="cx-hero-visual">
+                <div class="cx-visual-aura" aria-hidden="true"></div>
+                <div class="cx-visual-frame" id="heroVisualFrame">
+                    <img id="heroProductImg"
+                         class="cx-hero-image"
+                         src="<?php echo esc_url($theme_uri . '/assets/products/cctv-bullet-transparent.png'); ?>"
+                         alt="<?php esc_attr_e('Hikvision ColorVu Camera', 'camnex'); ?>"
+                         loading="eager" />
+                </div>
+            </div>
+
+            <!-- RIGHT: Compact Vertical Speciality Rail -->
+            <aside class="cx-hero-specs-rail" id="heroSpecsRail" aria-label="<?php esc_attr_e('Key Product Specifications', 'camnex'); ?>">
+                <div class="cx-spec-rail-item">
+                    <div class="cx-spec-rail-head">
+                        <span class="cx-spec-dot" aria-hidden="true">●</span>
+                        <span class="cx-spec-rail-val" id="specVal0">2MP</span>
+                    </div>
+                    <span class="cx-spec-rail-lbl" id="specLbl0"><?php esc_html_e('Resolution', 'camnex'); ?></span>
+                </div>
+                <div class="cx-spec-rail-item">
+                    <div class="cx-spec-rail-head">
+                        <span class="cx-spec-dot" aria-hidden="true">●</span>
+                        <span class="cx-spec-rail-val" id="specVal1">ColorVu</span>
+                    </div>
+                    <span class="cx-spec-rail-lbl" id="specLbl1"><?php esc_html_e('Night Vision', 'camnex'); ?></span>
+                </div>
+                <div class="cx-spec-rail-item">
+                    <div class="cx-spec-rail-head">
+                        <span class="cx-spec-dot" aria-hidden="true">●</span>
+                        <span class="cx-spec-rail-val" id="specVal2">AI Detection</span>
+                    </div>
+                    <span class="cx-spec-rail-lbl" id="specLbl2"><?php esc_html_e('Smart Analytics', 'camnex'); ?></span>
+                </div>
+                <div class="cx-spec-rail-item">
+                    <div class="cx-spec-rail-head">
+                        <span class="cx-spec-dot" aria-hidden="true">●</span>
+                        <span class="cx-spec-rail-val" id="specVal3">30m</span>
+                    </div>
+                    <span class="cx-spec-rail-lbl" id="specLbl3"><?php esc_html_e('IR Range', 'camnex'); ?></span>
+                </div>
+            </aside>
+
+            <!-- Bottom: Minimalist Product Carousel Switcher -->
+            <div class="cx-hero-nav" role="tablist" aria-label="<?php esc_attr_e('Featured Product Showcase Selector', 'camnex'); ?>">
+                <button type="button" class="cx-hero-nav-btn active" role="tab" id="prodTab0" aria-selected="true" data-index="0" aria-label="<?php esc_attr_e('Product 1: Hikvision ColorVu Camera', 'camnex'); ?>">
+                    <span class="cx-nav-num">01</span>
+                    <span class="cx-nav-title"><?php esc_html_e('ColorVu Camera', 'camnex'); ?></span>
+                </button>
+                <button type="button" class="cx-hero-nav-btn" role="tab" id="prodTab1" aria-selected="false" data-index="1" aria-label="<?php esc_attr_e('Product 2: Face Recognition Terminal', 'camnex'); ?>">
+                    <span class="cx-nav-num">02</span>
+                    <span class="cx-nav-title"><?php esc_html_e('Biometric Terminal', 'camnex'); ?></span>
+                </button>
+                <button type="button" class="cx-hero-nav-btn" role="tab" id="prodTab2" aria-selected="false" data-index="2" aria-label="<?php esc_attr_e('Product 3: Reyee Cloud PoE Switch', 'camnex'); ?>">
+                    <span class="cx-nav-num">03</span>
+                    <span class="cx-nav-title"><?php esc_html_e('Cloud PoE Switch', 'camnex'); ?></span>
+                </button>
+                <button type="button" class="cx-hero-nav-btn" role="tab" id="prodTab3" aria-selected="false" data-index="3" aria-label="<?php esc_attr_e('Product 4: Smart Video Doorbell', 'camnex'); ?>">
+                    <span class="cx-nav-num">04</span>
+                    <span class="cx-nav-title"><?php esc_html_e('Video Doorbell', 'camnex'); ?></span>
+                </button>
+            </div>
+
         </div>
 
-    </div>
-
-    <div class="container cx-partner-section">
-        <p class="cx-partner-heading"><?php esc_html_e("We work with the world's leading brands", 'camnex'); ?></p>
-        <div class="cx-partner-strip" id="partnerStrip"></div>
     </div>
 </section>
