@@ -3,7 +3,7 @@
 **Project**: CamneX Bangladesh (Security, Networking and IT Solutions Company)  
 **Production URL**: `https://www.camnexbd.com`  
 **Theme Name**: `camnex-theme`  
-**Theme Directory**: `wordpress/wp-content/themes/camnex-theme/`  
+**Theme Directory**: `/camnex-theme/ (wp-content/themes/camnex-theme/)`  
 **Document Purpose**: Production environment prerequisites, plugin dependencies, and administrative runbook.
 
 ---

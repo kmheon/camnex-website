@@ -4,7 +4,7 @@
 **Primary Domain**: https://www.camnexbd.com  
 **Primary Contact**: +880 1540-535150 | contact@camnexbd.com  
 **Primary Brand Colors**: `#F15A24` (Primary Orange), `#D94D1C` (Hover/Dark Orange)  
-**Theme Path**: `wordpress/wp-content/themes/camnex-theme/` (symlinked from `camnex-theme/`)  
+**Theme Path**: `/camnex-theme/ (wp-content/themes/camnex-theme/)` (symlinked from `camnex-theme/`)  
 **Frozen Frontend Source of Truth**: `frontend/` (Strictly read-only / untouched)
 
 ---
