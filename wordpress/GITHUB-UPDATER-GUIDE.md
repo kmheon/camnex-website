@@ -1,7 +1,7 @@
 # CamneX Bangladesh — GitHub-Based WordPress Theme Updater Guide
 
 **Repository**: https://github.com/kmheon/camnex-website  
-**Canonical Theme Directory**: /camnex-theme/  
+**Canonical Theme Directory**: / (Repository Root)  
 **Target WordPress Theme Path**: wp-content/themes/camnex-theme/  
 **Current Version**: 1.0.1 (Updater-Ready Release)  
 **Updater Readiness**: READY
